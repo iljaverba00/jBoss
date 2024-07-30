@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='Cp1251'?>
+<!DOCTYPE policy PUBLIC "-//JBoss//DTD JBOSS Security Config 3.0//EN" "http://www.jboss.org/j2ee/dtd/security_config.dtd" []>
+
+<!-- The XML based JAAS login configuration read by the
+org.jboss.security.auth.login.XMLLoginConfig mbean. Add
+an application-policy element for each security domain.
+
+The outline of the application-policy is:
+<application-policy name="security-domain-name">
+  <authentication>
+    <login-module code="login.module1.class.name" flag="control_flag">
+      <module-option name = "option1-name">option1-value</module-option>
+      <module-option name = "option2-name">option2-value</module-option>
+      ...
+    </login-module>
+
+    <login-module code="login.module2.class.name" flag="control_flag">
+      ...
+    </login-module>
+    ...
+  </authentication>
+</application-policy>
+
+$Revision: 1.12 $
+-->
+
+<policy>
+    <!-- Security domain for JBossMQ -->
+    <application-policy name="jbossmq">
+        <authentication>
+            <login-module code="org.jboss.security.auth.spi.DatabaseServerLoginModule" flag="required">
+                <module-option name="unauthenticatedIdentity">guest</module-option>
+                <module-option name="dsJndiName">java:/DefaultDS</module-option>
+                <module-option name="principalsQuery">SELECT PASSWD FROM JMS_USERS WHERE USERID=?</module-option>
+                <module-option name="rolesQuery">SELECT ROLEID, 'Roles' FROM JMS_ROLES WHERE USERID=?</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <!-- Security domain for JBossMQ when using file-state-service.xml
+    <application-policy name = "jbossmq">
+       <authentication>
+          <login-module code = "org.jboss.mq.sm.file.DynamicLoginModule"
+             flag = "required">
+             <module-option name = "unauthenticatedIdentity">guest</module-option>
+             <module-option name = "sm.objectname">jboss.mq:service=StateManager</module-option>
+          </login-module>
+       </authentication>
+    </application-policy>
+    -->
+
+    <!-- Security domains for testing new jca framework -->
+    <application-policy name="HsqlDbRealm">
+        <authentication>
+            <login-module code="org.jboss.resource.security.ConfiguredIdentityLoginModule" flag="required">
+                <module-option name="principal">sa</module-option>
+                <module-option name="userName">sa</module-option>
+                <module-option name="password" />
+                <module-option name="managedConnectionFactoryName">jboss.jca:service=LocalTxCM,name=DefaultDS</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <application-policy name="JmsXARealm">
+        <authentication>
+            <login-module code="org.jboss.resource.security.ConfiguredIdentityLoginModule" flag="required">
+                <module-option name="principal">guest</module-option>
+                <module-option name="userName">guest</module-option>
+                <module-option name="password">guest</module-option>
+                <module-option name="managedConnectionFactoryName">jboss.jca:service=TxCM,name=JmsXA</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <!-- A template configuration for the jmx-console web application. This
+      defaults to the UsersRolesLoginModule the same as other and should be
+      changed to a stronger authentication mechanism as required.
+    -->
+    <application-policy name="jmx-console">
+        <authentication>
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required">
+                <module-option name="usersProperties">props/jmx-console-users.properties</module-option>
+                <module-option name="rolesProperties">props/jmx-console-roles.properties</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <!-- A template configuration for the web-console web application. This
+      defaults to the UsersRolesLoginModule the same as other and should be
+      changed to a stronger authentication mechanism as required.
+    -->
+    <application-policy name="web-console">
+        <authentication>
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required">
+                <module-option name="usersProperties">web-console-users.properties</module-option>
+                <module-option name="rolesProperties">web-console-roles.properties</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <!--
+      A template configuration for the JBossWS security domain.
+      This defaults to the UsersRolesLoginModule the same as other and should be
+      changed to a stronger authentication mechanism as required.
+    -->
+    <application-policy name="JBossWS">
+        <authentication>
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required">
+                <module-option name="usersProperties">props/jbossws-users.properties</module-option>
+                <module-option name="rolesProperties">props/jbossws-roles.properties</module-option>
+                <module-option name="unauthenticatedIdentity">anonymous</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <!-- The default login configuration used by any security domain that
+    does not have a application-policy entry with a matching name
+    -->
+    <application-policy name="other">
+        <!-- A simple server login module, which can be used when the number
+        of users is relatively small. It uses two properties files:
+        users.properties, which holds users (key) and their password (value).
+        roles.properties, which holds users (key) and a comma-separated list of
+        their roles (value).
+        The unauthenticatedIdentity property defines the name of the principal
+        that will be used when a null username and password are presented as is
+        the case for an unuathenticated web client or MDB. If you want to
+        allow such users to be authenticated add the property, e.g.,
+        unauthenticatedIdentity="nobody"
+        -->
+        <authentication>
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required" />
+        </authentication>
+    </application-policy>
+
+
+    <!-- Используется для авторизации клиент-кода на сервере (например, GEE-Simple) -->
+    <application-policy name="client-login">
+        <authentication>
+            <login-module code="org.jboss.security.ClientLoginModule" flag="required">
+                <!-- Я вот хз - надо ли эту опцию, ну да хуже не будет -->
+                <module-option name="restore-login-identity">true</module-option>
+                <!-- А вот эту надо - чтоб каждый поток был сам по себе -->
+                <module-option name="multi-threaded">true</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <!-- Конфигурация для Администратора:
+         - логин через файл
+    -->
+    <application-policy name="geeadmin">
+        <authentication>
+            <login-module code="com.geocad.wc.login.GseeFileLoginModule" flag="required">
+                <module-option name="usersProperties">props/users.properties</module-option>
+                <module-option name="role">superadmin</module-option>
+                <module-option name="hashAlgorithm">md5</module-option>
+                <module-option name="storeHashAlgorithm">md5</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+
+    <!-- Основная конфигурация:
+         - логин через метамодель и/или LDAP
+    -->
+    <application-policy name="geocad">
+        <authentication>
+            <login-module code="com.geocad.wc.login.GseeMetamodelLoginModule" flag="sufficient">
+                <module-option name="turnOff">false</module-option>
+                <module-option name="hashAlgorithm">MD5</module-option>
+            </login-module>
+
+            <login-module code="com.geocad.wc.login.GseeLdapLoginModule" flag="sufficient">
+                <module-option name="turnOff">false</module-option>
+                <module-option name="java.naming.provider.url">ldap://dns.corp.geocad.ru:3268</module-option> <!-- 389 -->
+                <module-option name="bindAsUser">true</module-option>
+                <module-option name="bindDomain">geo</module-option>
+                <module-option name="searchTimeLimit">10000</module-option>
+                <module-option name="userCtxDN">ou=&#x41f;&#x43e;&#x43b;&#x44c;&#x437;&#x43e;&#x432;&#x430;&#x442;&#x435;&#x43b;&#x438;,dc=corp,dc=geocad,dc=ru</module-option>
+                <module-option name="userFilter">(sAMAccountName={0})</module-option>
+                <module-option name="userSearchScope">SUBTREE_SCOPE</module-option>
+                <module-option name="allowEmptyPassword">false</module-option>
+
+
+                <!--module-option name="roleCtxDN">OU=Пользователи,dc=corp,dc=geocad,dc=ru;OU=GSEE,OU=Группы доступа,dc=corp,dc=geocad,dc=ru</module-option>
+                <module-option name="roleFilter">(member={1})</module-option-->
+                <module-option name="roleCtxDN">dc=corp,dc=geocad,dc=ru;OU={2},OU=programmers,OU=GSEE,OU=Группы доступа,dc=corp,dc=geocad,dc=ru</module-option>
+				<module-option name="roleFilter">(|(member={1})(distinguishedName={1}))</module-option>
+
+                <module-option name="roleAttributeID">name</module-option>
+                <module-option name="roleSearchScope">SUBTREE_SCOPE</module-option>
+                <module-option name="roleAttributeIsDN">false</module-option>
+                <module-option name="parseRoleNameFromDN">true</module-option>
+                <module-option name="roleNameAttributeID">cn</module-option>
+
+                <module-option name="allRolesCtxDN">OU=Пользователи,dc=corp,dc=geocad,dc=ru;OU=GSEE,OU=Группы доступа,dc=corp,dc=geocad,dc=ru</module-option>
+                <module-option name="allRolesFilter"></module-option>
+                <module-option name="allRolesAttributeID">name</module-option>
+                <module-option name="allRolesAttributeIsDN">false</module-option>
+                <module-option name="allRolesParseRoleNameFromDN">true</module-option>
+                <module-option name="allRolesNameAttributeID">cn</module-option>
+            </login-module>
+
+            <login-module code="com.geocad.wc.login.GseeEsiaLoginModule" flag="sufficient">
+                <module-option name="turnOff">false</module-option>
+                <module-option name="ignoreType">false</module-option>
+                <module-option name="hashAlgorithm">md5</module-option>
+                <module-option name="esiaConnect">true</module-option>
+            </login-module>
+        </authentication>
+    </application-policy>
+</policy>
+

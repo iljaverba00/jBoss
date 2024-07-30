@@ -1,0 +1,6 @@
+-Dhttp.proxyPort=8181
+-Xmx4096m
+-Dsun.java2d.d3d=true
+-Dsun.java2d.opengl=false
+-Dhttp.proxyHost=kseon.info
+-Xms1600m

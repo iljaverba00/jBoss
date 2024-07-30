@@ -1,0 +1,1328 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000000005f6f157a, pid=9248, tid=9692
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_80-b15) (build 1.7.0_80-b15)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.80-b11 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0xa157a]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000e226000):  JavaThread "http-0.0.0.0-80-2" daemon [_thread_in_vm, id=9692, stack(0x0000000018690000,0x0000000018790000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000000
+
+Registers:
+RAX=0x0000cd66914d33ec, RBX=0x00000000110a81d0, RCX=0x000000001878a470, RDX=0x0000000000000000
+RSP=0x000000001878a100, RBP=0x000000000e226000, RSI=0x000000000e226000, RDI=0x000000001878a470
+R8 =0x0000000000000000, R9 =0x0000000000000000, R10=0x00000007f415e5c0, R11=0x000000001878a5c0
+R12=0x0000000000000000, R13=0x0000000000000000, R14=0x000000001878a5c0, R15=0x0000000000000001
+RIP=0x000000005f6f157a, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000001878a100)
+0x000000001878a100:   00000000110a81d0 00000000110a81b8
+0x000000001878a110:   000000000e226000 000000005f822675
+0x000000001878a120:   000000000e226000 0000000070d9f9c3
+0x000000001878a130:   00000007f0002c28 00000000000001b6
+0x000000001878a140:   0000000000000001 000000000f8110d8
+0x000000001878a150:   000000001878a1d0 00000000000003d8
+0x000000001878a160:   000000000f810d00 0000000000000000
+0x000000001878a170:   000000000b4c0c71 000000000e226000
+0x000000001878a180:   000000000e226000 0000000000000000
+0x000000001878a190:   000000000f810d00 000000005f83df2c
+0x000000001878a1a0:   000000000f810d00 0000000000000000
+0x000000001878a1b0:   000000000b4c35b0 00000000110a8190
+0x000000001878a1c0:   0000000000000000 000000005f6b3b00
+0x000000001878a1d0:   000000000e226000 000000001067c900
+0x000000001878a1e0:   0000000000000001 00000007f00c9370
+0x000000001878a1f0:   0000000100000013 000000005f83d9e3 
+
+Instructions: (pc=0x000000005f6f157a)
+0x000000005f6f155a:   54 41 55 41 56 41 57 48 81 ec 78 01 00 00 48 8b
+0x000000005f6f156a:   05 c1 a8 69 00 48 33 c4 48 89 84 24 60 01 00 00
+0x000000005f6f157a:   48 8b 02 48 8b ac 24 f0 01 00 00 4d 8b f1 8b 80
+0x000000005f6f158a:   9c 00 00 00 4d 8b f8 48 8b d9 c1 e8 09 a8 01 0f 
+
+
+Register to memory mapping:
+
+RAX=0x0000cd66914d33ec is an unknown value
+RBX=0x00000000110a81d0 is an unknown value
+RCX=0x000000001878a470 is pointing into the stack for thread: 0x000000000e226000
+RDX=0x0000000000000000 is an unknown value
+RSP=0x000000001878a100 is pointing into the stack for thread: 0x000000000e226000
+RBP=0x000000000e226000 is a thread
+RSI=0x000000000e226000 is a thread
+RDI=0x000000001878a470 is pointing into the stack for thread: 0x000000000e226000
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x00000007f415e5c0 is an oop
+{constant pool} 
+ - klass: {other class}
+ - holder: 0x00000007f3acde58
+ - cache: 0x00000007f41600e8
+ -   1 :  : klass_index=192 name_and_type_index=363
+ -   2 :  : "bankID" {0x8510b418}
+ -   3 :  : klass_index=365 name_and_type_index=366
+ -   4 :  : klass_index=367 name_and_type_index=368
+ -   5 :  : klass_index=191 name_and_type_index=369
+ -   6 :  : "r" {0x86aaa190}
+ -   7 :  : "/" {0x84e236a8}
+ -   8 :  : klass_index=371 name_and_type_index=372
+ -   9 :  : "" {0x84e233a8}
+ -  10 :  : "@" {0x84e23998}
+ -  11 :  : klass_index=371 name_and_type_index=375
+ -  12 :  : "_" {0x84e23ce8}
+ -  13 :  : "_ID!" {0x7219add0}
+ -  14 :  : klass_index=371 name_and_type_index=378
+ -  15 :  : 'java/lang/StringBuilder' {0xf008eec8}
+ -  16 :  : klass_index=15 name_and_type_index=363
+ -  17 :  : klass_index=15 name_and_type_index=380
+ -  18 :  : "_ID" {0x85104cf0}
+ -  19 :  : klass_index=15 name_and_type_index=382
+ -  20 :  : klass_index=371 name_and_type_index=383
+ -  21 :  : "$skip" {0x84eb38c0}
+ -  22 :  : "$top" {0x84eb2d48}
+ -  23 :  : "$select" {0x8510a058}
+ -  24 :  : "$orderby" {0x851056e0}
+ -  25 :  : "$filter" {0x8510c378}
+ -  26 :  : ""error":{" {0x84d29130}
+ -  27 :  : klass_index=15 name_and_type_index=390
+ -  28 :  : klass_index=191 name_and_type_index=391
+ -  29 :  : klass_index=392 name_and_type_index=393
+ -  30 :  : """ {0x84e23480}
+ -  31 :  : "cause" {0x7219ae00}
+ -  32 :  : ":" {0x84e23878}
+ -  33 :  : ""5 C40;>AL ?>;CG8BL A5AA8N" {0x7219ae38}
+ -  34 :  : "";" {0x7219ae98}
+ -  35 :  : klass_index=392 name_and_type_index=399
+ -  36 :  : klass_index=367 name_and_type_index=400
+ -  37 :  : klass_index=392 name_and_type_index=401
+ -  38 :  : klass_index=402 name_and_type_index=403
+ -  39 :  : klass_index=402 name_and_type_index=404
+ -  40 :  : 'java/util/ArrayList' {0xf00fad70}
+ -  41 :  : klass_index=40 name_and_type_index=363
+ -  42 :  : klass_index=402 name_and_type_index=406
+ -  43 :  : klass_index=407 name_and_type_index=408
+ -  44 :  : ""5 C40;>AL ?>;CG8BL 8AB>G=8: D0:B0 - " {0x7219aec8}
+ -  45 :  : "items" {0x84d26e10}
+ -  46 :  : klass_index=371 name_and_type_index=411
+ -  47 :  : 'com/geocad/wc/filtermodel/AddSqlValue' {0xf2d72000}
+ -  48 :  : klass_index=47 name_and_type_index=363
+ -  49 :  : klass_index=413 name_and_type_index=414
+ -  50 :  : "," {0x84e23618}
+ -  51 :  : klass_index=402 name_and_type_index=416
+ -  52 :  : klass_index=75 name_and_type_index=406
+ -  53 :  : klass_index=417 name_and_type_index=418
+ -  54 :  : klass_index=417 name_and_type_index=419
+ -  55 :  : klass_index=47 name_and_type_index=420
+ -  56 :  : " desc" {0x7219af40}
+ -  57 :  : klass_index=413 name_and_type_index=422
+ -  58 :  : " asc" {0x7219af78}
+ -  59 :  : klass_index=402 name_and_type_index=424
+ -  60 :  : klass_index=47 name_and_type_index=425
+ -  61 :  : klass_index=191 name_and_type_index=426
+ -  62 :  : klass_index=427 name_and_type_index=428
+ -  63 :  : 10000000
+ -  64 :  : klass_index=427 name_and_type_index=429
+ -  65 :  : klass_index=417 name_and_type_index=430
+ -  66 :  : klass_index=417 name_and_type_index=431
+ -  67 :  : klass_index=40 name_and_type_index=432
+ -  68 :  : klass_index=417 name_and_type_index=433
+ -  69 :  : 'com/geocad/wc/factmodel/Fact'
+ -  70 :  : "{"d":{"results":[" {0x87b63ee8}
+ -  71 :  : klass_index=417 name_and_type_index=436
+ -  72 :  : klass_index=437 name_and_type_index=438
+ -  73 :  : klass_index=437 name_and_type_index=439
+ -  74 :  : "{" {0x84e23ef8}
+ -  75 :  : 'com/geocad/wc/metamodel/valueobject/FactDscrAttrValue' {0xf2dde918}
+ -  76 :  : klass_index=69 name_and_type_index=442
+ -  77 :  : klass_index=75 name_and_type_index=443
+ -  78 :  : klass_index=444 name_and_type_index=445
+ -  79 :  : klass_index=446 name_and_type_index=447
+ -  80 :  : klass_index=69 name_and_type_index=448
+ -  81 :  : klass_index=444 name_and_type_index=449
+ -  82 :  : 'com/geocad/wc/util/FieldTypes'
+ -  83 :  : 'java/lang/Double'
+ -  84 :  : klass_index=452 name_and_type_index=453
+ -  85 :  : klass_index=454 name_and_type_index=382
+ -  86 :  : "\"" {0x84d25a10}
+ -  87 :  : klass_index=75 name_and_type_index=456
+ -  88 :  : "":"" {0x7219afa8}
+ -  89 :  : 'java/lang/CharSequence'
+ -  90 :  : klass_index=15 name_and_type_index=459
+ -  91 :  : "}" {0x84e23f58}
+ -  92 :  : "]" {0x84e23c68}
+ -  93 :  : 'com/geocad/wc/sfw/ActionForm'
+ -  94 :  : "application/json;charset=utf-8;" {0x84d31e48}
+ -  95 :  : klass_index=464 name_and_type_index=465
+ -  96 :  : "pragma" {0x84eafca8}
+ -  97 :  : "no-cache" {0x84eb4578}
+ -  98 :  : klass_index=464 name_and_type_index=468
+ -  99 :  : "Cache-Control" {0x85103958}
+ - 100 :  : klass_index=191 name_and_type_index=470
+ - 101 :  : klass_index=464 name_and_type_index=471
+ - 102 :  : klass_index=472 name_and_type_index=473
+ - 103 :  : "fields" {0x87b63f00}
+ - 104 :  : 'com/geocad/wc/sfw/weblight/WLOdata$Results'
+ - 105 :  : klass_index=75 name_and_type_index=476
+ - 106 :  : "Number" {0x7219afd8}
+ - 107 :  : klass_index=104 name_and_type_index=478
+ - 108 :  : "Text" {0x84e347e0}
+ - 109 :  : "Note" {0x86677308}
+ - 110 :  : "Boolean" {0x86b697b0}
+ - 111 :  : "Date" {0x84d33d80}
+ - 112 :  : "DateTime" {0x7219b010}
+ - 113 :  : "Timestamp" {0x7219b048}
+ - 114 :  : "Spatial" {0x7219b088}
+ - 115 :  : "Object" {0x8667a860}
+ - 116 :  : "Undefined" {0x7219b0c0}
+ - 117 :  : 'com/geocad/wc/sfw/weblight/WLOdata$D'
+ - 118 :  : klass_index=117 name_and_type_index=489
+ - 119 :  : 'com/google/gson/Gson'
+ - 120 :  : klass_index=119 name_and_type_index=363
+ - 121 :  : 'com/geocad/wc/sfw/weblight/WLOdata$ObjectJson'
+ - 122 :  : klass_index=121 name_and_type_index=492
+ - 123 :  : klass_index=119 name_and_type_index=493
+ - 124 :  : "$count" {0x859fc890}
+ - 125 :  : klass_index=495 name_and_type_index=496
+ - 126 :  : 'com/geocad/wc/sqlmodel/querys/AbstractSQLSelect'
+ - 127 :  : klass_index=407 name_and_type_index=498
+ - 128 :  : klass_index=499 name_and_type_index=500
+ - 129 :  : klass_index=499 name_and_type_index=501
+ - 130 :  : klass_index=499 name_and_type_index=502
+ - 131 :  : klass_index=503 name_and_type_index=504
+ - 132 :  : klass_index=472 name_and_type_index=505
+ - 133 :  : ""5 C40;>AL ?>;CG8BL D0:45A:@8?B>@ A 0;80A>< - " {0x7219b100}
+ - 134 :  : klass_index=407 name_and_type_index=507
+ - 135 :  : klass_index=407 name_and_type_index=508
+ - 136 :  : klass_index=15 name_and_type_index=383
+ - 137 :  : ""error":{}" {0x87f88700}
+ - 138 :  : klass_index=472 name_and_type_index=510
+ - 139 :  : 'java/lang/Exception'
+ - 140 :  : klass_index=139 name_and_type_index=512
+ - 141 :  : "5?@542845==0O >H81:0" {0x7219b188}
+ - 142 :  : " or " {0x84eb0530}
+ - 143 :  : " and " {0x84d34be8}
+ - 144 :  : klass_index=191 name_and_type_index=516
+ - 145 :  : klass_index=47 name_and_type_index=517
+ - 146 :  : klass_index=47 name_and_type_index=518
+ - 147 :  : klass_index=47 name_and_type_index=519
+ - 148 :  : "contains" {0x84e44760}
+ - 149 :  : klass_index=371 name_and_type_index=521
+ - 150 :  : "(" {0x84e23558}
+ - 151 :  : klass_index=371 name_and_type_index=523
+ - 152 :  : klass_index=371 name_and_type_index=524
+ - 153 :  : ")" {0x84e23588}
+ - 154 :  : klass_index=371 name_and_type_index=526
+ - 155 :  : "'" {0x84e23528}
+ - 156 :  : klass_index=75 name_and_type_index=449
+ - 157 :  : 'com/geocad/wc/filtermodel/WherePartCondition'
+ - 158 :  : klass_index=529 name_and_type_index=530
+ - 159 :  : klass_index=157 name_and_type_index=531
+ - 160 :  : " " {0x84e23468}
+ - 161 :  : ""5 C40;>AL ?>;CG8BL ?>;5 - " {0x7219b1e0}
+ - 162 :  : klass_index=371 name_and_type_index=534
+ - 163 :  : klass_index=371 name_and_type_index=535
+ - 164 :  : "eq" {0x85310ea8}
+ - 165 :  : "ne" {0x87fe4028}
+ - 166 :  : "gt" {0x84e27fa0}
+ - 167 :  : "ge" {0x87fe4040}
+ - 168 :  : "lt" {0x84e28198}
+ - 169 :  : "le" {0x87fe4058}
+ - 170 :  : klass_index=529 name_and_type_index=542
+ - 171 :  : klass_index=543 name_and_type_index=544
+ - 172 :  : klass_index=543 name_and_type_index=545
+ - 173 :  : 'java/lang/NumberFormatException'
+ - 174 :  : klass_index=173 name_and_type_index=512
+ - 175 :  : klass_index=83 name_and_type_index=547
+ - 176 :  : klass_index=83 name_and_type_index=548
+ - 177 :  : klass_index=529 name_and_type_index=549
+ - 178 :  : 'java/lang/UnsupportedOperationException'
+ - 179 :  : "0==0O >?5@0F8O - " {0x7219b240}
+ - 180 :  : ", =5 ?>445@68205BAO" {0x7219b290}
+ - 181 :  : klass_index=178 name_and_type_index=390
+ - 182 :  : klass_index=529 name_and_type_index=553
+ - 183 :  : klass_index=529 name_and_type_index=554
+ - 184 :  : klass_index=529 name_and_type_index=555
+ - 185 :  : klass_index=556 name_and_type_index=557
+ - 186 :  : klass_index=529 name_and_type_index=558
+ - 187 :  : klass_index=529 name_and_type_index=559
+ - 188 :  : klass_index=529 name_and_type_index=560
+ - 189 :  : "?5@0B>@ - " {0x7219b2e0}
+ - 190 :  : ", =5 ?>445@68205BAO." {0x7219b320}
+ - 191 :  : 'com/geocad/wc/sfw/weblight/WLOdata' {0xf3acde58}
+ - 192 :  : 'com/geocad/wc/sfw/weblight/WLAbstractForm'
+ - 193 :  : 'com/geocad/wc/sfw/weblight/WLOdata$D1'
+ - 194 :  : 'D1'
+ - 195 :  : 'InnerClasses'
+ - 196 :  : 'com/geocad/wc/sfw/weblight/WLOdata$ObjectJson1'
+ - 197 :  : 'ObjectJson1'
+ - 198 :  : 'Results'
+ - 199 :  : 'D'
+ - 200 :  : 'ObjectJson'
+ - 201 :  : 'EQ'
+ - 202 :  : 'Ljava/lang/String;'
+ - 203 :  : 'ConstantValue'
+ - 204 :  : 'NE'
+ - 205 :  : 'GT'
+ - 206 :  : 'GE'
+ - 207 :  : 'LT'
+ - 208 :  : 'LE'
+ - 209 :  : 'AND'
+ - 210 :  : "and" {0x857fda98}
+ - 211 :  : 'OR'
+ - 212 :  : "or" {0x858f64b8}
+ - 213 :  : 'NOT'
+ - 214 :  : "not" {0x85924270}
+ - 215 :  : '<init>'
+ - 216 :  : '()V'
+ - 217 :  : 'Code'
+ - 218 :  : 'LineNumberTable'
+ - 219 :  : 'LocalVariableTable'
+ - 220 :  : 'this'
+ - 221 :  : 'Lcom/geocad/wc/sfw/weblight/WLOdata;'
+ - 222 :  : 'drow'
+ - 223 :  : '(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V'
+ - 224 :  : 'parallelSplit'
+ - 225 :  : '[Ljava/lang/String;'
+ - 226 :  : 'fda'
+ - 227 :  : 'Lcom/geocad/wc/metamodel/valueobject/FactDscrAttrValue;'
+ - 228 :  : 'select'
+ - 229 :  : 'selects'
+ - 230 :  : 'asc'
+ - 231 :  : 'Z'
+ - 232 :  : 'fdaId'
+ - 233 :  : 'Ljava/lang/Object;'
+ - 234 :  : 'order'
+ - 235 :  : 'orderSplit'
+ - 236 :  : 'conditions'
+ - 237 :  : 'Ljava/util/List;'
+ - 238 :  : 'size'
+ - 239 :  : 'I'
+ - 240 :  : 'fact'
+ - 241 :  : 'Lcom/geocad/wc/factmodel/Fact;'
+ - 242 :  : 'i'
+ - 243 :  : 'topFacts'
+ - 244 :  : 'str'
+ - 245 :  : 'factDscrAttr'
+ - 246 :  : 'objectStr'
+ - 247 :  : 'Ljava/lang/StringBuilder;'
+ - 248 :  : 'asv'
+ - 249 :  : 'Lcom/geocad/wc/filtermodel/AddSqlValue;'
+ - 250 :  : 'ids'
+ - 251 :  : 'facts'
+ - 252 :  : 'skip'
+ - 253 :  : 'top'
+ - 254 :  : 'result'
+ - 255 :  : 'factData'
+ - 256 :  : 'out'
+ - 257 :  : 'Ljava/io/PrintWriter;'
+ - 258 :  : 'results'
+ - 259 :  : 'd'
+ - 260 :  : 'Lcom/geocad/wc/sfw/weblight/WLOdata$D;'
+ - 261 :  : 'g'
+ - 262 :  : 'Lcom/google/gson/Gson;'
+ - 263 :  : 'fdSelect'
+ - 264 :  : 'Lcom/geocad/wc/sqlmodel/querys/AbstractSQLSelect;'
+ - 265 :  : 'ds'
+ - 266 :  : 'Lcom/geocad/wc/dda/DataSet;'
+ - 267 :  : 'factDscrAttrs'
+ - 268 :  : 'selectFactDscrAttrs'
+ - 269 :  : 'fd'
+ - 270 :  : 'Lcom/geocad/wc/metamodel/valueobject/FactDscrValue;'
+ - 271 :  : 'e'
+ - 272 :  : 'Ljava/lang/Exception;'
+ - 273 :  : 'request'
+ - 274 :  : 'Ljavax/servlet/http/HttpServletRequest;'
+ - 275 :  : 'response'
+ - 276 :  : 'Ljavax/servlet/http/HttpServletResponse;'
+ - 277 :  : 'dai'
+ - 278 :  : 'Lcom/geocad/wc/kernel/dataaccess/DataAccessInterface;'
+ - 279 :  : 'r'
+ - 280 :  : 'split'
+ - 281 :  : 'fdStr'
+ - 282 :  : 'req'
+ - 283 :  : 'parallel'
+ - 284 :  : 'fdAlias'
+ - 285 :  : 'skipStr'
+ - 286 :  : 'topStr'
+ - 287 :  : 'selectStr'
+ - 288 :  : 'orderbyStr'
+ - 289 :  : 'filterStr'
+ - 290 :  : 'fsl'
+ - 291 :  : 'Lcom/geocad/wc/kernel/fact/FactSourceInterface;'
+ - 292 :  : 'errorMessage'
+ - 293 :  : 'sii'
+ - 294 :  : 'Lcom/geocad/wc/kernel/session/SessionInstanceInterface;'
+ - 295 :  : 'LocalVariableTypeTable'
+ - 296 :  : 'Ljava/util/List<Lcom/geocad/wc/filtermodel/WherePartCondition;>;'
+ - 297 :  : 'Ljava/util/List<Lcom/geocad/wc/factmodel/Fact;>;'
+ - 298 :  : 'Ljava/util/List<Ljava/lang/Object;>;'
+ - 299 :  : 'Ljava/util/List<Lcom/geocad/wc/sfw/weblight/WLOdata$Results;>;'
+ - 300 :  : 'Ljava/util/List<Lcom/geocad/wc/metamodel/valueobject/FactDscrAttrValue;>;'
+ - 301 :  : 'StackMapTable'
+ - 302 :  : 'com/geocad/wc/sfw/weblight/WLOdata'
+ - 303 :  : 'javax/servlet/http/HttpServletRequest'
+ - 304 :  : 'javax/servlet/http/HttpServletResponse'
+ - 305 :  : 'com/geocad/wc/kernel/dataaccess/DataAccessInterface'
+ - 306 :  : 'java/lang/String' {0xf000b060}
+ - 307 :  : '[Ljava/lang/String;'
+ - 308 :  : 'com/geocad/wc/kernel/fact/FactSourceInterface'
+ - 309 :  : 'java/lang/StringBuilder'
+ - 310 :  : 'com/geocad/wc/kernel/session/SessionInstanceInterface'
+ - 311 :  : 'com/geocad/wc/metamodel/valueobject/FactDscrValue'
+ - 312 :  : 'java/util/List'
+ - 313 :  : 'com/geocad/wc/filtermodel/AddSqlValue'
+ - 314 :  : 'java/util/Iterator'
+ - 315 :  : 'com/geocad/wc/factmodel/Fact'
+ - 316 :  : 'com/geocad/wc/metamodel/valueobject/FactDscrAttrValue'
+ - 317 :  : 'java/io/Serializable'
+ - 318 :  : 'com/geocad/wc/sqlmodel/querys/AbstractSQLSelect'
+ - 319 :  : 'com/geocad/wc/dda/DataSet'
+ - 320 :  : 'java/lang/Exception'
+ - 321 :  : 'java/lang/Throwable'
+ - 322 :  : 'Exceptions'
+ - 323 :  : 'javax/servlet/ServletException'
+ - 324 :  : 'java/io/IOException'
+ - 325 :  : 'getFilter'
+ - 326 :  : '(Ljava/lang/String;Ljava/lang/StringBuilder;Lcom/geocad/wc/metamodel/valueobject/FactDscrValue;Lcom/geocad/wc/filtermodel/AddSqlValue;)Lcom/geocad/wc/filtermodel/AddSqlValue;'
+ - 327 :  : 'wpc'
+ - 328 :  : 'Lcom/geocad/wc/filtermodel/WherePartCondition;'
+ - 329 :  : 'filterPart'
+ - 330 :  : 'andSplit'
+ - 331 :  : 'string'
+ - 332 :  : 'orSplit'
+ - 333 :  : 'and'
+ - 334 :  : 'toWherePartCondition'
+ - 335 :  : '(Ljava/lang/StringBuilder;Lcom/geocad/wc/metamodel/valueobject/FactDscrValue;Ljava/lang/String;)Lcom/geocad/wc/filtermodel/WherePartCondition;'
+ - 336 :  : 'filter'
+ - 337 :  : 'target'
+ - 338 :  : 'fdavAlias'
+ - 339 :  : 'fdav'
+ - 340 :  : 'condStr'
+ - 341 :  : 'cond'
+ - 342 :  : 'intVal'
+ - 343 :  : 'Ljava/lang/NumberFormatException;'
+ - 344 :  : 'doubleVal'
+ - 345 :  : 'value'
+ - 346 :  : 'paramSplit'
+ - 347 :  : 'condition'
+ - 348 :  : 'com/geocad/wc/filtermodel/WherePartCondition'
+ - 349 :  : 'java/lang/NumberFormatException'
+ - 350 :  : 'detailToString'
+ - 351 :  : '(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;'
+ - 352 :  : 'sessionId'
+ - 353 :  : 'fdId'
+ - 354 :  : 'linkToString'
+ - 355 :  : '(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'
+ - 356 :  : 'link'
+ - 357 :  : 'alt'
+ - 358 :  : 'graphicToString'
+ - 359 :  : '(Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/String;)Ljava/lang/String;'
+ - 360 :  : 'layerId'
+ - 361 :  : 'SourceFile'
+ - 362 :  : 'WLOdata.java'
+ - 363 :  : name_index=215 signature_index=216
+ - 364 :  : 'bankID'
+ - 365 :  : 'javax/servlet/http/HttpServletRequest' {0xf1590470}
+ - 366 :  : name_index=583 signature_index=584
+ - 367 :  : 'java/lang/Integer' {0xf00a7000}
+ - 368 :  : name_index=586 signature_index=587
+ - 369 :  : name_index=588 signature_index=239
+ - 370 :  : '/'
+ - 371 :  : 'java/lang/String' {0xf000b060}
+ - 372 :  : name_index=280 signature_index=589
+ - 373 :  : ''
+ - 374 :  : '@'
+ - 375 :  : name_index=520 signature_index=590
+ - 376 :  : '_'
+ - 377 :  : '_ID!'
+ - 378 :  : name_index=591 signature_index=592
+ - 379 :  : 'java/lang/StringBuilder'
+ - 380 :  : name_index=593 signature_index=594
+ - 381 :  : '_ID'
+ - 382 :  : name_index=595 signature_index=596
+ - 383 :  : name_index=597 signature_index=598
+ - 384 :  : '$skip'
+ - 385 :  : '$top'
+ - 386 :  : '$select'
+ - 387 :  : '$orderby'
+ - 388 :  : '$filter'
+ - 389 :  : '"error":{'
+ - 390 :  : name_index=215 signature_index=599
+ - 391 :  : name_index=600 signature_index=601
+ - 392 :  : 'com/geocad/wc/sfw/semantic2/model/MetaCommand' {0xf3d10e88}
+ - 393 :  : name_index=603 signature_index=604
+ - 394 :  : '"'
+ - 395 :  : 'cause'
+ - 396 :  : ':'
+ - 397 :  : '"Не удалось получить сессию'
+ - 398 :  : '";'
+ - 399 :  : name_index=605 signature_index=606
+ - 400 :  : name_index=607 signature_index=608
+ - 401 :  : name_index=609 signature_index=610
+ - 402 :  : 'com/geocad/wc/metamodel/valueobject/FactDscrValue' {0xf2db3580}
+ - 403 :  : name_index=611 signature_index=612
+ - 404 :  : name_index=613 signature_index=614
+ - 405 :  : 'java/util/ArrayList'
+ - 406 :  : name_index=615 signature_index=616
+ - 407 :  : 'com/geocad/wc/kernel/session/SessionInstanceInterface' {0xf2d00028}
+ - 408 :  : name_index=617 signature_index=618
+ - 409 :  : '"Не удалось получить источник факта - '
+ - 410 :  : 'items'
+ - 411 :  : name_index=619 signature_index=620
+ - 412 :  : 'com/geocad/wc/filtermodel/AddSqlValue'
+ - 413 :  : 'org/apache/commons/lang3/StringUtils' {0xf1f80120}
+ - 414 :  : name_index=622 signature_index=590
+ - 415 :  : ','
+ - 416 :  : name_index=623 signature_index=624
+ - 417 :  : 'java/util/List' {0xf00c2fe8}
+ - 418 :  : name_index=625 signature_index=620
+ - 419 :  : name_index=626 signature_index=627
+ - 420 :  : name_index=628 signature_index=629
+ - 421 :  : ' desc'
+ - 422 :  : name_index=630 signature_index=631
+ - 423 :  : ' asc'
+ - 424 :  : name_index=632 signature_index=633
+ - 425 :  : name_index=634 signature_index=635
+ - 426 :  : name_index=325 signature_index=326
+ - 427 :  : 'com/geocad/wc/kernel/fact/FactSourceInterface'
+ - 428 :  : name_index=636 signature_index=637
+ - 429 :  : name_index=638 signature_index=639
+ - 430 :  : name_index=640 signature_index=641
+ - 431 :  : name_index=238 signature_index=598
+ - 432 :  : name_index=215 signature_index=642
+ - 433 :  : name_index=643 signature_index=641
+ - 434 :  : 'com/geocad/wc/factmodel/Fact'
+ - 435 :  : '{"d":{"results":['
+ - 436 :  : name_index=644 signature_index=645
+ - 437 :  : 'java/util/Iterator'
+ - 438 :  : name_index=646 signature_index=627
+ - 439 :  : name_index=638 signature_index=647
+ - 440 :  : '{'
+ - 441 :  : 'com/geocad/wc/metamodel/valueobject/FactDscrAttrValue'
+ - 442 :  : name_index=648 signature_index=620
+ - 443 :  : name_index=649 signature_index=650
+ - 444 :  : 'com/geocad/wc/metamodel/valueobject/TableFieldValue'
+ - 445 :  : name_index=652 signature_index=653
+ - 446 :  : 'com/geocad/wc/metamodel/valueobject/FieldLogicalType'
+ - 447 :  : name_index=655 signature_index=627
+ - 448 :  : name_index=656 signature_index=657
+ - 449 :  : name_index=658 signature_index=598
+ - 450 :  : 'com/geocad/wc/util/FieldTypes'
+ - 451 :  : 'java/lang/Double'
+ - 452 :  : 'com/geocad/wc/util/finance/FinanceUtil'
+ - 453 :  : name_index=660 signature_index=661
+ - 454 :  : 'java/lang/Object'
+ - 455 :  : '\"'
+ - 456 :  : name_index=663 signature_index=596
+ - 457 :  : '":"'
+ - 458 :  : 'java/lang/CharSequence'
+ - 459 :  : name_index=593 signature_index=664
+ - 460 :  : '}'
+ - 461 :  : ']'
+ - 462 :  : 'com/geocad/wc/sfw/ActionForm'
+ - 463 :  : 'application/json;charset=utf-8;'
+ - 464 :  : 'javax/servlet/http/HttpServletResponse'
+ - 465 :  : name_index=665 signature_index=599
+ - 466 :  : 'pragma'
+ - 467 :  : 'no-cache'
+ - 468 :  : name_index=666 signature_index=667
+ - 469 :  : 'Cache-Control'
+ - 470 :  : name_index=668 signature_index=669
+ - 471 :  : name_index=670 signature_index=671
+ - 472 :  : 'java/io/PrintWriter'
+ - 473 :  : name_index=673 signature_index=599
+ - 474 :  : 'fields'
+ - 475 :  : 'com/geocad/wc/sfw/weblight/WLOdata$Results'
+ - 476 :  : name_index=674 signature_index=596
+ - 477 :  : 'Number'
+ - 478 :  : name_index=215 signature_index=675
+ - 479 :  : 'Text'
+ - 480 :  : 'Note'
+ - 481 :  : 'Boolean'
+ - 482 :  : 'Date'
+ - 483 :  : 'DateTime'
+ - 484 :  : 'Timestamp'
+ - 485 :  : 'Spatial'
+ - 486 :  : 'Object'
+ - 487 :  : 'Undefined'
+ - 488 :  : 'com/geocad/wc/sfw/weblight/WLOdata$D'
+ - 489 :  : name_index=215 signature_index=676
+ - 490 :  : 'com/google/gson/Gson'
+ - 491 :  : 'com/geocad/wc/sfw/weblight/WLOdata$ObjectJson'
+ - 492 :  : name_index=215 signature_index=677
+ - 493 :  : name_index=678 signature_index=679
+ - 494 :  : '$count'
+ - 495 :  : 'com/geocad/wc/dda/StandardQueryGenerator'
+ - 496 :  : name_index=681 signature_index=682
+ - 497 :  : 'com/geocad/wc/sqlmodel/querys/AbstractSQLSelect'
+ - 498 :  : name_index=683 signature_index=684
+ - 499 :  : 'com/geocad/wc/kernel/dataaccess/DataAccessInterface'
+ - 500 :  : name_index=685 signature_index=686
+ - 501 :  : name_index=687 signature_index=216
+ - 502 :  : name_index=638 signature_index=688
+ - 503 :  : 'com/geocad/wc/dda/DataSet'
+ - 504 :  : name_index=638 signature_index=627
+ - 505 :  : name_index=673 signature_index=642
+ - 506 :  : '"Не удалось получить факдескриптор с алиасом - '
+ - 507 :  : name_index=689 signature_index=690
+ - 508 :  : name_index=691 signature_index=692
+ - 509 :  : '"error":{}'
+ - 510 :  : name_index=673 signature_index=693
+ - 511 :  : 'java/lang/Exception'
+ - 512 :  : name_index=694 signature_index=216
+ - 513 :  : 'Непредвиденная ошибка'
+ - 514 :  : ' or '
+ - 515 :  : ' and '
+ - 516 :  : name_index=334 signature_index=335
+ - 517 :  : name_index=695 signature_index=696
+ - 518 :  : name_index=697 signature_index=696
+ - 519 :  : name_index=698 signature_index=696
+ - 520 :  : 'contains'
+ - 521 :  : name_index=699 signature_index=700
+ - 522 :  : '('
+ - 523 :  : name_index=701 signature_index=587
+ - 524 :  : name_index=702 signature_index=703
+ - 525 :  : ')'
+ - 526 :  : name_index=702 signature_index=704
+ - 527 :  : '''
+ - 528 :  : 'com/geocad/wc/filtermodel/WherePartCondition'
+ - 529 :  : 'com/geocad/wc/filtermodel/WherePartOperation'
+ - 530 :  : name_index=706 signature_index=707
+ - 531 :  : name_index=215 signature_index=708
+ - 532 :  : ' '
+ - 533 :  : '"Не удалось получить поле - '
+ - 534 :  : name_index=709 signature_index=631
+ - 535 :  : name_index=710 signature_index=598
+ - 536 :  : 'eq'
+ - 537 :  : 'ne'
+ - 538 :  : 'gt'
+ - 539 :  : 'ge'
+ - 540 :  : 'lt'
+ - 541 :  : 'le'
+ - 542 :  : name_index=711 signature_index=707
+ - 543 :  : 'java/lang/Boolean'
+ - 544 :  : name_index=713 signature_index=700
+ - 545 :  : name_index=607 signature_index=714
+ - 546 :  : 'java/lang/NumberFormatException'
+ - 547 :  : name_index=715 signature_index=716
+ - 548 :  : name_index=607 signature_index=717
+ - 549 :  : name_index=718 signature_index=707
+ - 550 :  : 'java/lang/UnsupportedOperationException'
+ - 551 :  : 'Данная операция - '
+ - 552 :  : ', не поддерживается'
+ - 553 :  : name_index=719 signature_index=707
+ - 554 :  : name_index=720 signature_index=707
+ - 555 :  : name_index=721 signature_index=707
+ - 556 :  : 'com/geocad/wc/util/format/DateTimeUtil'
+ - 557 :  : name_index=723 signature_index=724
+ - 558 :  : name_index=725 signature_index=707
+ - 559 :  : name_index=726 signature_index=707
+ - 560 :  : name_index=727 signature_index=707
+ - 561 :  : 'Оператор - '
+ - 562 :  : ', не поддерживается.'
+ - 563 :  : 'com/geocad/wc/sfw/weblight/WLOdata'
+ - 564 :  : 'com/geocad/wc/sfw/weblight/WLAbstractForm'
+ - 565 :  : 'com/geocad/wc/sfw/weblight/WLOdata$D1'
+ - 566 :  : 'com/geocad/wc/sfw/weblight/WLOdata$ObjectJson1'
+ - 567 :  : 'or'
+ - 568 :  : 'not'
+ - 569 :  : 'javax/servlet/http/HttpServletRequest'
+ - 570 :  : 'javax/servlet/http/HttpServletResponse'
+ - 571 :  : 'com/geocad/wc/kernel/dataaccess/DataAccessInterface'
+ - 572 :  : 'java/lang/String'
+ - 573 :  : 'com/geocad/wc/kernel/fact/FactSourceInterface'
+ - 574 :  : 'com/geocad/wc/kernel/session/SessionInstanceInterface'
+ - 575 :  : 'com/geocad/wc/metamodel/valueobject/FactDscrValue'
+ - 576 :  : 'java/util/List'
+ - 577 :  : 'java/util/Iterator'
+ - 578 :  : 'java/io/Serializable'
+ - 579 :  : 'com/geocad/wc/dda/DataSet'
+ - 580 :  : 'java/lang/Throwable'
+ - 581 :  : 'javax/servlet/ServletException'
+ - 582 :  : 'java/io/IOException'
+ - 583 :  : 'getParameter'
+ - 584 :  : '(Ljava/lang/String;)Ljava/lang/String;'
+ - 585 :  : 'java/lang/Integer'
+ - 586 :  : 'parseInt'
+ - 587 :  : '(Ljava/lang/String;)I'
+ - 588 :  : 'bankId'
+ - 589 :  : '(Ljava/lang/String;)[Ljava/lang/String;'
+ - 590 :  : '(Ljava/lang/CharSequence;)Z'
+ - 591 :  : 'replace'
+ - 592 :  : '(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;'
+ - 593 :  : 'append'
+ - 594 :  : '(Ljava/lang/String;)Ljava/lang/StringBuilder;'
+ - 595 :  : 'toString'
+ - 596 :  : '()Ljava/lang/String;'
+ - 597 :  : 'length'
+ - 598 :  : '()I'
+ - 599 :  : '(Ljava/lang/String;)V'
+ - 600 :  : 'mc'
+ - 601 :  : 'Lcom/geocad/wc/sfw/semantic2/model/MetaCommand;'
+ - 602 :  : 'com/geocad/wc/sfw/semantic2/model/MetaCommand'
+ - 603 :  : 'getSii'
+ - 604 :  : '()Lcom/geocad/wc/kernel/session/SessionInstanceInterface;'
+ - 605 :  : 'getModelIdByBankid'
+ - 606 :  : '(I)I'
+ - 607 :  : 'valueOf'
+ - 608 :  : '(I)Ljava/lang/Integer;'
+ - 609 :  : 'getMetaModelManager'
+ - 610 :  : '(Ljava/lang/Object;)Lcom/geocad/wc/metamodel/manager/MetaModelClientManager;'
+ - 611 :  : 'getFactDscrByUniqueKey'
+ - 612 :  : '(Ljava/lang/String;Ljava/lang/Object;Lcom/geocad/wc/metamodel/manager/MetaModelManager;)Lcom/geocad/wc/metamodel/valueobject/FactDscrValue;'
+ - 613 :  : 'getFactDscrAttrs'
+ - 614 :  : '()Ljava/util/List;'
+ - 615 :  : 'getObjectId'
+ - 616 :  : '()Ljava/lang/Integer;'
+ - 617 :  : 'getFactSourceLocal'
+ - 618 :  : '(Ljava/lang/Object;Ljava/lang/Object;)Lcom/geocad/wc/kernel/fact/FactSourceInterface;'
+ - 619 :  : 'equals'
+ - 620 :  : '(Ljava/lang/Object;)Z'
+ - 621 :  : 'org/apache/commons/lang3/StringUtils'
+ - 622 :  : 'isBlank'
+ - 623 :  : 'getFactDscrAttrByAlias'
+ - 624 :  : '(Ljava/lang/String;)Lcom/geocad/wc/metamodel/valueobject/FactDscrAttrValue;'
+ - 625 :  : 'add'
+ - 626 :  : 'isEmpty'
+ - 627 :  : '()Z'
+ - 628 :  : 'setFactDscrAttrIds'
+ - 629 :  : '(Ljava/util/Collection;)V'
+ - 630 :  : 'substringBefore'
+ - 631 :  : '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'
+ - 632 :  : 'getFactDscrAttrIdByAlias'
+ - 633 :  : '(Ljava/lang/String;)Ljava/lang/Object;'
+ - 634 :  : 'addOrder'
+ - 635 :  : '(Ljava/lang/Object;Z)V'
+ - 636 :  : 'readFacts'
+ - 637 :  : '(Lcom/geocad/wc/filtermodel/AddSqlValue;)V'
+ - 638 :  : 'next'
+ - 639 :  : '(I)Ljava/util/List;'
+ - 640 :  : 'remove'
+ - 641 :  : '(I)Ljava/lang/Object;'
+ - 642 :  : '(I)V'
+ - 643 :  : 'get'
+ - 644 :  : 'iterator'
+ - 645 :  : '()Ljava/util/Iterator;'
+ - 646 :  : 'hasNext'
+ - 647 :  : '()Ljava/lang/Object;'
+ - 648 :  : 'hasFactAttr'
+ - 649 :  : 'getTableField'
+ - 650 :  : '()Lcom/geocad/wc/metamodel/valueobject/TableFieldValue;'
+ - 651 :  : 'com/geocad/wc/metamodel/valueobject/TableFieldValue'
+ - 652 :  : 'getLogicalType'
+ - 653 :  : '()Lcom/geocad/wc/metamodel/valueobject/FieldLogicalType;'
+ - 654 :  : 'com/geocad/wc/metamodel/valueobject/FieldLogicalType'
+ - 655 :  : 'isZip'
+ - 656 :  : 'getFactAttr'
+ - 657 :  : '(Ljava/lang/Object;)Ljava/lang/Object;'
+ - 658 :  : 'getType'
+ - 659 :  : 'com/geocad/wc/util/finance/FinanceUtil'
+ - 660 :  : 'formatMoney2'
+ - 661 :  : '(Ljava/lang/Double;)Ljava/lang/String;'
+ - 662 :  : 'java/lang/Object'
+ - 663 :  : 'getAlias'
+ - 664 :  : '(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;'
+ - 665 :  : 'setContentType'
+ - 666 :  : 'addHeader'
+ - 667 :  : '(Ljava/lang/String;Ljava/lang/String;)V'
+ - 668 :  : 'addAccessControl'
+ - 669 :  : '(Ljavax/servlet/http/HttpServletResponse;)V'
+ - 670 :  : 'getWriter'
+ - 671 :  : '()Ljava/io/PrintWriter;'
+ - 672 :  : 'java/io/PrintWriter'
+ - 673 :  : 'println'
+ - 674 :  : 'getName'
+ - 675 :  : '(Lcom/geocad/wc/sfw/weblight/WLOdata;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V'
+ - 676 :  : '(Lcom/geocad/wc/sfw/weblight/WLOdata;Ljava/util/List;)V'
+ - 677 :  : '(Lcom/geocad/wc/sfw/weblight/WLOdata;Lcom/geocad/wc/sfw/weblight/WLOdata$D;)V'
+ - 678 :  : 'toJson'
+ - 679 :  : '(Ljava/lang/Object;)Ljava/lang/String;'
+ - 680 :  : 'com/geocad/wc/dda/StandardQueryGenerator'
+ - 681 :  : 'getSelectForFactDscr'
+ - 682 :  : '(Lcom/geocad/wc/metamodel/valueobject/FactDscrValue;Lcom/geocad/wc/filtermodel/AddSqlValue;Lcom/geocad/wc/kernel/session/SessionInstanceInterface;Ljava/lang/Object;)Lcom/geocad/wc/sqlmodel/querys/SQLAbstractSelect;'
+ - 683 :  : 'getDataAccessLocal'
+ - 684 :  : '(Ljava/lang/Object;)Lcom/geocad/wc/kernel/dataaccess/DataAccessInterface;'
+ - 685 :  : 'setQuery'
+ - 686 :  : '(Lcom/geocad/wc/sqlmodel/SQLQuery;)V'
+ - 687 :  : 'execute'
+ - 688 :  : '(I)Lcom/geocad/wc/dda/DataSet;'
+ - 689 :  : 'closeFactSource'
+ - 690 :  : '(Lcom/geocad/wc/kernel/fact/FactSourceInterface;)V'
+ - 691 :  : 'closeDataAccess'
+ - 692 :  : '(Lcom/geocad/wc/kernel/dataaccess/DataAccessInterface;)V'
+ - 693 :  : '(Ljava/lang/Object;)V'
+ - 694 :  : 'printStackTrace'
+ - 695 :  : 'addWherePartAnd'
+ - 696 :  : '(Lcom/geocad/wc/filtermodel/WherePartObject;)V'
+ - 697 :  : 'addWherePartOr'
+ - 698 :  : 'addWherePart'
+ - 699 :  : 'startsWith'
+ - 700 :  : '(Ljava/lang/String;)Z'
+ - 701 :  : 'indexOf'
+ - 702 :  : 'substring'
+ - 703 :  : '(I)Ljava/lang/String;'
+ - 704 :  : '(II)Ljava/lang/String;'
+ - 705 :  : 'com/geocad/wc/filtermodel/WherePartOperation'
+ - 706 :  : 'STRING_CONTAINS'
+ - 707 :  : 'Lcom/geocad/wc/filtermodel/WherePartOperation;'
+ - 708 :  : '(Ljava/lang/Object;Lcom/geocad/wc/filtermodel/WherePartOperation;Ljava/lang/Object;)V'
+ - 709 :  : 'replaceAll'
+ - 710 :  : 'hashCode'
+ - 711 :  : 'EQUAL'
+ - 712 :  : 'java/lang/Boolean'
+ - 713 :  : 'parseBoolean'
+ - 714 :  : '(Z)Ljava/lang/Boolean;'
+ - 715 :  : 'parseDouble'
+ - 716 :  : '(Ljava/lang/String;)D'
+ - 717 :  : '(D)Ljava/lang/Double;'
+ - 718 :  : 'STRING_EQUALS_IGNORE_CASE'
+ - 719 :  : 'NOT_EQUAL'
+ - 720 :  : 'STRING_NOT_EQUALS_IGNORE_CASE'
+ - 721 :  : 'GREATER'
+ - 722 :  : 'com/geocad/wc/util/format/DateTimeUtil'
+ - 723 :  : 'parseDateRussian'
+ - 724 :  : '(Ljava/lang/String;)Lorg/threeten/bp/LocalDate;'
+ - 725 :  : 'GREATER_EQUAL'
+ - 726 :  : 'LESS'
+ - 727 :  : 'LESS_EQUAL'
+ - 728 :  : "bankID" {0x8510b418}
+ - 729 :  : "r" {0x86aaa190}
+ - 730 :  : "/" {0x84e236a8}
+ - 731 :  : "" {0x84e233a8}
+ - 732 :  : "@" {0x84e23998}
+ - 733 :  : "_" {0x84e23ce8}
+ - 734 :  : name_index=607 signature_index=679
+ - 735 :  : klass_index=306 name_and_type_index=734
+ - 736 :  : "_ID" {0x85104cf0}
+ - 737 :  : "$skip" {0x84eb38c0}
+ - 738 :  : "$top" {0x84eb2d48}
+ - 739 :  : "$select" {0x8510a058}
+ - 740 :  : "$orderby" {0x851056e0}
+ - 741 :  : "$filter" {0x8510c378}
+ - 742 :  : ""error":{" {0x84d29130}
+ - 743 :  : """ {0x84e23480}
+ - 744 :  : "items" {0x84d26e10}
+ - 745 :  : "," {0x84e23618}
+ - 746 :  : "{"d":{"results":[" {0x87b63ee8}
+ - 747 :  : "}" {0x84e23f58}
+ - 748 :  : "]" {0x84e23c68}
+ - 749 :  : "application/json;charset=utf-8;" {0x84d31e48}
+ - 750 :  : "pragma" {0x84eafca8}
+ - 751 :  : "no-cache" {0x84eb4578}
+ - 752 :  : "Cache-Control" {0x85103958}
+ - 753 :  : "fields" {0x87b63f00}
+ - 754 :  : "$count" {0x859fc890}
+ - 755 :  : ""error":{}" {0x87f88700}
+ - 756 :  : " or " {0x84eb0530}
+ - 757 :  : " and " {0x84d34be8}
+ - 758 :  : "contains" {0x84e44760}
+ - 759 :  : "(" {0x84e23558}
+ - 760 :  : ")" {0x84e23588}
+ - 761 :  : "'" {0x84e23528}
+ - 762 :  : " " {0x84e23468}
+
+R11=0x000000001878a5c0 is pointing into the stack for thread: 0x000000000e226000
+R12=0x0000000000000000 is an unknown value
+R13=0x0000000000000000 is an unknown value
+R14=0x000000001878a5c0 is pointing into the stack for thread: 0x000000000e226000
+R15=0x0000000000000001 is an unknown value
+
+
+Stack: [0x0000000018690000,0x0000000018790000],  sp=0x000000001878a100,  free space=1000k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xa157a]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.geocad.wc.sfw.weblight.WLOdata.drow(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+772
+j  com.geocad.wc.sfw.ActionServlet.processAction(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;Lcom/geocad/wc/sfw/ActionForward;)V+353
+j  com.geocad.wc.sfw.ActionServlet.process(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+148
+j  com.geocad.wc.sfw.ActionServlet.doGet(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+3
+j  javax.servlet.http.HttpServlet.service(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+35
+j  javax.servlet.http.HttpServlet.service(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+30
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J 1662 C2 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x000000000290b874 [0x000000000290b820+0x54]
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  org.apache.catalina.security.SecurityUtil$1.run()Ljava/lang/Object;+12
+v  ~StubRoutines::call_stub
+J 745  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000028bb246 [0x00000000028bb1e0+0x66]
+j  javax.security.auth.Subject.doAsPrivileged(Ljavax/security/auth/Subject;Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+59
+j  org.apache.catalina.security.SecurityUtil.execute(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;Ljava/security/Principal;)V+136
+j  org.apache.catalina.security.SecurityUtil.doAsPrivilege(Ljava/lang/String;Ljavax/servlet/Servlet;[Ljava/lang/Class;[Ljava/lang/Object;Ljava/security/Principal;)V+73
+j  org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+353
+j  org.apache.catalina.core.ApplicationFilterChain.access$000(Lorg/apache/catalina/core/ApplicationFilterChain;Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+3
+j  org.apache.catalina.core.ApplicationFilterChain$1.run()Ljava/lang/Object;+12
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+22
+j  org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+61
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+87
+J 1662 C2 sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object; (10 bytes) @ 0x000000000290b874 [0x000000000290b820+0x54]
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+57
+j  org.apache.catalina.security.SecurityUtil$1.run()Ljava/lang/Object;+12
+v  ~StubRoutines::call_stub
+J 745  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00000000028bb246 [0x00000000028bb1e0+0x66]
+j  javax.security.auth.Subject.doAsPrivileged(Ljavax/security/auth/Subject;Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+59
+j  org.apache.catalina.security.SecurityUtil.execute(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;Ljava/security/Principal;)V+136
+j  org.apache.catalina.security.SecurityUtil.doAsPrivilege(Ljava/lang/String;Ljavax/servlet/Filter;[Ljava/lang/Class;[Ljava/lang/Object;)V+72
+j  org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+103
+j  org.apache.catalina.core.ApplicationFilterChain.access$000(Lorg/apache/catalina/core/ApplicationFilterChain;Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+3
+j  org.apache.catalina.core.ApplicationFilterChain$1.run()Ljava/lang/Object;+12
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  org.apache.catalina.core.ApplicationFilterChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+22
+j  org.apache.catalina.core.StandardWrapperValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+778
+j  org.apache.catalina.core.StandardContextValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+283
+j  org.jboss.web.tomcat.security.SecurityAssociationValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+349
+j  org.apache.catalina.authenticator.AuthenticatorBase.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+631
+j  org.jboss.web.tomcat.security.JaccContextValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+42
+j  org.apache.catalina.core.StandardHostValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+64
+j  org.apache.catalina.valves.ErrorReportValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+6
+j  org.jboss.web.tomcat.service.jca.CachedConnectionValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+35
+j  org.apache.catalina.core.StandardEngineValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+42
+j  org.jboss.web.rewrite.RewriteValve.invoke(Lorg/apache/catalina/connector/Request;Lorg/apache/catalina/connector/Response;)V+1115
+j  org.apache.catalina.connector.CoyoteAdapter.service(Lorg/apache/coyote/Request;Lorg/apache/coyote/Response;)V+157
+j  org.apache.coyote.http11.Http11Processor.process(Ljava/net/Socket;)V+422
+j  org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Ljava/net/Socket;)Z+82
+j  org.apache.tomcat.util.net.JIoEndpoint$Worker.run()V+41
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000010b29000 JavaThread "UIL2(SocketManager.MsgPool@312c3731 client=192.168.0.192:51139)#9" daemon [_thread_blocked, id=3484, stack(0x0000000019290000,0x0000000019390000)]
+  0x0000000010b2f000 JavaThread "UIL2(SocketManager.MsgPool@5796caac client=192.168.0.192:51105)#11" daemon [_thread_blocked, id=9908, stack(0x0000000018b90000,0x0000000018c90000)]
+  0x0000000010b2a000 JavaThread "UIL2(SocketManager.MsgPool@3313e0ef client=192.168.0.192:51022)#14" daemon [_thread_blocked, id=7100, stack(0x0000000018490000,0x0000000018590000)]
+  0x0000000010b2a800 JavaThread "UIL2(SocketManager.MsgPool@5e14851b client=192.168.0.192:51069)#14" daemon [_thread_blocked, id=9064, stack(0x0000000014f90000,0x0000000015090000)]
+  0x0000000010b31800 JavaThread "WorkerThread#2[192.168.0.192:51184]" [_thread_blocked, id=3848, stack(0x000000001adc0000,0x000000001aec0000)]
+  0x0000000010b30800 JavaThread "UIL2.SocketManager.WriteTask#8 client=192.168.0.192:51139" daemon [_thread_blocked, id=3788, stack(0x0000000019a90000,0x0000000019b90000)]
+  0x0000000010b30000 JavaThread "UIL2.SocketManager.ReadTask#7 client=192.168.0.192:51139" daemon [_thread_in_native, id=9516, stack(0x0000000019990000,0x0000000019a90000)]
+  0x0000000010b32000 JavaThread "UIL2.SocketManager.WriteTask#6 client=192.168.0.192:51105" daemon [_thread_blocked, id=7728, stack(0x0000000019790000,0x0000000019890000)]
+  0x0000000010b2b800 JavaThread "UIL2.SocketManager.ReadTask#5 client=192.168.0.192:51105" daemon [_thread_in_native, id=4192, stack(0x0000000019690000,0x0000000019790000)]
+  0x0000000010b2e800 JavaThread "WorkerThread#1[192.168.0.192:51183]" [_thread_blocked, id=10164, stack(0x0000000019590000,0x0000000019690000)]
+  0x0000000010b2d800 JavaThread "WorkerThread#0[192.168.0.192:51133]" [_thread_blocked, id=812, stack(0x0000000019490000,0x0000000019590000)]
+  0x0000000010b2d000 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=9632, stack(0x0000000019390000,0x0000000019490000)]
+  0x0000000010b27800 JavaThread "Pool clean timer, url=jdbc:sqlserver://VIRTUALDB2014:1433;integratedSecurity=true;database=kras" daemon [_thread_blocked, id=3488, stack(0x0000000019190000,0x0000000019290000)]
+  0x000000000e22f000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=10056, stack(0x0000000019090000,0x0000000019190000)]
+  0x000000000e22b000 JavaThread "MessageListenerThread - JMS_TQ1" daemon [_thread_blocked, id=2368, stack(0x0000000018f90000,0x0000000019090000)]
+  0x000000000e22e000 JavaThread "Connection Monitor Thread" daemon [_thread_blocked, id=6328, stack(0x0000000018c90000,0x0000000018d90000)]
+  0x000000000e22d800 JavaThread "UIL2.SocketManager.WriteTask#4 client=192.168.0.192:51069" daemon [_thread_blocked, id=7852, stack(0x0000000018a90000,0x0000000018b90000)]
+  0x000000000e226800 JavaThread "UIL2.SocketManager.WriteTask#3 client=192.168.0.192:51022" daemon [_thread_blocked, id=8388, stack(0x0000000018990000,0x0000000018a90000)]
+  0x000000000e229000 JavaThread "UIL2.SocketManager.ReadTask#1 client=192.168.0.192:51022" daemon [_thread_in_native, id=6576, stack(0x0000000018890000,0x0000000018990000)]
+  0x000000000e229800 JavaThread "UIL2.SocketManager.ReadTask#2 client=192.168.0.192:51069" daemon [_thread_in_native, id=9116, stack(0x0000000018790000,0x0000000018890000)]
+=>0x000000000e226000 JavaThread "http-0.0.0.0-80-2" daemon [_thread_in_vm, id=9692, stack(0x0000000018690000,0x0000000018790000)]
+  0x000000000e228000 JavaThread "http-0.0.0.0-80-1" daemon [_thread_in_native, id=4144, stack(0x0000000018590000,0x0000000018690000)]
+  0x000000000e225000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=6520, stack(0x0000000018390000,0x0000000018490000)]
+  0x000000000e227800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=9664, stack(0x0000000018290000,0x0000000018390000)]
+  0x000000000e224800 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=576, stack(0x0000000018190000,0x0000000018290000)]
+  0x000000000e223800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=9052, stack(0x0000000018090000,0x0000000018190000)]
+  0x000000000e223000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=8152, stack(0x0000000017f90000,0x0000000018090000)]
+  0x000000000e21f800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=8560, stack(0x0000000017e90000,0x0000000017f90000)]
+  0x000000000e221800 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=1620, stack(0x0000000017d90000,0x0000000017e90000)]
+  0x000000000e220800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=9876, stack(0x0000000017c90000,0x0000000017d90000)]
+  0x000000000e222000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=7196, stack(0x0000000017b90000,0x0000000017c90000)]
+  0x000000000fc4b800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=4340, stack(0x0000000017a90000,0x0000000017b90000)]
+  0x000000000fc4a800 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=8696, stack(0x0000000017990000,0x0000000017a90000)]
+  0x000000000fc47000 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=7344, stack(0x0000000017890000,0x0000000017990000)]
+  0x000000000fc4a000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=7548, stack(0x0000000017790000,0x0000000017890000)]
+  0x000000000fc47800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=10176, stack(0x0000000017690000,0x0000000017790000)]
+  0x000000000fc49000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:ene_meta/enemeta@geocad_oracle:1521:sati" [_thread_blocked, id=8672, stack(0x0000000017590000,0x0000000017690000)]
+  0x000000000fc48800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:ene_meta/enemeta@geocad_oracle:1521:sati" [_thread_blocked, id=8212, stack(0x0000000017490000,0x0000000017590000)]
+  0x000000000fc46000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=10188, stack(0x0000000017390000,0x0000000017490000)]
+  0x000000000fc42800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=5400, stack(0x0000000017290000,0x0000000017390000)]
+  0x000000000fc44000 JavaThread "Connection close timer, class=PostgreSqlMetaDB, url=jdbc:postgresql://virtualdb:5432/abakan" [_thread_blocked, id=3520, stack(0x0000000017190000,0x0000000017290000)]
+  0x000000000fc45800 JavaThread "Pool clean timer, url=jdbc:postgresql://virtualdb:5432/abakan" [_thread_blocked, id=9144, stack(0x0000000017090000,0x0000000017190000)]
+  0x000000000fc43000 JavaThread "Connection close timer, class=PostgreSqlMetaDB, url=jdbc:postgresql://virtualdb:5432/abakan" [_thread_blocked, id=4208, stack(0x0000000016f90000,0x0000000017090000)]
+  0x000000000fc44800 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=3712, stack(0x0000000016e90000,0x0000000016f90000)]
+  0x000000000fc41800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=1640, stack(0x0000000016d90000,0x0000000016e90000)]
+  0x000000000fc3e000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=9952, stack(0x0000000016c90000,0x0000000016d90000)]
+  0x000000000fc41000 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=6104, stack(0x0000000016b90000,0x0000000016c90000)]
+  0x000000000fc3e800 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=8092, stack(0x0000000016a90000,0x0000000016b90000)]
+  0x000000000fc3d000 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=3812, stack(0x0000000016990000,0x0000000016a90000)]
+  0x000000000fc40000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=10064, stack(0x0000000016890000,0x0000000016990000)]
+  0x000000000fc3f800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=7768, stack(0x0000000016790000,0x0000000016890000)]
+  0x000000000fc3c000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=6284, stack(0x0000000016690000,0x0000000016790000)]
+  0x000000001005b800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=6348, stack(0x0000000016590000,0x0000000016690000)]
+  0x000000000fa0d000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=8140, stack(0x0000000016490000,0x0000000016590000)]
+  0x000000000b8b2000 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=7036, stack(0x0000000016390000,0x0000000016490000)]
+  0x000000001017c000 JavaThread "Pool clean timer, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=6040, stack(0x0000000016290000,0x0000000016390000)]
+  0x000000000fa0c800 JavaThread "Connection close timer, class=OracleMetaDB, url=jdbc:oracle:thin:@geocad_oracle:1521:sati" [_thread_blocked, id=5536, stack(0x000000000c6b0000,0x000000000c7b0000)]
+  0x000000000fa08800 JavaThread "ajp-0.0.0.0-8009-Acceptor-0" daemon [_thread_in_native, id=8012, stack(0x0000000016090000,0x0000000016190000)]
+  0x000000000fa0b800 JavaThread "http-8443-Acceptor-0" daemon [_thread_in_native, id=7068, stack(0x0000000015f90000,0x0000000016090000)]
+  0x000000001017e000 JavaThread "http-0.0.0.0-80-Acceptor-0" daemon [_thread_in_native, id=7448, stack(0x0000000015e90000,0x0000000015f90000)]
+  0x000000001017c800 JavaThread "Thread-5" [_thread_blocked, id=6360, stack(0x0000000015d90000,0x0000000015e90000)]
+  0x000000001017b000 JavaThread "JBossLifeThread" [_thread_blocked, id=1176, stack(0x0000000015c90000,0x0000000015d90000)]
+  0x0000000010177800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=XFilesBean,service=EJB3" [_thread_blocked, id=7256, stack(0x0000000015b90000,0x0000000015c90000)]
+  0x0000000010179800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=XFilesBean,service=EJB3" [_thread_blocked, id=10136, stack(0x0000000015a90000,0x0000000015b90000)]
+  0x000000001017a800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=ProcedureSourceBean,service=EJB3" [_thread_blocked, id=5404, stack(0x0000000015990000,0x0000000015a90000)]
+  0x0000000010178000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=ProcedureSourceBean,service=EJB3" [_thread_blocked, id=5228, stack(0x0000000015890000,0x0000000015990000)]
+  0x0000000010179000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=StatisticViewBean,service=EJB3" [_thread_blocked, id=5436, stack(0x0000000015790000,0x0000000015890000)]
+  0x0000000010175000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=StatisticViewBean,service=EJB3" [_thread_blocked, id=4520, stack(0x0000000015690000,0x0000000015790000)]
+  0x0000000010173800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=StatisticBean,service=EJB3" [_thread_blocked, id=6884, stack(0x0000000015590000,0x0000000015690000)]
+  0x0000000010176000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=StatisticBean,service=EJB3" [_thread_blocked, id=4568, stack(0x0000000015490000,0x0000000015590000)]
+  0x0000000010174000 JavaThread "Connection close timer, class=MySQLMetaDB, url=jdbc:mysql://localhost:33306/test_mysql?user=root&password=root" [_thread_blocked, id=7184, stack(0x0000000015390000,0x0000000015490000)]
+  0x0000000010176800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=ModelStatisticBean,service=EJB3" [_thread_blocked, id=4432, stack(0x0000000015290000,0x0000000015390000)]
+  0x000000001016f800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=ModelStatisticBean,service=EJB3" [_thread_blocked, id=5732, stack(0x0000000015190000,0x0000000015290000)]
+  0x0000000010170800 JavaThread "Procedure scheduler 1574466158" [_thread_blocked, id=10060, stack(0x0000000015090000,0x0000000015190000)]
+  0x0000000010172000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=SessionInstanceBean,service=EJB3" [_thread_blocked, id=4168, stack(0x0000000014e90000,0x0000000014f90000)]
+  0x000000001016f000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=SessionInstanceBean,service=EJB3" [_thread_blocked, id=2864, stack(0x0000000014d90000,0x0000000014e90000)]
+  0x000000000fa0b000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=ServerManagerBean,service=EJB3" [_thread_blocked, id=7460, stack(0x0000000014c90000,0x0000000014d90000)]
+  0x000000000fa08000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=ServerManagerBean,service=EJB3" [_thread_blocked, id=4588, stack(0x0000000014b90000,0x0000000014c90000)]
+  0x000000000fa0a000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=SemGraphBean,service=EJB3" [_thread_blocked, id=4172, stack(0x0000000014a90000,0x0000000014b90000)]
+  0x000000000fa07000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=SemGraphBean,service=EJB3" [_thread_blocked, id=2040, stack(0x0000000014990000,0x0000000014a90000)]
+  0x000000000fa06800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=SecuryAdminBean,service=EJB3" [_thread_blocked, id=6780, stack(0x0000000014890000,0x0000000014990000)]
+  0x000000000fa09800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=SecuryAdminBean,service=EJB3" [_thread_blocked, id=7464, stack(0x0000000014790000,0x0000000014890000)]
+  0x000000000fa02800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=ReportSourceBean,service=EJB3" [_thread_blocked, id=7352, stack(0x0000000014690000,0x0000000014790000)]
+  0x000000000fa05800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=ReportSourceBean,service=EJB3" [_thread_blocked, id=7232, stack(0x0000000014590000,0x0000000014690000)]
+  0x000000000fa03800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=MetadataBean,service=EJB3" [_thread_blocked, id=2220, stack(0x0000000014490000,0x0000000014590000)]
+  0x000000000fa02000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=MetadataBean,service=EJB3" [_thread_blocked, id=8956, stack(0x0000000014390000,0x0000000014490000)]
+  0x000000000fa05000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=MetaSourceBean,service=EJB3" [_thread_blocked, id=6688, stack(0x0000000014290000,0x0000000014390000)]
+  0x000000000fa04000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=MetaSourceBean,service=EJB3" [_thread_blocked, id=8532, stack(0x0000000014190000,0x0000000014290000)]
+  0x000000000f9fe000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=GraphicSourceBean,service=EJB3" [_thread_blocked, id=3672, stack(0x0000000014090000,0x0000000014190000)]
+  0x000000000fa00800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=GraphicSourceBean,service=EJB3" [_thread_blocked, id=9412, stack(0x0000000013f90000,0x0000000014090000)]
+  0x000000000fa01000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=CommonCacheGraphicSourceBean,service=EJB3" [_thread_blocked, id=1288, stack(0x0000000013e90000,0x0000000013f90000)]
+  0x000000000f9ff800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=CommonCacheGraphicSourceBean,service=EJB3" [_thread_blocked, id=6024, stack(0x0000000013d90000,0x0000000013e90000)]
+  0x000000000f9ff000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=FactSourceBean,service=EJB3" [_thread_blocked, id=5240, stack(0x0000000013c90000,0x0000000013d90000)]
+  0x0000000010061800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=FactSourceBean,service=EJB3" [_thread_blocked, id=5252, stack(0x0000000013b90000,0x0000000013c90000)]
+  0x000000001005d800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=DiagnosticsBean,service=EJB3" [_thread_blocked, id=4872, stack(0x0000000013a90000,0x0000000013b90000)]
+  0x0000000010060800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=DiagnosticsBean,service=EJB3" [_thread_blocked, id=7752, stack(0x0000000013990000,0x0000000013a90000)]
+  0x000000001005f000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=DbmsClientBean,service=EJB3" [_thread_blocked, id=4512, stack(0x0000000013890000,0x0000000013990000)]
+  0x000000001005e800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=DbmsClientBean,service=EJB3" [_thread_blocked, id=9316, stack(0x0000000013790000,0x0000000013890000)]
+  0x0000000010060000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=DataAccessBean,service=EJB3" [_thread_blocked, id=7700, stack(0x0000000013690000,0x0000000013790000)]
+  0x000000001005a000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=DataAccessBean,service=EJB3" [_thread_blocked, id=8816, stack(0x0000000013590000,0x0000000013690000)]
+  0x000000001005a800 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_kernel.jar,name=BankParamsBean,service=EJB3" [_thread_blocked, id=3464, stack(0x0000000013490000,0x0000000013590000)]
+  0x0000000010056000 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_kernel.jar,name=BankParamsBean,service=EJB3" [_thread_blocked, id=8176, stack(0x0000000013390000,0x0000000013490000)]
+  0x0000000010059000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_admin.jar,name=ServerManagerBean,service=EJB3" [_thread_blocked, id=4696, stack(0x0000000013290000,0x0000000013390000)]
+  0x0000000010058800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_admin.jar,name=ServerManagerBean,service=EJB3" [_thread_blocked, id=10084, stack(0x0000000013190000,0x0000000013290000)]
+  0x0000000010057000 JavaThread "SFSB Removal Thread - jboss.j2ee:jar=wc_admin.jar,name=AdminBean,service=EJB3" [_thread_blocked, id=4832, stack(0x0000000013090000,0x0000000013190000)]
+  0x0000000010057800 JavaThread "SFSB Passivation Thread - jboss.j2ee:jar=wc_admin.jar,name=AdminBean,service=EJB3" [_thread_blocked, id=8032, stack(0x0000000012f90000,0x0000000013090000)]
+  0x0000000010053000 JavaThread "UILServerILService Accept Thread" [_thread_in_native, id=8272, stack(0x0000000012e90000,0x0000000012f90000)]
+  0x0000000010054800 JavaThread "TimeoutFactory-0" daemon [_thread_blocked, id=3816, stack(0x0000000012d90000,0x0000000012e90000)]
+  0x0000000010055800 JavaThread "JCA PoolFiller" [_thread_blocked, id=8948, stack(0x0000000012c90000,0x0000000012d90000)]
+  0x0000000010054000 JavaThread "HSQLDB Timer @602defba" daemon [_thread_blocked, id=10208, stack(0x0000000011ef0000,0x0000000011ff0000)]
+  0x0000000010052800 JavaThread "DefaultQuartzScheduler_QuartzSchedulerThread" [_thread_blocked, id=8772, stack(0x0000000012b90000,0x0000000012c90000)]
+  0x000000000dc98800 JavaThread "DefaultQuartzScheduler_Worker-9" [_thread_blocked, id=9892, stack(0x0000000012a90000,0x0000000012b90000)]
+  0x000000000fb9a800 JavaThread "DefaultQuartzScheduler_Worker-8" [_thread_blocked, id=5300, stack(0x0000000012990000,0x0000000012a90000)]
+  0x000000000fb99800 JavaThread "DefaultQuartzScheduler_Worker-7" [_thread_blocked, id=8676, stack(0x0000000012890000,0x0000000012990000)]
+  0x000000000fb99000 JavaThread "DefaultQuartzScheduler_Worker-6" [_thread_blocked, id=1600, stack(0x0000000012790000,0x0000000012890000)]
+  0x000000000fb95000 JavaThread "DefaultQuartzScheduler_Worker-5" [_thread_blocked, id=6096, stack(0x0000000012690000,0x0000000012790000)]
+  0x000000000fb96800 JavaThread "DefaultQuartzScheduler_Worker-4" [_thread_blocked, id=2072, stack(0x0000000012590000,0x0000000012690000)]
+  0x000000000fb98000 JavaThread "DefaultQuartzScheduler_Worker-3" [_thread_blocked, id=2060, stack(0x0000000012490000,0x0000000012590000)]
+  0x000000000fb95800 JavaThread "DefaultQuartzScheduler_Worker-2" [_thread_blocked, id=6296, stack(0x0000000012390000,0x0000000012490000)]
+  0x000000000fb97800 JavaThread "DefaultQuartzScheduler_Worker-1" [_thread_blocked, id=4648, stack(0x0000000012290000,0x0000000012390000)]
+  0x000000000fb94000 JavaThread "DefaultQuartzScheduler_Worker-0" [_thread_blocked, id=7380, stack(0x0000000012190000,0x0000000012290000)]
+  0x000000000fb90800 JavaThread "WorkManager(2)-1" daemon [_thread_blocked, id=9488, stack(0x0000000012090000,0x0000000012190000)]
+  0x000000000fb93800 JavaThread "AcceptorThread[[SSL: ServerSocket[addr=localhost/127.0.0.1,localport=64124]]]" [_thread_in_native, id=6060, stack(0x0000000011df0000,0x0000000011ef0000)]
+  0x000000000fb91000 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=9392, stack(0x0000000011cf0000,0x0000000011df0000)]
+  0x000000000fb92800 JavaThread "dump.log watchdog" daemon [_thread_blocked, id=4456, stack(0x0000000011bf0000,0x0000000011cf0000)]
+  0x000000000fb92000 JavaThread "Abandoned connection cleanup thread" daemon [_thread_blocked, id=864, stack(0x0000000011af0000,0x0000000011bf0000)]
+  0x000000000fb8f800 JavaThread "AcceptorThread[ServerSocket[addr=localhost/127.0.0.1,localport=64123]]" [_thread_in_native, id=8632, stack(0x00000000119f0000,0x0000000011af0000)]
+  0x000000000fb8c000 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=6768, stack(0x00000000118f0000,0x00000000119f0000)]
+  0x000000000fb8f000 JavaThread "AcceptorThread[[SSL: ServerSocket[addr=localhost/127.0.0.1,localport=64122]]]" [_thread_in_native, id=3364, stack(0x00000000117f0000,0x00000000118f0000)]
+  0x000000000fb8e000 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=4616, stack(0x00000000116f0000,0x00000000117f0000)]
+  0x000000000fb8b000 JavaThread "Timer-1" daemon [_thread_blocked, id=3628, stack(0x00000000115f0000,0x00000000116f0000)]
+  0x000000000fb8d800 JavaThread "JBossMQ Cache Reference Softner" daemon [_thread_blocked, id=7920, stack(0x0000000010520000,0x0000000010620000)]
+  0x000000000dc9e000 JavaThread "ContainerBackgroundProcessor[StandardEngine[jboss.web]]" daemon [_thread_blocked, id=8376, stack(0x0000000010420000,0x0000000010520000)]
+  0x000000000dc9d000 JavaThread "AcceptorThread[ServerSocket[addr=localhost/127.0.0.1,localport=3873]]" [_thread_in_native, id=5140, stack(0x0000000010320000,0x0000000010420000)]
+  0x000000000dc9c800 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=7888, stack(0x0000000010220000,0x0000000010320000)]
+  0x000000000dc9b800 JavaThread "AcceptorThread[ServerSocket[addr=localhost/127.0.0.1,localport=4446]]" [_thread_in_native, id=6848, stack(0x000000000f150000,0x000000000f250000)]
+  0x000000000dc98000 JavaThread "ServerSocketRefresh" daemon [_thread_blocked, id=5984, stack(0x000000000f050000,0x000000000f150000)]
+  0x000000000dc9b000 JavaThread "PooledInvokerAcceptor#0-51020" [_thread_in_native, id=3236, stack(0x000000000ef50000,0x000000000f050000)]
+  0x000000000dc99800 JavaThread "Listener:51019" daemon [_thread_in_native, id=8972, stack(0x000000000ee50000,0x000000000ef50000)]
+  0x000000000dc97000 JavaThread "Thread-4" daemon [_thread_blocked, id=5424, stack(0x000000000ed50000,0x000000000ee50000)]
+  0x000000000dc9a000 JavaThread "Thread-3" daemon [_thread_blocked, id=6572, stack(0x000000000eb50000,0x000000000ec50000)]
+  0x000000000b8b6000 JavaThread "Listener:51016" daemon [_thread_in_native, id=8636, stack(0x000000000ea50000,0x000000000eb50000)]
+  0x000000000b8b5000 JavaThread "JBoss System Threads(1)-2" daemon [_thread_in_native, id=4104, stack(0x000000000e950000,0x000000000ea50000)]
+  0x000000000b8b6800 JavaThread "GC Daemon" daemon [_thread_blocked, id=7120, stack(0x000000000e850000,0x000000000e950000)]
+  0x000000000b8b8000 JavaThread "RMI Reaper" [_thread_blocked, id=8700, stack(0x000000000e750000,0x000000000e850000)]
+  0x000000000b8b7800 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=3372, stack(0x000000000e650000,0x000000000e750000)]
+  0x000000000b8b1800 JavaThread "JBoss System Threads(1)-1" daemon [_thread_in_native, id=5136, stack(0x000000000e550000,0x000000000e650000)]
+  0x000000000b8b4800 JavaThread "ScannerThread" daemon [_thread_blocked, id=8868, stack(0x000000000e450000,0x000000000e550000)]
+  0x000000000b8b3000 JavaThread "Timer-0" daemon [_thread_blocked, id=7456, stack(0x000000000e350000,0x000000000e450000)]
+  0x000000000b8b3800 JavaThread "DestroyJavaVM" [_thread_blocked, id=2400, stack(0x00000000023b0000,0x00000000024b0000)]
+  0x000000000b83c800 JavaThread "Service Thread" daemon [_thread_blocked, id=8456, stack(0x000000000c4b0000,0x000000000c5b0000)]
+  0x000000000b833000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=8484, stack(0x000000000c3b0000,0x000000000c4b0000)]
+  0x000000000b832000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=8476, stack(0x000000000c2b0000,0x000000000c3b0000)]
+  0x000000000b827000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=9112, stack(0x000000000c1b0000,0x000000000c2b0000)]
+  0x000000000b5e6800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=7416, stack(0x000000000c0b0000,0x000000000c1b0000)]
+  0x000000000b5dc800 JavaThread "Attach Listener" daemon [_thread_blocked, id=8604, stack(0x000000000bfb0000,0x000000000c0b0000)]
+  0x000000000b5db800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4716, stack(0x000000000beb0000,0x000000000bfb0000)]
+  0x000000000b5da800 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=8056, stack(0x000000000bdb0000,0x000000000beb0000)]
+  0x000000000b5c8000 JavaThread "Finalizer" daemon [_thread_blocked, id=3660, stack(0x000000000bcb0000,0x000000000bdb0000)]
+  0x000000000b5c0800 JavaThread "Reference Handler" daemon [_thread_blocked, id=8900, stack(0x000000000bbb0000,0x000000000bcb0000)]
+
+Other Threads:
+  0x000000000b5bb800 VMThread [stack: 0x000000000b5f0000,0x000000000b6f0000] [id=4680]
+  0x000000000b84b000 WatcherThread [stack: 0x000000000c5b0000,0x000000000c6b0000] [id=7340]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ par new generation   total 78464K, used 36523K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K,  50% used [0x0000000770000000, 0x0000000772245c80, 0x0000000774420000)
+  from space 8704K,  16% used [0x0000000774ca0000, 0x0000000774e04fd8, 0x0000000775520000)
+  to   space 8704K,   0% used [0x0000000774420000, 0x0000000774420000, 0x0000000774ca0000)
+ concurrent mark-sweep generation total 586160K, used 397275K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68735K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+
+Card table byte_map: [0x0000000005aa0000,0x0000000005f30000] byte_map_base: 0x0000000001f20000
+
+Polling page: 0x0000000000bd0000
+
+Code Cache  [0x00000000026a0000, 0x0000000002c60000, 0x00000000056a0000)
+ total_blobs=2199 nmethods=1560 adapters=598 free_code_cache=43383Kb largest_free_block=44343168
+
+Compilation events (10 events):
+Event: 849.092 Thread 0x000000000b832000 1938             com.geocad.wc.sqlmodel.elements.SQLExpression::equals (122 bytes)
+Event: 849.093 Thread 0x000000000b832000 nmethod 1938 0x0000000002bdeb10 code [0x0000000002bdec60, 0x0000000002bded98]
+Event: 849.114 Thread 0x000000000b833000 1939             com.sun.crypto.provider.TlsPrfGenerator::expand (245 bytes)
+Event: 849.131 Thread 0x000000000b833000 nmethod 1939 0x0000000002c53490 code [0x0000000002c53680, 0x0000000002c54dd8]
+Event: 863.633 Thread 0x000000000b832000 1940   !         java.io.Win32FileSystem::resolve (362 bytes)
+Event: 863.643 Thread 0x000000000b832000 nmethod 1940 0x0000000002c50a10 code [0x0000000002c50da0, 0x0000000002c51e38]
+Event: 911.447 Thread 0x000000000b833000 1941             java.lang.Integer::parseInt (261 bytes)
+Event: 911.456 Thread 0x000000000b833000 nmethod 1941 0x0000000002c442d0 code [0x0000000002c44480, 0x0000000002c44e48]
+Event: 911.464 Thread 0x000000000b832000 1942             com.sun.jndi.ldap.Filter::indexOf (28 bytes)
+Event: 911.466 Thread 0x000000000b832000 nmethod 1942 0x0000000002c50690 code [0x0000000002c507c0, 0x0000000002c50958]
+
+GC Heap History (10 events):
+Event: 561.898 GC heap before
+{Heap before GC invocations=57 (full 10):
+ par new generation   total 78464K, used 72525K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K, 100% used [0x0000000770000000, 0x0000000774420000, 0x0000000774420000)
+  from space 8704K,  31% used [0x0000000774420000, 0x00000007746d3720, 0x0000000774ca0000)
+  to   space 8704K,   0% used [0x0000000774ca0000, 0x0000000774ca0000, 0x0000000775520000)
+ concurrent mark-sweep generation total 586160K, used 397233K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68628K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+Event: 561.900 GC heap after
+Heap after GC invocations=58 (full 10):
+ par new generation   total 78464K, used 1941K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K,   0% used [0x0000000770000000, 0x0000000770000000, 0x0000000774420000)
+  from space 8704K,  22% used [0x0000000774ca0000, 0x0000000774e85418, 0x0000000775520000)
+  to   space 8704K,   0% used [0x0000000774420000, 0x0000000774420000, 0x0000000774ca0000)
+ concurrent mark-sweep generation total 586160K, used 397233K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68628K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+}
+Event: 562.810 GC heap before
+{Heap before GC invocations=58 (full 10):
+ par new generation   total 78464K, used 71701K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K, 100% used [0x0000000770000000, 0x0000000774420000, 0x0000000774420000)
+  from space 8704K,  22% used [0x0000000774ca0000, 0x0000000774e85418, 0x0000000775520000)
+  to   space 8704K,   0% used [0x0000000774420000, 0x0000000774420000, 0x0000000774ca0000)
+ concurrent mark-sweep generation total 586160K, used 397233K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68628K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+Event: 562.813 GC heap after
+Heap after GC invocations=59 (full 10):
+ par new generation   total 78464K, used 3315K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K,   0% used [0x0000000770000000, 0x0000000770000000, 0x0000000774420000)
+  from space 8704K,  38% used [0x0000000774420000, 0x000000077475cd40, 0x0000000774ca0000)
+  to   space 8704K,   0% used [0x0000000774ca0000, 0x0000000774ca0000, 0x0000000775520000)
+ concurrent mark-sweep generation total 586160K, used 397272K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68628K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+}
+Event: 563.183 GC heap before
+{Heap before GC invocations=59 (full 10):
+ par new generation   total 78464K, used 73075K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K, 100% used [0x0000000770000000, 0x0000000774420000, 0x0000000774420000)
+  from space 8704K,  38% used [0x0000000774420000, 0x000000077475cd40, 0x0000000774ca0000)
+  to   space 8704K,   0% used [0x0000000774ca0000, 0x0000000774ca0000, 0x0000000775520000)
+ concurrent mark-sweep generation total 586160K, used 397272K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68628K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+Event: 563.188 GC heap after
+Heap after GC invocations=60 (full 10):
+ par new generation   total 78464K, used 2230K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K,   0% used [0x0000000770000000, 0x0000000770000000, 0x0000000774420000)
+  from space 8704K,  25% used [0x0000000774ca0000, 0x0000000774ecdb80, 0x0000000775520000)
+  to   space 8704K,   0% used [0x0000000774420000, 0x0000000774420000, 0x0000000774ca0000)
+ concurrent mark-sweep generation total 586160K, used 397274K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68628K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+}
+Event: 603.696 GC heap before
+{Heap before GC invocations=60 (full 10):
+ par new generation   total 78464K, used 71990K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K, 100% used [0x0000000770000000, 0x0000000774420000, 0x0000000774420000)
+  from space 8704K,  25% used [0x0000000774ca0000, 0x0000000774ecdb80, 0x0000000775520000)
+  to   space 8704K,   0% used [0x0000000774420000, 0x0000000774420000, 0x0000000774ca0000)
+ concurrent mark-sweep generation total 586160K, used 397274K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68668K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+Event: 603.700 GC heap after
+Heap after GC invocations=61 (full 10):
+ par new generation   total 78464K, used 1189K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K,   0% used [0x0000000770000000, 0x0000000770000000, 0x0000000774420000)
+  from space 8704K,  13% used [0x0000000774420000, 0x0000000774549700, 0x0000000774ca0000)
+  to   space 8704K,   0% used [0x0000000774ca0000, 0x0000000774ca0000, 0x0000000775520000)
+ concurrent mark-sweep generation total 586160K, used 397274K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68668K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+}
+Event: 787.784 GC heap before
+{Heap before GC invocations=61 (full 10):
+ par new generation   total 78464K, used 70949K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K, 100% used [0x0000000770000000, 0x0000000774420000, 0x0000000774420000)
+  from space 8704K,  13% used [0x0000000774420000, 0x0000000774549700, 0x0000000774ca0000)
+  to   space 8704K,   0% used [0x0000000774ca0000, 0x0000000774ca0000, 0x0000000775520000)
+ concurrent mark-sweep generation total 586160K, used 397274K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68692K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+Event: 787.787 GC heap after
+Heap after GC invocations=62 (full 10):
+ par new generation   total 78464K, used 1427K [0x0000000770000000, 0x0000000775520000, 0x0000000784cc0000)
+  eden space 69760K,   0% used [0x0000000770000000, 0x0000000770000000, 0x0000000774420000)
+  from space 8704K,  16% used [0x0000000774ca0000, 0x0000000774e04fd8, 0x0000000775520000)
+  to   space 8704K,   0% used [0x0000000774420000, 0x0000000774420000, 0x0000000774ca0000)
+ concurrent mark-sweep generation total 586160K, used 397275K [0x0000000784cc0000, 0x00000007a892c000, 0x00000007f0000000)
+ concurrent-mark-sweep perm gen total 114232K, used 68692K [0x00000007f0000000, 0x00000007f6f8e000, 0x0000000800000000)
+}
+
+Deoptimization events (10 events):
+Event: 603.662 Thread 0x0000000010b2e800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002c06c84 method=com.microsoft.sqlserver.jdbc.TDSParser.parse(Lcom/microsoft/sqlserver/jdbc/TDSReader;Lcom/microsoft/sqlserver/jdbc/TDSTokenHandler;)V @ 383
+Event: 736.930 Thread 0x0000000010b31800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002c06c84 method=com.microsoft.sqlserver.jdbc.TDSParser.parse(Lcom/microsoft/sqlserver/jdbc/TDSReader;Lcom/microsoft/sqlserver/jdbc/TDSTokenHandler;)V @ 383
+Event: 784.717 Thread 0x0000000010b2e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000002c3b658 method=com.geocad.wc.metamodel.manager.MetaModelCacheManager.get(ILjava/lang/Object;Lcom/geocad/wc/metamodel/manager/MetaModelCacheManager$GetMode;)Ljava/lang/Object; @ 282
+Event: 786.204 Thread 0x0000000010b2e800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x0000000002ba4bc8 method=com.geocad.wc.metamodel.manager.MetaModelCacheManager.get(ILjava/util/List;)Ljava/util/List; @ 69
+Event: 787.669 Thread 0x0000000010b2e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000029167c4 method=oracle.jdbc.driver.T4CTTIrxd.unmarshalBVC(I)V @ 43
+Event: 787.735 Thread 0x0000000010b2e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000002c3b394 method=com.geocad.wc.metamodel.manager.MetaModelCacheManager.get(ILjava/lang/Object;Lcom/geocad/wc/metamodel/manager/MetaModelCacheManager$GetMode;)Ljava/lang/Object; @ 347
+Event: 787.740 Thread 0x0000000010b2e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000002c3b658 method=com.geocad.wc.metamodel.manager.MetaModelCacheManager.get(ILjava/lang/Object;Lcom/geocad/wc/metamodel/manager/MetaModelCacheManager$GetMode;)Ljava/lang/Object; @ 282
+Event: 787.745 Thread 0x0000000010b2e800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000002c3b394 method=com.geocad.wc.metamodel.manager.MetaModelCacheManager.get(ILjava/lang/Object;Lcom/geocad/wc/metamodel/manager/MetaModelCacheManager$GetMode;)Ljava/lang/Object; @ 347
+Event: 849.117 Thread 0x0000000010b31800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c06980 method=com.microsoft.sqlserver.jdbc.TDSParser.parse(Lcom/microsoft/sqlserver/jdbc/TDSReader;Lcom/microsoft/sqlserver/jdbc/TDSTokenHandler;)V @ 447
+Event: 911.474 Thread 0x000000000e226000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000002ad616c method=java.util.AbstractCollection.addAll(Ljava/util/Collection;)Z @ 29
+
+Internal exceptions (10 events):
+Event: 850.125 Thread 0x000000000fb92800 Threw 0x00000007705d3b08 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 850.125 Thread 0x000000000fb92800 Threw 0x00000007705d3ee0 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 850.125 Thread 0x000000000fb92800 Threw 0x00000007705d4830 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 850.125 Thread 0x000000000fb92800 Threw 0x00000007705d4be0 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 910.125 Thread 0x000000000fb92800 Threw 0x00000007705d5558 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 910.125 Thread 0x000000000fb92800 Threw 0x00000007705d5930 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 910.125 Thread 0x000000000fb92800 Threw 0x00000007705d6280 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 910.125 Thread 0x000000000fb92800 Threw 0x00000007705d6630 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 911.454 Thread 0x0000000010b34800 Threw 0x0000000772140478 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:743
+Event: 911.465 Thread 0x0000000010b33800 Threw 0x0000000772133f50 at C:\re\jdk7u80\2329\hotspot\src\share\vm\prims\jni.cpp:743
+
+Events (10 events):
+Event: 911.465 Executing VM operation: RevokeBias
+Event: 911.466 Executing VM operation: RevokeBias done
+Event: 911.466 Thread 0x0000000010b33800 DEOPT PACKING pc=0x00000000029e45a8 sp=0x000000001998f490
+Event: 911.466 Thread 0x0000000010b33800 DEOPT UNPACKING pc=0x00000000026d92b9 sp=0x000000001998f1d8 mode 1
+Event: 911.466 Executing VM operation: RevokeBias
+Event: 911.466 Executing VM operation: RevokeBias done
+Event: 911.466 Thread 0x0000000010b33800 Thread exited: 0x0000000010b33800
+Event: 911.474 Thread 0x000000000e226000 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x0000000002ad616c
+Event: 911.474 Thread 0x000000000e226000 DEOPT PACKING pc=0x0000000002ad616c sp=0x000000001878a540
+Event: 911.474 Thread 0x000000000e226000 DEOPT UNPACKING pc=0x00000000026d75a4 sp=0x000000001878a4f8 mode 2
+
+
+Dynamic libraries:
+0x00007ff7b2830000 - 0x00007ff7b2863000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\java.exe
+0x00007ff9154b0000 - 0x00007ff91565d000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff914ef0000 - 0x00007ff91502f000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ff912a10000 - 0x00007ff912b25000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ff910600000 - 0x00007ff91068e000 	C:\WINDOWS\system32\apphelp.dll
+0x00007ff8fb360000 - 0x00007ff8fb3b5000 	C:\WINDOWS\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ff9153b0000 - 0x00007ff91545a000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ff9126a0000 - 0x00007ff9126ce000 	C:\WINDOWS\system32\SspiCli.dll
+0x00007ff914600000 - 0x00007ff914654000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x00007ff915030000 - 0x00007ff9151a7000 	C:\WINDOWS\system32\USER32.dll
+0x00007ff915210000 - 0x00007ff9153a5000 	C:\WINDOWS\system32\ole32.dll
+0x00007ff9130d0000 - 0x00007ff9145fe000 	C:\WINDOWS\system32\SHELL32.dll
+0x00007ff911bb0000 - 0x00007ff911bd1000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ff914e40000 - 0x00007ff914eea000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ff8ff7e0000 - 0x00007ff8ff7fe000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x00007ff912ba0000 - 0x00007ff912ce0000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ff9151b0000 - 0x00007ff915208000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x00007ff914660000 - 0x00007ff914871000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x00007ff912e10000 - 0x00007ff912f5d000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ff9125d0000 - 0x00007ff9125e5000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ff910ea0000 - 0x00007ff910f52000 	C:\WINDOWS\SYSTEM32\SHCORE.dll
+0x00007ff915460000 - 0x00007ff915496000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ff914880000 - 0x00007ff9149d1000 	C:\WINDOWS\system32\MSCTF.dll
+0x00007ff910800000 - 0x00007ff910a7b000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf\COMCTL32.dll
+0x000000005fe30000 - 0x000000005ff02000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\msvcr100.dll
+0x000000005f650000 - 0x000000005fe29000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\server\jvm.dll
+0x00007ff9058a0000 - 0x00007ff9058a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff8f6440000 - 0x00007ff8f6462000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff912f60000 - 0x00007ff912f67000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ff912b30000 - 0x00007ff912b8a000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ff8f6410000 - 0x00007ff8f643a000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ff9154a0000 - 0x00007ff9154a9000 	C:\WINDOWS\system32\NSI.dll
+0x00007ff9126d0000 - 0x00007ff91271f000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x00007ff9113f0000 - 0x00007ff911418000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x0000000060f70000 - 0x0000000060f7f000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\verify.dll
+0x0000000060f40000 - 0x0000000060f68000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\java.dll
+0x000000005f610000 - 0x000000005f645000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\jdwp.dll
+0x0000000060f30000 - 0x0000000060f38000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\npt.dll
+0x000000005f5f0000 - 0x000000005f606000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\zip.dll
+0x000000005f5d0000 - 0x000000005f5ea000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\net.dll
+0x00007ff911e40000 - 0x00007ff911e99000 	C:\WINDOWS\system32\mswsock.dll
+0x000000005f5c0000 - 0x000000005f5c9000 	c:\Program Files\Java\jdk1.7.0_80\jre\bin\dt_socket.dll
+0x00007ff90ca80000 - 0x00007ff90ca95000 	C:\WINDOWS\system32\napinsp.dll
+0x00007ff90caa0000 - 0x00007ff90caba000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x00007ff910690000 - 0x00007ff9106ab000 	C:\WINDOWS\system32\NLAapi.dll
+0x00007ff911cb0000 - 0x00007ff911d54000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ff90cac0000 - 0x00007ff90cacd000 	C:\WINDOWS\System32\winrnr.dll
+0x00007ff90cc00000 - 0x00007ff90cc0a000 	C:\Windows\System32\rasadhlp.dll
+0x00007ff90ea60000 - 0x00007ff90ea8a000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ff90e6a0000 - 0x00007ff90e6aa000 	C:\WINDOWS\SYSTEM32\WINNSI.DLL
+0x00007ff90d3c0000 - 0x00007ff90d42b000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x000000005f5a0000 - 0x000000005f5b1000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\nio.dll
+0x000000005f590000 - 0x000000005f59b000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\management.dll
+0x00007ff912020000 - 0x00007ff912040000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007ff911a60000 - 0x00007ff911a96000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ff912180000 - 0x00007ff9121a6000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x00007ff9124a0000 - 0x00007ff912503000 	C:\WINDOWS\system32\bcryptprimitives.dll
+0x00007ff912510000 - 0x00007ff91251b000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007ff90d3a0000 - 0x00007ff90d3b6000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x00007ff90d380000 - 0x00007ff90d39a000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x000000005f560000 - 0x000000005f584000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\sunec.dll
+0x000000005f550000 - 0x000000005f55b000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\sunmscapi.dll
+0x00007ff912720000 - 0x00007ff9128ff000 	C:\WINDOWS\system32\CRYPT32.dll
+0x00007ff912680000 - 0x00007ff912691000 	C:\WINDOWS\system32\MSASN1.dll
+0x000000005f3b0000 - 0x000000005f545000 	C:\Program Files\Java\jdk1.7.0_80\jre\bin\awt.dll
+0x00007ff912f70000 - 0x00007ff913037000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x00007ff8fe6e0000 - 0x00007ff8fe72c000 	C:\work\JBoss\bin\native\win64\sqljdbc_auth.dll
+0x00007ff90f420000 - 0x00007ff90f42c000 	C:\WINDOWS\system32\secur32.dll
+0x00007ff911f30000 - 0x00007ff91201f000 	C:\WINDOWS\system32\kerberos.DLL
+0x00007ff912040000 - 0x00007ff91205a000 	C:\WINDOWS\SYSTEM32\cryptdll.dll
+0x00007ff911ec0000 - 0x00007ff911f2b000 	C:\WINDOWS\system32\msv1_0.DLL
+0x00007ff90f210000 - 0x00007ff90f239000 	C:\WINDOWS\system32\ntdsapi.dll
+0x00007ff8ff080000 - 0x00007ff8ff209000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n -Djava.library.path=C:\work\JBoss\bin\native\win64;C:\WINDOWS\system32 -Dprogram.name=rund.bat -XX:SoftRefLRUPolicyMSPerMB=1000000000 -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djava.util.logging.config.file=C:\work\JBoss\bin\logging.properties -DentityExpansionLimit=2147483640 -Djava.security.manager -Djava.security.policy=C:\work\JBoss\server\default\conf\server.policy -Djboss.home.dir=C:\work\JBoss -Djboss.server.home.dir=C:\work\JBoss\server\default -Djboss.bind.address=0.0.0.0 -Xmx2048m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Djava.endorsed.dirs=C:\work\JBoss\lib\endorsed 
+java_command: org.jboss.Main -b 0.0.0.0
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Java\jre7\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Sedlovskii\AppData\Roaming\npm
+USERNAME=a.sedlovskii
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, erms, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 16723440k(6784880k free), swap 19213808k(7111012k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.80-b11) for windows-amd64 JRE (1.7.0_80-b15), built on Apr 10 2015 11:26:34 by "java_re" with unknown MS VC++:1600
+
+time: Mon Dec 07 16:27:50 2020
+elapsed time: 911 seconds
+

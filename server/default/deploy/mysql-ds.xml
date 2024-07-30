@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: mysql-ds.xml,v 1.1 2007/05/11 08:32:34 alexey Exp $ -->
+<!--  Datasource config for MySQL using 3.0.9 available from:
+http://www.mysql.com/downloads/api-jdbc-stable.html
+-->
+
+<datasources>
+<local-tx-datasource>
+    <depends>gee.startup:service=StartUp</depends>
+    <jndi-name>datasources/demo_meta</jndi-name>
+    <connection-url>jdbc:mysql://svr.geocad.ru:3306/gee_meta?user=gee_meta&amp;password=gee_meta</connection-url>
+    <driver-class>com.mysql.jdbc.Driver</driver-class>
+  </local-tx-datasource>
+
+<local-tx-datasource>
+    <depends>gee.startup:service=StartUp</depends>
+    <jndi-name>datasources/ran_meta</jndi-name>
+    <connection-url>jdbc:mysql://svr.geocad.ru:3306/ran_meta?user=ran_meta&amp;password=ran_meta</connection-url>
+    <driver-class>com.mysql.jdbc.Driver</driver-class>
+</local-tx-datasource>
+
+<local-tx-datasource>
+    <depends>gee.startup:service=StartUp</depends>
+    <jndi-name>datasources/ene_meta</jndi-name>
+    <connection-url>jdbc:mysql://viper:33306/ene_meta?user=root&amp;password=root</connection-url>
+    <driver-class>com.mysql.jdbc.Driver</driver-class>
+</local-tx-datasource>
+
+<local-tx-datasource>
+    <depends>gee.startup:service=StartUp</depends>
+    <jndi-name>datasources/gee_meta</jndi-name>
+    <connection-url>jdbc:mysql://viper:33306/gee_meta?user=root&amp;password=root</connection-url>
+    <driver-class>com.mysql.jdbc.Driver</driver-class>
+</local-tx-datasource>
+
+
+
+</datasources>
+
+

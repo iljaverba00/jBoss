@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><server>
+    <mbean code="org.jboss.mq.il.uil2.UILServerILService" name="jboss.mq:service=InvocationLayer,type=UIL2">
+        <depends optional-attribute-name="Invoker">jboss.mq:service=Invoker</depends>
+        <attribute name="ConnectionFactoryJNDIRef">ConnectionFactory</attribute>
+        <attribute name="XAConnectionFactoryJNDIRef">XAConnectionFactory</attribute>
+        <attribute name="BindAddress">${jboss.bind.address}</attribute>
+        <attribute name="PingPeriod">60000</attribute>
+        <attribute name="EnableTcpNoDelay">true</attribute>
+        <attribute name="ReadTimeout">120000</attribute>
+        <attribute name="ClientReadTimeout">120000</attribute>
+        <attribute name="BufferSize">2048</attribute>
+        <attribute name="ChunkSize">1000000</attribute>
+        <attribute name="ConnectAddress">${java.rmi.server.hostname}</attribute>
+        <attribute name="ServerBindPort">10000</attribute>
+    </mbean>
+    <mbean code="org.jboss.naming.NamingAlias" name="jboss.mq:service=InvocationLayer,type=UIL">
+        <attribute name="FromName">UILConnectionFactory</attribute>
+        <attribute name="ToName">ConnectionFactory</attribute>
+        <depends>jboss:service=Naming</depends>
+    </mbean>
+    <mbean code="org.jboss.naming.NamingAlias" name="jboss.mq:service=InvocationLayer,type=UILXA">
+        <attribute name="FromName">UILXAConnectionFactory</attribute>
+        <attribute name="ToName">XAConnectionFactory</attribute>
+        <depends>jboss:service=Naming</depends>
+    </mbean>
+    <mbean code="org.jboss.naming.NamingAlias" name="jboss.mq:service=InvocationLayer,type=UIL2,alias=UIL2ConnectionFactory">
+        <attribute name="FromName">UIL2ConnectionFactory</attribute>
+        <attribute name="ToName">ConnectionFactory</attribute>
+        <depends>jboss:service=Naming</depends>
+    </mbean>
+    <mbean code="org.jboss.naming.NamingAlias" name="jboss.mq:service=InvocationLayer,type=UIL2XA,alias=UIL2XAConnectionFactory">
+        <attribute name="FromName">UIL2XAConnectionFactory</attribute>
+        <attribute name="ToName">XAConnectionFactory</attribute>
+        <depends>jboss:service=Naming</depends>
+    </mbean>
+    <mbean code="org.jboss.naming.LinkRefPairService" name="jboss.jms:alias=QueueConnectionFactory">
+        <attribute name="JndiName">QueueConnectionFactory</attribute>
+        <attribute name="RemoteJndiName">ConnectionFactory</attribute>
+        <attribute name="LocalJndiName">java:/JmsXA</attribute>
+        <depends>jboss:service=Naming</depends>
+    </mbean>
+    <mbean code="org.jboss.naming.LinkRefPairService" name="jboss.jms:alias=TopicConnectionFactory">
+        <attribute name="JndiName">TopicConnectionFactory</attribute>
+        <attribute name="RemoteJndiName">ConnectionFactory</attribute>
+        <attribute name="LocalJndiName">java:/JmsXA</attribute>
+        <depends>jboss:service=Naming</depends>
+    </mbean>
+</server>

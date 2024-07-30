@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<METAMODELS>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>gis_road</NAME>
+        <DESCRIPTION>Корпоративная ГИС. Автодороги</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>gis_road</SCHEMA>
+        <GROUPNAME>Эталонные модели</GROUPNAME>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>aa_mm_gee_keys</NAME>
+        <DESCRIPTION>Ключи</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <SCHEMA>gee_keys</SCHEMA>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <GROUPNAME>Программистам</GROUPNAME>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>gis_ent</NAME>
+        <DESCRIPTION>Корпоративная ГИС.Кадастр предприятия</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>gis_ent</SCHEMA>
+        <GROUPNAME>Эталонные модели</GROUPNAME>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>gee_fre_meta</NAME>
+        <DESCRIPTION>Реестр лесов</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>gee_fre_meta</SCHEMA>
+        <GROUPNAME>Эталонные модели</GROUPNAME>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>spu_meta</NAME>
+        <DESCRIPTION>НСО ДИЗО Юридические лица</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>192.168.0.1-192.168.0.255</ALLOWFROM>
+        <SCHEMA>spu_meta</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>spu_meta</NAME>
+        <DESCRIPTION>НСО ДИЗО Юридические лица</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>spu_meta</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>vologda</NAME>
+        <DESCRIPTION>Вологда</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>vologda</SCHEMA>
+        <GROUPNAME>Территории</GROUPNAME>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>spb_ogd</NAME>
+        <DESCRIPTION>Цифровой двойник</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <ALLOWFROM>192.168.0.1-192.168.0.255</ALLOWFROM>
+        <SCHEMA>spb_ogd</SCHEMA>
+        <GROUPNAME>Эталонные модели</GROUPNAME>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>aa_mm_reo</NAME>
+        <DESCRIPTION>Российский экологический оператор</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>reo</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>ccb_pgsql</NAME>
+        <DESCRIPTION>КУМИ Комсомольск</DESCRIPTION>
+        <URL>jdbc:postgresql://virtualdb:5432/komsomolsk</URL>
+        <USER>komsomolsk</USER>
+        <PASSWORD>komsomolsk</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>meta_ccb</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>abakan_mm_ogd</NAME>
+        <DESCRIPTION>Абакан ОГД</DESCRIPTION>
+        <URL>jdbc:postgresql://virtualdb:5432/abakan</URL>
+        <USER>abakan</USER>
+        <PASSWORD>abakan</PASSWORD>
+        <SCHEMA>mm_ogd</SCHEMA>
+        <ALLOWFROM>ALL</ALLOWFROM>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>portal3d</NAME>
+        <DESCRIPTION>Мариуполь</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>192.168.0.1-192.168.0.255</ALLOWFROM>
+        <SCHEMA>portal3d</SCHEMA>
+        <ALLOWFROM>ALL</ALLOWFROM>
+    </METAMODEL>
+
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>alanya_mm</NAME>
+        <DESCRIPTION>РГИС Алания</DESCRIPTION>
+        <URL>jdbc:postgresql://virtualdb:5432/alanya</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>mm_alanya</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>gee_ogd_meta_nsk3</NAME>
+        <DESCRIPTION>ОГД Новосибирск город</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/nsk</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>gee_ogd_meta_nsk3</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>gisogd_2021</NAME>
+        <DESCRIPTION>ГИСОГД 2.0</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>gisogd_2021</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>spb_ogd</NAME>
+        <DESCRIPTION>Санкт-Петербург</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>spb_ogd</SCHEMA>
+    </METAMODEL>
+
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>aa_mm_tax</NAME>
+        <DESCRIPTION>Анализ налоговых поступлений</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>tax</SCHEMA>
+    </METAMODEL>
+
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>webportal</NAME>
+        <DESCRIPTION>Веб портал</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/webportal</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>webportal_mm</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>blago</NAME>
+        <DESCRIPTION>Благовещенск МГИС</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>blago</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>aa_mm_wine</NAME>
+        <DESCRIPTION>Карта виноградников</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/aa_mm</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>wine</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>noyabrsk</NAME>
+        <DESCRIPTION>Ноябрьск</DESCRIPTION>
+        <URL>jdbc:postgresql://postgres:5432/webportal</URL>
+        <USER>nso</USER>
+        <PASSWORD>nso</PASSWORD>
+        <ALLOWFROM>192.168.0.1-192.168.0.255</ALLOWFROM>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <SCHEMA>wp_noyabrsk_mm</SCHEMA>
+    </METAMODEL>
+    <METAMODEL>
+        <DBMS>PostgreSQL</DBMS>
+        <NAME>gee_agr_meta</NAME>
+        <DESCRIPTION>Учет и мониторинг с/х земель</DESCRIPTION>
+        <url>jdbc:postgresql://postgres:5432/aa_mm</url>
+        <user>nso</user>
+        <schema>gee_agr_meta</schema>
+        <password>nso</password>
+        <ALLOWFROM>ALL</ALLOWFROM>
+        <GROUPNAME>Эталонные модели</GROUPNAME>
+    </METAMODEL>
+</METAMODELS>

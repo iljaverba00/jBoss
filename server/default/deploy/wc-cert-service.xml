@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+    <mbean code="org.jboss.remoting.transport.Connector"
+          name="jboss.remoting:type=Connector,name=CertConnector,handler=ejb3">
+        <depends>jboss.aop:service=AspectDeployer</depends>
+        <!--attribute name="InvokerLocator">socket://${jboss.bind.address}:3873</attribute-->
+        <attribute name="Configuration">
+            <config>
+                <invoker transport="socket">
+                    <attribute name="serverBindAddress">${jboss.bind.address}</attribute>
+                    <!--attribute name="serverBindPort">3873</attribute-->
+                    <attribute name="clientConnectAddress">${java.rmi.server.hostname}</attribute>
+                </invoker>
+                <handlers>
+                    <handler subsystem="AOP">org.jboss.aspects.remoting.AOPRemotingInvocationHandler</handler>
+                </handlers>
+            </config>
+        </attribute>
+    </mbean>
+</server>

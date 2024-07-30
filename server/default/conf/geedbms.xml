@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbms-conf>
+    <dbms name="Oracle" class="com.geocad.wc.jdbc.oracle.OracleDbms">
+        <template direction="special" std="$af1 = true" special="$af1 &lt;&gt; 0"/>
+        <template direction="special" std="$af1 = false" special="$af1 = 0"/>
+        <template direction="special" std="$af1 &lt;&gt; true" special="$af1 = 0"/>
+        <template direction="special" std="$af1 &lt;&gt; false" special="$af1 &lt;&gt; 0"/>
+
+        <template direction="all" std="geeEquals($e1,$e2)" special="upper($e1) = upper($e2)"/>
+        <template direction="all" std="geeNotEquals($e1,$e2)" special="upper($e1) &lt;> upper($e2)"/>
+        <template direction="all" std="geeStartsWith($e1,$e2)" special="upper($e1) LIKE (upper($e2) || '%')" specEscape="2"/>
+        <template direction="all" std="geeNotStartsWith($e1,$e2)" special="not upper($e1) LIKE (upper($e2) || '%')" specEscape="2"/>
+        <template direction="all" std="geeContains($e1,$e2)" special="upper($e1) LIKE ('%' || upper($e2) || '%')" specEscape="2"/>
+        <template direction="all" std="geeNotContains($e1,$e2)" special="not upper($e1) LIKE ('%' || upper($e2) || '%')" specEscape="2"/>
+        <template direction="all" std="geeDouble2str($e1,$e2)" special="to_char(round($e1, $e2))" specEscape="2"/>
+        <template direction="all" std="geeDouble2str($e1)" special="to_char($e1)"/>
+
+        <template direction="special" std="geeClobEquals($e1,$e2)" special="upper($e1) LIKE upper($e2)" specEscape="2"/>
+        <template direction="special" std="geeClobNotEquals($e1,$e2)" special="not upper($e1) LIKE upper($e2)" specEscape="2"/>
+        <template direction="special" std="geeClobStartsWith($e1,$e2)" special="upper($e1) LIKE (upper($e2) || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobNotStartsWith($e1,$e2)" special="not upper($e1) LIKE (upper($e2) || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobContains($e1,$e2)" special="upper($e1) LIKE ('%' || upper($e2) || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobNotContains($e1,$e2)" special="not upper($e1) LIKE ('%' || upper($e2) || '%')" specEscape="2"/>
+
+        <template direction="special" std="geeDateEquals($e1,$e2)" special="$e1 = $e2"/>
+        <template direction="special" std="geeDateNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>
+        <template direction="special" std="geeDateGreater($e1,$e2)" special="$e1 > $e2"/>
+        <template direction="special" std="geeDateGreaterEquals($e1,$e2)" special="$e1 >= $e2"/>
+        <template direction="special" std="geeDateLess($e1,$e2)" special="$e1 &lt; $e2"/>
+        <template direction="special" std="geeDateLessEquals($e1,$e2)" special="$e1 &lt;= $e2"/>
+	</dbms>
+    <dbms name="MySQL" class="com.geocad.wc.jdbc.mysql.MySqlDbms">
+        <!--<template direction="all" std="$e1 || $e2" special="concat($e1, $e2)"/>-->
+
+        <template direction="all" std="geeEquals($e1,$e2)" special="upper($e1) = upper($e2)"/>
+        <template direction="all" std="geeNotEquals($e1,$e2)" special="upper($e1) &lt;> upper($e2)"/>
+        <template direction="all" std="geeStartsWith($e1,$e2)" special="upper($e1) LIKE upper(concat($e2, '%'))" specEscape="2"/>
+        <template direction="all" std="geeNotStartsWith($e1,$e2)" special="not upper($e1) LIKE upper(concat($e2, '%'))" specEscape="2"/>
+        <template direction="all" std="geeContains($e1,$e2)" special="upper($e1) LIKE upper(concat('%', $e2, '%'))" specEscape="2"/>
+        <template direction="all" std="geeNotContains($e1,$e2)" special="not upper($e1) LIKE upper(concat('%', $e2, '%'))" specEscape="2"/>
+        <template direction="all" std="geeDouble2str($e1,$e2)" special="format($e1, $e2)"/>
+
+        <template direction="special" std="geeClobEquals($e1,$e2)" special="upper($e1) = upper($e2)"/>
+        <template direction="special" std="geeClobNotEquals($e1,$e2)" special="upper($e1) &lt;> upper($e2)"/>
+        <template direction="special" std="geeClobStartsWith($e1,$e2)" special="upper($e1) LIKE upper(concat($e2, '%'))" specEscape="2"/>
+        <template direction="special" std="geeClobNotStartsWith($e1,$e2)" special="not upper($e1) LIKE upper(concat($e2, '%'))" specEscape="2"/>
+        <template direction="special" std="geeClobContains($e1,$e2)" special="upper($e1) LIKE upper(concat('%', $e2, '%'))" specEscape="2"/>
+        <template direction="special" std="geeClobNotContains($e1,$e2)" special="not upper($e1) LIKE upper(concat('%', $e2, '%'))" specEscape="2"/>
+
+        <template direction="special" std="geeDateEquals($e1,$e2)" special="$e1 = $e2"/>
+        <template direction="special" std="geeDateNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>
+        <template direction="special" std="geeDateGreater($e1,$e2)" special="$e1 > $e2"/>
+        <template direction="special" std="geeDateGreaterEquals($e1,$e2)" special="$e1 >= $e2"/>
+        <template direction="special" std="geeDateLess($e1,$e2)" special="$e1 &lt; $e2"/>
+        <template direction="special" std="geeDateLessEquals($e1,$e2)" special="$e1 &lt;= $e2"/>
+
+        <template direction="all" std="nvl($e1,$e2)" special="ifnull($e1,$e2)"/>
+
+        <!-- decode реализовано в коде генератора  -->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7,$e8,$e9)" special="if($e1 = $e2,$e3,if($e1 = $e4,$e5,if($e1 = $e6,$e7,NULL)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7,$e8,$e9,$e10)" special="if($e1 = $e2,$e3,if($e1 = $e4,$e5,if($e1 = $e6,$e7,$e8)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7)" special="if($e1 = $e2,$e3,if($e1 = $e4,$e5,if($e1 = $e6,$e7,NULL)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7,$e8)" special="if($e1 = $e2,$e3,if($e1 = $e4,$e5,if($e1 = $e6,$e7,$e8)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5)" special="if($e1 = $e2,$e3,if($e1 = $e4,$e5,NULL))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6)" special="if($e1 = $e2,$e3,if($e1 = $e4,$e5,$e6))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3)" special="if($e1 = $e2,$e3,NULL)"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4)" special="if($e1 = $e2,$e3,$e4)"/>-->
+
+        <template direction="all" std="to_char(NULL)" special="''"/>
+        <template direction="all" std="TO_CHAR($e1, 'DD.MM.YYYY')" special="DATE_FORMAT($e1, '%d.%m.%Y')"/>
+        <template direction="all" std="to_number(to_char($e1, 'YYYY'))" special="year($e1)"/>
+        <template direction="all" std="to_date($e1,$c2)" special="str_to_date($e1,'%d.%m.%Y')"/>
+    </dbms>
+    <dbms name="MsSQL" class="com.geocad.wc.jdbc.mssql.MsSqlDbms">
+        <template direction="special" std="$af1 = true" special="$af1 &lt;&gt; 0"/>
+        <template direction="special" std="$af1 = false" special="$af1 = 0"/>
+        <template direction="special" std="$af1 &lt;&gt; true" special="$af1 = 0"/>
+        <template direction="special" std="$af1 &lt;&gt; false" special="$af1 &lt;&gt; 0"/>
+
+        <template direction="special" std="geeEquals($e1,$e2)" special="upper($e1) = upper($e2)"/>
+        <template direction="special" std="geeNotEquals($e1,$e2)" special="upper($e1) &lt;> upper($e2)"/>
+        <template direction="special" std="geeStartsWith($e1,$e2)" special="upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeNotStartsWith($e1,$e2)" special="not upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeContains($e1,$e2)" special="upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeNotContains($e1,$e2)" special="not upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>
+        <template direction="special" std="length($e1)" special="len($e1)"/>
+        <template direction="all" std="instr($e1,$e2)" special="charindex($e2, $e1)"/>
+
+        <template direction="special" std="geeClobEquals($e1,$e2)" special="upper($e1) = upper($e2)"/>
+        <template direction="special" std="geeClobNotEquals($e1,$e2)" special="upper($e1) &lt;> upper($e2)"/>
+        <template direction="special" std="geeClobStartsWith($e1,$e2)" special="upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobNotStartsWith($e1,$e2)" special="not upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobContains($e1,$e2)" special="upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobNotContains($e1,$e2)" special="not upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>
+
+        <template direction="special" std="geeDateEquals($e1,$e2)" special="$e1 = $e2"/>
+        <template direction="special" std="geeDateNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>
+        <template direction="special" std="geeDateGreater($e1,$e2)" special="$e1 > $e2"/>
+        <template direction="special" std="geeDateGreaterEquals($e1,$e2)" special="$e1 >= $e2"/>
+        <template direction="special" std="geeDateLess($e1,$e2)" special="$e1 &lt; $e2"/>
+        <template direction="special" std="geeDateLessEquals($e1,$e2)" special="$e1 &lt;= $e2"/>
+        <template direction="special" std="geeDouble2str($e1,$e2)" special="format($e1, concat('N', $e2))" specEscape="2"/>
+        <template direction="special" std="substr($e1,$e2,$e3)" special="substring(isnull($e1, ''), $e2, $e3)"/>
+        <template direction="special" std="substr($e1,$e2)" special="substring(isnull($e1, ''), $e2, len($e1))"/>
+
+        <template direction="all" std="to_char(NULL)" special="''"/>
+        <template direction="all" std="to_char($e1,'YYYY')" special="CONVERT(varchar(4), $e1, 102)" />
+        <template direction="special" std="to_date($e1,$c2)" special="CONVERT(DATETIME, $e1, 104)"/>
+        <template direction="all" std="nvl($e1,$e2)" special="COALESCE($e1, $e2)"/>
+        <template direction="all" std="SysDate()" special="getdate()"/>
+
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,iif($e1 = $e6,$e7,NULL)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7,$e8)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,iif($e1 = $e6,$e7,$e8)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,NULL))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,$e6))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3)" special="iif($e1 = $e2,$e3,NULL)"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4)" special="iif($e1 = $e2,$e3,$e4)"/>-->
+    </dbms>
+    <dbms name="PostgreSQL" class="com.geocad.wc.jdbc.postgresql.PostgreSqlDbms">
+        <template direction="special" std="geeEquals($e1,$e2)" special="upper($e1) = upper($e2)"/>
+        <template direction="special" std="geeNotEquals($e1,$e2)" special="upper($e1) &lt;> upper($e2)"/>
+        <template direction="special" std="geeStartsWith($e1,$e2)" special="upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeNotStartsWith($e1,$e2)" special="not upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+<!--        <template direction="special" std="geeContains($e1,$e2)" special="upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>-->
+        <template direction="special" std="geeNotContains($e1,$e2)" special="not upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>
+        <template direction="special" std="instr($e1,$e2)" special="strpos($e1,$e2)"/>
+
+        <template direction="special" std="geeClobEquals($e1,$e2)" special="upper($e1) = upper($e2)"/>
+        <template direction="special" std="geeClobNotEquals($e1,$e2)" special="upper($e1) &lt;> upper($e2)"/>
+        <template direction="special" std="geeClobStartsWith($e1,$e2)" special="upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobNotStartsWith($e1,$e2)" special="not upper($e1) LIKE upper($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobContains($e1,$e2)" special="upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobNotContains($e1,$e2)" special="not upper($e1) LIKE upper('%' || $e2 || '%')" specEscape="2"/>
+
+        <template direction="special" std="geeDateEquals($e1,$e2)" special="$e1 = $e2"/>
+        <template direction="special" std="geeDateNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>
+        <template direction="special" std="geeDateGreater($e1,$e2)" special="$e1 > $e2"/>
+        <template direction="special" std="geeDateGreaterEquals($e1,$e2)" special="$e1 >= $e2"/>
+        <template direction="special" std="geeDateLess($e1,$e2)" special="$e1 &lt; $e2"/>
+        <template direction="special" std="geeDateLessEquals($e1,$e2)" special="$e1 &lt;= $e2"/>
+
+        <!--to_char(NULL) - такая функция есть в PostgreSQL -->
+        <template direction="all" std="to_char(NULL)" special="NULL"/>   <!-- в PostgreSQL ф. to_char - с двумя параметрами. -->
+        <!--to_date($e1,$c2) - такая функция есть в PostgreSQL-->
+        <template direction="all" std="nvl($e1,$e2)" special="COALESCE($e1, $e2)"/>
+        <template direction="all" std="SysDate()" special="now()"/>
+        <!-- Реализация decode встроена в генератор -->
+    </dbms>
+    <dbms name="CPS graphic" class="com.geocad.wc.jdbc.cps.CpsDbms" />
+    <dbms name="Oracle Spatial" class="com.geocad.wc.jdbc.oraclespatial.OracleSpatialDbms" />
+    <dbms name="Postgis" class="com.geocad.wc.jdbc.postgis.PostgisDbms" />
+    <!--dbms name="WFSGraphicCartridge" class="com.geocad.wc.jdbc.wfs.WfsDbms">
+		<param name="WFS_URL" value="http://webservices.ionicsoft.com/plugfest/wfs/OSNABRUECK"/>
+	</dbms-->
+    <dbms name="ArcSde" class="com.geocad.wc.jdbc.arcsde.ArcSdeDbms"/>
+    <dbms name="Access" class="com.geocad.wc.jdbc.access.AccessDbms">
+
+<!--    AccessSimple - простой вариант описания, без возможности законнектиться    -->
+		<param name="TypeDriver" value="AccessSimple"/>
+
+<!--    AccessJdbcOdbc - вариант описания, позволяющий законнектиться к БД через мост JDBC - ODBC.   -->
+<!--		<param name="TypeDriver" value="AccessJdbcOdbc"/>-->
+
+        <template direction="special" std="geeEquals($e1,$e2)" special="$e1 = $e2"/>
+        <template direction="special" std="geeNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>
+        <template direction="all" std="geeStartsWith($e1,$e2)" special="$e1 LIKE $e2 || '%'" specEscape="2"/>
+        <template direction="all" std="geeNotStartsWith($e1,$e2)" special="not $e1 LIKE ($e2 || '%')" specEscape="2"/>
+        <template direction="all" std="geeContains($e1,$e2)" special="$e1 LIKE ('%' || $e2 || '%')" specEscape="2"/>
+        <template direction="all" std="geeNotContains($e1,$e2)" special="not $e1 LIKE ('%' || $e2 || '%')" specEscape="2"/>
+
+        <template direction="special" std="geeClobEquals($e1,$e2)" special="$e1 = $e2"/>
+        <template direction="special" std="geeClobNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>
+        <template direction="special" std="geeClobStartsWith($e1,$e2)" special="$e1 LIKE $e2 || '%'" specEscape="2"/>
+        <template direction="special" std="geeClobNotStartsWith($e1,$e2)" special="not $e1 LIKE ($e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobContains($e1,$e2)" special="$e1 LIKE ('%' || $e2 || '%')" specEscape="2"/>
+        <template direction="special" std="geeClobNotContains($e1,$e2)" special="not $e1 LIKE ('%' || $e2 || '%')" specEscape="2"/>
+
+        <template direction="special" std="geeDateEquals($e1,$e2)" special="$e1 = $e2"/>
+        <template direction="special" std="geeDateNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>
+        <template direction="special" std="geeDateGreater($e1,$e2)" special="$e1 > $e2"/>
+        <template direction="special" std="geeDateGreaterEquals($e1,$e2)" special="$e1 >= $e2"/>
+        <template direction="special" std="geeDateLess($e1,$e2)" special="$e1 &lt; $e2"/>
+        <template direction="special" std="geeDateLessEquals($e1,$e2)" special="$e1 &lt;= $e2"/>
+
+        <template direction="all" std="nvl($e1,$e2)" special="nz($e1,$e2)"/>
+        <template direction="all" std="to_char($e1,'YYYY')" special="Format($e1,'YYYY')" />
+        <template direction="all" std="to_number($e1)" special="val($e1)"/>
+
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,iif($e1 = $e6,$e7,NULL)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6,$e7,$e8)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,iif($e1 = $e6,$e7,$e8)))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,NULL))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4,$e5,$e6)" special="iif($e1 = $e2,$e3,iif($e1 = $e4,$e5,$e6))"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3)" special="iif($e1 = $e2,$e3,NULL)"/>-->
+        <!--<template direction="all" std="decode($e1,$e2,$e3,$e4)" special="iif($e1 = $e2,$e3,$e4)"/>-->
+
+	</dbms>
+</dbms-conf>

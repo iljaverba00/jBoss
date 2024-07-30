@@ -1,0 +1,197 @@
+@require 'helpers'
+
+
+body
+	background #0e6ca5
+	font 14px Calibry, Tahoma, Arial, sans-serif
+	//display flex
+	//justify-content center
+	//align-items center
+
+textarea, input
+	box-sizing border-box
+	border 1px solid #a9a9a9
+
+input:disabled, textarea:disabled
+	cursor not-allowed !important
+	background-color #eee
+
+button
+	background #fff
+	border 1px solid #a9a9a9
+	padding 5px 8px
+	margin 0 3px
+	box-sizing border-box
+	cursor pointer
+
+	&.green
+		background #3e8f3e
+		color white
+		&:hover
+			background darken(@background, 5)
+	&.red
+		background indianred
+		color white
+		&:hover
+			background darken(@background, 5)
+
+	&:first-child
+		margin-left 0
+	&:last-child
+		margin-right 0
+	
+	&:hover
+		background darken(@background, 5)
+	&:disabled
+		opacity .65;
+		/*background @background !important
+		color darkgrey !important*/
+
+.btn-group
+	margin 0 3px
+	vertical-align: baseline;
+	button
+		margin 0
+	button+button
+		margin-left -1px
+
+
+h1,h2,h3,h4
+	margin 0
+	display inline-block
+
+#map
+	margin 5px 0
+	border 1px solid #a9a9a9
+
+.input-group
+	display table
+	input
+		display table-cell
+
+.input-group-addon
+	padding-top 0
+	padding-bottom 0
+	background-color transparent
+	border none
+	border-radius 0
+
+#wrapper
+	background white
+	box-shadow 1px 1px 7px 0px rgba(0, 0, 0, 0.5)
+	width 640px
+	min-height 400px
+	margin 20px auto
+	padding 10px
+	display flex
+	flex-direction column
+	box-sizing border-box
+	justify-content space-between
+	
+	.user_bar
+		
+		.title
+			display inline-block
+			font-weight bold
+			font-size 16px
+			vertical-align -webkit-baseline-middle
+		
+		.user_name
+			display inline-block
+			
+		.user_model
+			display inline-block
+			
+			
+	.settings
+		flex-grow 2
+		margin 10px 0
+		
+		table.settings_fields_table
+			width 100%
+			//table-layout fixed
+			
+			tr > td:first-child
+				width 1px
+				white-space nowrap
+				
+			tr > td:last-child
+				//word-break break-all
+				
+				input, select
+					width 100%
+					box-sizing border-box
+				
+			.desc
+				font-size 11px
+				color lighten(black, 55)
+				//font-style italic
+			
+				
+	.status_bar
+		.status_bar__table
+			//width 100%
+			margin 10px 0
+			
+			tr > td 
+				padding-right 10px
+			tr > td:first-child
+				width 1px
+				
+		.status_bar__log
+			
+			.log_header
+				padding 5px 0
+			
+			.status_bar_log
+				width 100%
+				overflow-y scroll
+				overflow-x auto
+				
+				
+				
+.login_layout
+	//position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	position fixed
+	background darken(rgba(255, 255, 255, 0.4), 80)
+	display flex
+	justify-content center
+	align-items center
+	z-index 999
+	
+	.login_container
+		background white
+		padding 5px 10px
+		box-sizing border-box
+		box-shadow 1px 1px 5px 0px rgba(0, 0, 0, 0.3)
+		
+		.title
+			font-weight bold
+			padding 5px 0
+			
+		.content
+			margin 10px 0
+			
+		select
+			width 100%
+			padding 1px 0
+		
+		table
+			width 100%
+			border-spacing: 5px;
+			border-collapse: separate;
+			
+			tr > td:first-child
+				width 1px
+				
+			input
+				width 100%
+				box-sizing border-box
+		
+		
+		
+		

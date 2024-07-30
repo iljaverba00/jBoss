@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <listener>
+        <listener-class>com.geocad.wc.sfw.login.GEESessionListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>MaisServlet</servlet-name>
+        <servlet-class>com.geocad.wc.sfw.mais.MaisServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MaisServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>MaisServlet</welcome-file>
+    </welcome-file-list>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>User Auth</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+
+        <auth-constraint>
+            <role-name>geeuser</role-name>
+        </auth-constraint>
+
+        <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <!-- указывается тип авторизации для сервлета OWS -->
+    <login-config>
+        <auth-method>GEEMAIS</auth-method>
+        <realm-name>MAIS gates</realm-name>
+    </login-config>
+
+    <security-role>
+        <role-name>geeuser</role-name>
+    </security-role>
+
+
+</web-app>

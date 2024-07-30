@@ -1,0 +1,524 @@
+// Ядро JBoss - доверяем
+grant codeBase "file:${jboss.home.dir}/bin/-" {
+    permission java.security.AllPermission;
+};
+grant codeBase "file:${jboss.home.dir}/lib/-" {
+    permission java.security.AllPermission;
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/*" {
+    permission java.security.AllPermission;
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/crypto/*" {
+    permission java.security.AllPermission;
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/-" {
+    permission java.security.AllPermission;
+};
+grant codeBase "file:${jboss.server.home.dir}/tmp/deploy/-" {
+    permission java.security.AllPermission;
+};
+
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/smev_eniseySOAP.jar" {
+    // для работы сервиса Енисей ГУ
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/smev_asedkrsk.jar" {
+    // для работы сервиса Енисей ГУ
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/smev_gisgmp_enisey2.jar" {
+    // для работы сервиса ГИС ГМП
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/smev_gisgmp_enisey3.jar" {
+    // для работы сервиса ГИС ГМП
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_importexport.jar" {
+    // для GroupImporterKmz
+    permission java.net.SocketPermission "*", "connect,resolve";
+    // GDAL
+    permission java.lang.RuntimePermission "loadLibrary.*";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_scheduler.jar" {
+    // для Scheduler
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+    // для Dispatcher
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_jms_server.jar" {
+    // для записи процедурами в файл
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+    // подключение к клиентам
+    permission java.net.SocketPermission "*", "accept,listen,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_jms_common.jar" {
+    // для Dispatcher
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_metamodel_server.jar" {
+    // подключение к СУБД ММ, по идее можно ограничиться адресом и портом, прописываемым в -ds.xml
+    // нужно, в общем-то, только в момент выбора DBMS
+    permission java.net.SocketPermission "*", "connect";
+    // для StandardQueryGenerator
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_managemodel.jar" {
+    // для получения и записи дампов в ThreadInfo
+    permission java.io.FilePermission "<<ALL FILES>>", "write,delete";
+    permission java.lang.management.ManagementPermission "monitor";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_datasource.jar" {
+    // можно ограничить портами-адресами, только динамизм потеряется
+    permission java.net.SocketPermission "*", "connect";
+    // для взятия Proxy поверх коннекции
+    permission java.lang.RuntimePermission "accessClassInPackage.*";
+    // для MSSQL
+    permission java.lang.RuntimePermission "loadLibrary.sqljdbc_auth.dll";
+    permission java.lang.RuntimePermission "loadLibrary.sqljdbc_auth";
+    // для PostgreSQL при аутентификации по SSPI
+    permission javax.security.auth.AuthPermission "getSubject";
+    permission javax.security.auth.AuthPermission "createLoginContext.pgjdbc";
+    permission java.lang.RuntimePermission "loadLibrary.jnidispatch";
+    permission java.util.PropertyPermission "jna.loaded", "write";
+    permission java.lang.reflect.ReflectPermission "newProxyInPackage.org.postgresql.sspi";
+    // для записи логов из ошибок ResultSet (GEE-7334)
+    permission java.io.FilePermission "<<ALL FILES>>", "write";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_wfs.jar"
+{	// для чтения данных по протоколу WFS
+    permission java.security.AllPermission;
+//    permission java.net.SocketPermission "*", "connect";
+//    permission java.lang.RuntimePermission "shutdownHooks";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_access.jar" {
+	// Для JdbcAdo
+    // permission java.lang.RuntimePermission "loadLibrary.*";
+
+	// Для получения списка драйверов в AccessProperties
+    // permission java.io.FilePermission "<<ALL FILES>>", "execute";
+
+	// Для JdbcOdbc
+    permission java.lang.RuntimePermission "getClassLoader";
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.jdbc.odbc";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_googlemap.jar"
+{	// для подключения к серверу по HTTP, можно вписать имя сервера
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_arcsde.jar"
+{	// для подключения к серверу ArcSDE
+    permission java.net.SocketPermission "*", "connect,resolve";
+    // иначе не создает SeConnection
+    permission java.lang.RuntimePermission "createClassLoader";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_common.jar" {
+    // для CpsAbstractGraphicDAO
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+    // для AbstractMetaDB
+    permission java.net.SocketPermission "*", "connect";
+    // для CpsAbstractGraphicDAO
+    permission com.geocad.wc.dda.DDAPermission "executeIntern";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_bankconverter.jar" {
+    // для чтения и записи xml с данными таблиц
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_proc_cc.prar" {
+    // для new File(...)
+    permission java.lang.RuntimePermission "getFileSystemAttributes";
+    // для импорта ФИАС ГАР с сайта
+    permission java.net.SocketPermission "fias.nalog.ru", "resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_metrictable.prar" {
+    permission com.geocad.wc.dda.DDAPermission "executeIntern";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_bankstruct.prar" {
+    permission com.geocad.wc.dda.DDAPermission "executeIntern";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_portalki.prar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_triggers.prar" {
+    permission javax.management.MBeanServerPermission "createMBeanServer";
+	permission javax.management.MBeanServerPermission "findMBeanServer";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_genxml.prar" {
+    permission java.lang.RuntimePermission "createClassLoader";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_kras.prar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+    permission javax.xml.bind.JAXBPermission "*";
+    permission java.util.PropertyPermission "*", "write";
+    permission java.security.SecurityPermission "putProviderProperty.BC";
+    permission java.security.SecurityPermission "insertProvider.BC";
+    permission java.security.SecurityPermission "insertProvider.CryptoProXMLDSig";
+    permission java.security.SecurityPermission "putProviderProperty.XMLDSig";
+    permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.messaging.saaj.soap.*";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_kumi.prar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_risgmp.prar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_mais.prar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/mais_order_service.jar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+    permission javax.xml.bind.JAXBPermission "*";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/mais_external_service.jar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_spr.prar" {
+    // для SprImportInfo
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_sign_server.jar" {
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.security.x509";
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.security.pkcs";
+
+    // для работы класса XAdESSignVerify
+    permission java.util.PropertyPermission "com.sun.security.enableCRLDP", "write";
+    permission java.util.PropertyPermission "com.ibm.security.enableCRLDP", "write";
+    permission java.lang.RuntimePermission "preferences";
+    permission java.util.PropertyPermission "*", "write"; // для Signer.initSantuario()
+
+    // для подписывания XML
+    permission java.security.SecurityPermission "putProviderProperty.BC";
+    permission java.security.SecurityPermission "insertProvider.BC";
+    permission java.security.SecurityPermission "insertProvider.CryptoProXMLDSig";
+    permission java.security.SecurityPermission "putProviderProperty.XMLDSig";
+
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_smev3.jar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+    permission javax.xml.bind.JAXBPermission "*";
+    permission java.util.PropertyPermission "*", "write";
+    permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.messaging.saaj.*";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/smev_gisgmp_enisey.jar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/portalki_service.jar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_ogd.prar" {
+    permission java.net.SocketPermission "*", "connect,resolve";
+    // для OrderDataFromGeofond, там chmod делается
+    permission java.lang.RuntimePermission "accessUserInformation";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_tomskcity.prar" {
+    // для процедуры CopyPlanshet
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_constructor.prar" {
+    // для процедуры CreateGraphicTiles CreateTilesLegend
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_oracle_spatial.jar" {
+    // для Oracle Spatial
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_dbms_xfiles.jar" {
+    // доступ к таблице файлового спецхрана
+    permission com.geocad.wc.dda.DDAPermission "executeIntern";
+    // чтение и запись файлов, каталог можно ограничить
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_rmiio.jar" {
+    permission java.net.SocketPermission "*", "connect";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_graphicdao.jar" {
+    // для BinaryFileSource
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write";
+};
+
+// Безопасность
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_security_common.jar" {
+    // для работы инвокеров GeeSimple, которым нужен логин до сервера
+    permission javax.security.auth.AuthPermission "createLoginContext.client-login";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_security_server.jar" {
+    // GseeMetamodelLoginModule и SMF работают с MMM напрямую
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+    // GseeFileLoginModule сложным путем получает файл супер-паролей
+    permission java.lang.RuntimePermission "getClassLoader";
+    permission java.lang.RuntimePermission "loadLibrary.*";
+    // поскольку модули у нас не в ядре, им надо разрешить кое-что
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    // GseeLdapLoginModule лазит к LDAP-серверу
+    // можно ограничить конкретным сервером
+    permission java.net.SocketPermission "*", "connect,resolve";
+    // LoginModuleAnalyser, чтение конфигурации
+    permission javax.security.auth.AuthPermission "getLoginConfiguration";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_license_i.jar" {
+// Требуется для работы класса sun.misc.Base64decode
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_license_o.jar" {
+// Требуется для работы класса sun.misc.Base64encode
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_sfw.jar" {
+    // для закрытия сессии session.invalidate()
+    permission java.security.SecurityPermission "getPolicy";
+    permission javax.management.MBeanServerPermission "findMBeanServer";
+    // Требуется для работы класса com.google.gson.Gson(toJson/fromJson)
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+
+    //разлогон
+    permission javax.management.MBeanPermission "org.jboss.security.plugins.JaasSecurityManagerService#flushAuthenticationCache[jboss.security:service=JaasSecurityManager]", "invoke";
+
+    // для AdvancedReentrantLock
+    permission java.lang.RuntimePermission "getStackTrace";
+
+    //для авторизации через ЕСИА
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.security.*";
+
+    // Работа с классами Tomcat
+    permission java.lang.RuntimePermission "accessClassInPackage.org.apache.*";
+    // для GEEAuthenticator
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    // Работа с JMS
+    permission java.net.SocketPermission "*", "connect,resolve";
+    // для работы загрузки файлов MapInfo
+    // опасная времянка
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_api.jar" {
+    // для работы загрузки файлов MapInfo
+    // execute - для исполнения программы ffmpeg для потокового транскодирования видео
+    // опасная времянка
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete,execute";
+    permission java.lang.RuntimePermission "modifyThread";
+    // Работа с классами Tomcat
+    permission java.lang.RuntimePermission "accessClassInPackage.org.apache.*";
+    // для GEEAuthenticator
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    // Работа с JMS
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_ows.jar" {
+    // Работа с классами Tomcat
+    permission java.lang.RuntimePermission "accessClassInPackage.org.apache.*";
+    // Требуется для работы класса sun.misc.Base64decode, используемого в модуле OWSAuthenticator 
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+    // для GEEAuthenticator
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    // Работа с JMS
+    permission java.net.SocketPermission "*", "connect,resolve";
+    //кэширование wms
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_arcgis.jar" {
+    // Работа с классами Tomcat
+    permission java.lang.RuntimePermission "accessClassInPackage.org.apache.*";
+    // для GEEAuthenticator
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    // Работа с JMS
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_mais.jar" {
+    // Работа с классами Tomcat
+    permission java.lang.RuntimePermission "accessClassInPackage.org.apache.*";
+    // для GEEAuthenticator
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    // Работа с JMS
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_swag.jar" {
+    // Работа с классами Tomcat
+    permission java.lang.RuntimePermission "accessClassInPackage.org.apache.*";
+    // для GEEAuthenticator
+    permission javax.security.auth.AuthPermission "modifyPrincipals";
+    // Работа с JMS
+    permission java.net.SocketPermission "*", "connect,resolve";
+    // Для проверки
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_bean_common.jar" {
+    // для SessionInstanceFactory - присоединение на вебе
+    permission java.net.SocketPermission "*", "connect";
+    // для нее же
+    permission java.lang.RuntimePermission "createClassLoader";
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.reflect";
+    permission java.lang.RuntimePermission "reflectionFactoryAccess";
+    permission java.lang.RuntimePermission "org.jboss.security.SecurityAssociation.getPrincipalInfo";
+    // для класса LazyDataAccess
+    permission com.geocad.wc.dda.DDAPermission "executeIntern";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_bean_sm.jar" {
+    permission java.lang.management.ManagementPermission "monitor";
+    permission java.util.PropertyPermission "*", "read,write";
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+    permission java.lang.management.ManagementPermission "control";
+    permission java.lang.RuntimePermission "modifyThreadGroup";
+    //сброс кэша логинов
+    permission javax.management.MBeanServerPermission "findMBeanServer";
+    permission javax.management.MBeanPermission "org.jboss.security.plugins.JaasSecurityManagerService#flushAuthenticationCache[jboss.security:service=JaasSecurityManager]", "invoke";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_jboss.jar" {
+    // для регистрации MBean-ов
+    permission javax.management.MBeanTrustPermission "register";
+    // для ProcReployer
+    permission javax.management.MBeanPermission "org.jboss.mx.modelmbean.XMBean#SuffixOrder[jboss.system:service=MainDeployer]", "getAttribute";
+    // для GEE-Simple, а так же возможности соединяться наружу в процедурах
+    permission java.net.SocketPermission "*", "accept,connect,listen,resolve";
+    // для деплоя prar, внутри которых ui.jar
+    permission java.io.FilePermission "${jboss.server.home.dir}/tmp/deploy/-", "write";
+    // для SimpleLogger
+    permission java.io.FilePermission "${jboss.server.log.dir}/-", "write,delete";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_geesimple.jar" {
+    permission java.net.SocketPermission "*", "accept,listen,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_telegram_bot.jar" {
+    // для регистрации MBean
+    permission javax.management.MBeanTrustPermission "register";
+    permission java.net.SocketPermission "*", "connect,resolve";
+    permission javax.management.MBeanServerPermission "createMBeanServer";
+	permission javax.management.MBeanServerPermission "findMBeanServer";
+	permission javax.management.MBeanPermission "*", "invoke";
+    permission java.io.FilePermission "<<ALL FILES>>", "write,delete";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_proc_server.jar" {
+    // взятие процедур по имени, AbstractProcedureContext.getProcClass()
+    permission javax.management.MBeanPermission "com.geocad.wc.jboss.ProcDeployer#getFullClassName[gee.startup:service=ProcDeployer]", "invoke";
+    permission javax.management.MBeanPermission "com.geocad.wc.jboss.ProcDeployer#getResourceForClass[gee.startup:service=ProcDeployer]", "invoke";
+    permission javax.management.MBeanServerPermission "createMBeanServer";
+    permission javax.management.MBeanServerPermission "findMBeanServer";
+    // для записи файлов на стороне сервера (ServerMessagesFiles)
+    permission java.io.FilePermission "<<ALL FILES>>", "write,delete";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_statistic.jar" {
+    // для ModelStatMetaModelDAO
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_graphicmodel.jar" {
+    // для сериализации graphicmodel
+    permission java.lang.RuntimePermission "getClassLoader";
+    // для WebImageReader
+    permission java.net.NetPermission "getProxySelector";
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_graphicrender.jar" {
+    // SVG парсеру
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+    // JaiUtil
+    permission java.util.PropertyPermission "com.sun.media.jai.disableMediaLib", "write";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_statisticdao.jar" {
+    // для взятия MetaModelServerManager из Статистического DAO
+    permission com.geocad.wc.metamodel.MetaPermission "getInstance";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_util.jar" {
+    // для Config и geoas.properties
+    permission java.io.FilePermission "${jboss.server.config.url}/geoas.properties", "read";
+    // для Java Mail и WebUtil
+    permission java.net.SocketPermission "*", "connect,resolve";
+    // для создания файлов и папок во временной директории (для wc_gendoc.jar)
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+    // для AnnotationUtil.setAccessible()
+    permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    // для WebUtil.sendPostImpl(...)
+    permission java.net.NetPermission "getProxySelector";
+    // для PreferencesWrapper(...)
+    permission java.lang.RuntimePermission "preferences";
+
+    // Для работы SOAP
+    permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.messaging.saaj.*";
+};
+
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_gendoc.jar" {
+    // для создания файлов и папок во временной директории
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_plugin_businessprocess.jar" {
+    // для соединения с сервером
+    permission java.net.SocketPermission "*", "connect,resolve";
+
+    // для создания файлов и папок во временной директории
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+    permission javax.xml.bind.JAXBPermission "*";
+    permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.ws.spi";
+    permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.ws.fault";
+    permission java.lang.RuntimePermission "accessClassInPackage.com.sun.xml.internal.ws.*";
+
+    // запись системного свойства javax.xml.bind.JAXBContext
+    permission java.util.PropertyPermission "*", "write";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/sedadmnsk_service.jar" {
+    // для соединения с сервером
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_novosibirsk_g.prar" {
+    // для соединения с сервером
+    permission java.net.SocketPermission "*", "connect,resolve";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_report.prar" {
+    // работа с OdfToolkit
+    permission java.util.PropertyPermission "*", "read";
+};
+
+grant codeBase "file:${jboss.server.home.dir}/axis.jar" {
+    // для записи логов ... этого недостаточно!
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
+};
+
+// Все остальные наши библиотеки
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/*" {
+    // чтение файлов свойств, надо ограничить, их немного
+    permission java.io.FilePermission "<<ALL FILES>>", "read";
+    // чтение переменных, надо ограничить, их немного
+    permission java.util.PropertyPermission "*", "read";
+    // логи, надо научиться задавать параметры
+    permission java.util.logging.LoggingPermission "control";
+    // GeneralPathDouble построен с использованием одного из классов этого пакета
+    // вынести в lib - не получается, там перевызовы много откуда
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.reflect";
+    permission java.lang.RuntimePermission "reflectionFactoryAccess";
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.awt.geom";
+    // любой вызов на любом бине
+    permission java.lang.RuntimePermission "accessDeclaredMembers";
+    // вообще всё, что угодно, отовсюду требуется
+    permission java.lang.RuntimePermission "getClassLoader";
+    // любойSII.getNnnSource() (т.е. создание бина)
+    permission java.lang.RuntimePermission "setContextClassLoader";
+    //Как минимум нужен при вызове setQuery на DAI из процедуры
+    permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+    permission java.io.SerializablePermission "enableSubclassImplementation";
+};

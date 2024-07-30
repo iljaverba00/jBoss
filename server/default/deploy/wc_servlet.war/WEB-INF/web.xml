@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC
+   "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+   "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <listener>
+        <listener-class>com.geocad.wc.sfw.login.GEESessionListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>ActionServlet</servlet-name>
+        <servlet-class>com.geocad.wc.sfw.ActionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Compressor</servlet-name>
+        <servlet-class>com.geocad.wc.sfw.semantic2.view.Compressor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApiServlet</servlet-name>
+        <servlet-class>com.geocad.wc.sfw.api.ApiServlet</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.geocad.wc.sfw.api.ApiApplication</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>OWSForm</servlet-name>
+        <servlet-class>com.geocad.wc.sfw.ows.OWSForm</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ActionServlet</servlet-name>
+        <url-pattern>/ActionServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Compressor</servlet-name>
+        <url-pattern>/Compressor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApiServlet</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OWSForm</servlet-name>
+        <url-pattern>/ows/OWSForm/*</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>app.html</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.html</location>
+    </error-page>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>User Auth</web-resource-name>
+            <url-pattern>/ActionServlet</url-pattern>
+            <url-pattern>/api/*</url-pattern>
+        </web-resource-collection>
+	    <auth-constraint>
+            <role-name>geeuser</role-name>
+        </auth-constraint>
+	    <user-data-constraint>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>GEEFORM</auth-method>
+	    <realm-name>User Auth</realm-name>
+	    <form-login-config>
+	    <form-login-page>/ActionServlet?action=login</form-login-page>
+	    <form-error-page>/ActionServlet?action=le</form-error-page>
+	    </form-login-config>
+    </login-config> 
+
+    <security-role>
+        <role-name>geeuser</role-name>
+    </security-role>
+
+    <!--<filter>-->
+        <!--<filter-name>cors</filter-name>-->
+        <!--<filter-class>com.geocad.wc.sfw.CorsFilter</filter-class>-->
+        <!--<init-param>-->
+          <!--<param-name>cors.allowed.origins</param-name>-->
+          <!--<param-value>*</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+          <!--<param-name>cors.allowed.methods</param-name>-->
+          <!--<param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+          <!--<param-name>cors.allowed.headers</param-name>-->
+          <!--<param-value>Access-Control-Allow-Headers, Authorization, Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers, X-Ajax-Call, X-Csrf-Token</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+          <!--<param-name>cors.exposed.headers</param-name>-->
+          <!--<param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials, Access-Control-Allow-Headers</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+          <!--<param-name>cors.support.credentials</param-name>-->
+          <!--<param-value>true</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+          <!--<param-name>cors.preflight.maxage</param-name>-->
+          <!--<param-value>10000</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+          <!--<param-name>cors.somesite</param-name>-->
+          <!--<param-value>SameSite=None;Path=/;Secure</param-value>-->
+        <!--</init-param>-->
+    <!--</filter>-->
+
+    <!--<filter-mapping>-->
+        <!--<filter-name>cors</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
+
+</web-app>

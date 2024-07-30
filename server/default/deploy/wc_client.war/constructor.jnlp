@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp codebase="$$codebase">
+  <information>
+      <title>GEE Constructor</title>
+      <vendor>Geocad Plus Ltd.</vendor>
+      <homepage href="http://www.geocad.ru"/>
+      <shortcut>
+          <menu submenu="Geocad Enterprise Edition"/>
+      </shortcut>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <application-desc main-class="com.geocad.wc.constructor2.controller.Kernel"/>
+  <resources>
+    <j2se version="1.5" java-vm-args="-XX:SoftRefLRUPolicyMSPerMB=1000000000"/>
+    <property name="java.naming.factory.initial" value="org.jnp.interfaces.NamingContextFactory"/>
+    <property name="java.naming.factory.url.pkgs" value="org.jboss.naming"/>
+    <jar href="wc_constructor.jar" version="1.28"/>
+    <jar href="wc_graphicdao.jar" version="1.23"/>
+    <jar href="wc_dbms_exc.jar" version="1.12"/>
+    <jar href="wc_dbms_mapinfo.jar" version="1.20"/>
+    <jar href="wc_dbms_polis.jar" version="1.17"/>
+    <jar href="wc_dbms_googlemap.jar" version="1.9"/>
+    <jar href="wc_dbms_arcsde.jar" version="1.20"/>
+    <jar href="wc_dbms_wfs.jar" version="1.9"/>
+    <jar href="wc_dbms_importexport.jar" version="1.24"/>
+    <jar href="wc_sqlmodel.jar" version="1.16"/>
+    <jar href="wc_util.jar" version="1.29"/>
+    <jar href="wc_bean_common.jar" version="1.38"/>
+    <jar href="wc_proc_common.jar" version="1.6"/>
+    <jar href="wc_spatial_common.jar" version="1.8"/>
+    <jar href="wc_security_common.jar" version="1.10"/>
+    <jar href="wc_jms_common.jar" version="1.13"/>
+    <jar href="wc_metamodel_common.jar" version="3.13"/>
+    <jar href="wc_client.jar" version="1.45"/>
+    <jar href="wc_report_common.jar" version="1.25"/>
+    <jar href="wc_report_client.jar" version="1.18"/>
+    <jar href="wc_report_xml.jar" version="1.5"/>
+    <jar href="wc_graphic.jar" version="1.44"/>
+    <jar href="wc_pictures.jar" version="1.16"/>
+    <jar href="wc_swing.jar" version="1.26"/>
+    <jar href="wc_abris.jar" version="1.2"/>
+    <jar href="wc_interaction.jar" version="1.5"/>
+    <jar href="wc_help.jar" version="1.1"/>
+    <jar href="bsh-core.jar" version="2.0b6"/>
+    <jar href="jbossall-client.jar" version="4.2.2.3"/>
+    <jar href="jboss-aop-jdk50-client.jar" version="1.5.6.1"/>
+    <jar href="jboss-aspect-jdk50-client.jar" version="1.5.0.1"/>
+    <jar href="jboss-ejb3-client.jar" version="4.2.2.1"/>
+    <jar href="jboss-ejb3x.jar" version="4.2.2.1"/>
+    <jar href="poi.jar" version="3.0.1.1"/>
+    <jar href="rmiio.jar" version="2.0.2.1"/>
+    <jar href="ss_css2.jar" version="0.9.4.1"/>
+    <jar href="swing_ru.jar" version="1.0.1"/>
+    <jar href="jh.jar" version="2.0.0.1"/>
+    <jar href="tidy.jar" version="1.0.7.1"/>
+  </resources>
+</jnlp>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+    <mbean code="com.geocad.wc.jboss.StartUp" name="gee.startup:service=StartUp">
+        <attribute name="GeeSimplePort">0</attribute>
+        <attribute name="GeeSimpleName">GeeSimple</attribute>
+    </mbean>
+    <mbean code="com.geocad.wc.jboss.ProcDeployer" name="gee.startup:service=ProcDeployer"/>
+    <mbean code="com.geocad.wc.jboss.ProcRunner" name="gee.startup:service=ProcRunner">
+        <!-- Запускать процедуры можно только после того, как wc_kernel.jar задеплоился:
+             прицепимся к самому важному бину в нём -->
+        <depends>jboss.j2ee:jar=wc_kernel.jar,name=SessionInstanceBean,service=EJB3</depends>
+    </mbean>
+    <mbean code="com.geocad.wc.jboss.SessionKiller"  name="gee.startup:service=SessionKiller">
+        <!-- Интервал вызова, мс -->
+        <attribute name="InvokeInterval">60000</attribute>
+        <!-- Количество сессий, которые будут тестироваться на одном вызове.
+             Можно поставить 0, чтобы тестировать все, но это может занимать большое время. -->
+        <attribute name="SessionsToTest">1</attribute>
+        <!-- Интервал ожидания ответа от клиента, мс -->
+        <attribute name="PingTimeout">5000</attribute>
+    </mbean>
+    <mbean code="com.geocad.wc.jboss.SimpleLogger"  name="gee.startup:service=SimpleLogger">
+        <!-- Интервал вызова, мс -->
+        <attribute name="InvokeInterval">0</attribute>
+    </mbean>
+</server>
