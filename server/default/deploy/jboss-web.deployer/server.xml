@@ -20,13 +20,22 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL HTTP/1.1 Connector on port 80
     -->
-    <Connector URIEncoding="UTF-8" acceptCount="100" address="${jboss.bind.address}" connectionTimeout="20000" disableUploadTimeout="true" emptySessionPath="true" enableLookups="false" maxHttpHeaderSize="8192" maxThreads="250" port="80" protocol="HTTP/1.1"/>
 
     <!-- Define a SSL HTTP/1.1 Connector on port 8443
          This connector uses the JSSE configuration, when using APR, the 
          connector should be using the OpenSSL style configuration
          described in the APR documentation -->
-    <Connector SSLEnabled="true" URIEncoding="UTF-8" clientAuth="false" keystoreFile="${jboss.server.home.dir}/conf/keystore_ssl" keystorePass="5hL3ma_Azl" maxThreads="150" port="8443" protocol="HTTP/1.1" scheme="https" secure="true" sslProtocol="TLSv1.2"/>
+    <!--
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS"
+               keystoreFile="${jboss.server.home.dir}/conf/keystore_ssl"
+               keystorePass="5hL3ma_Azl" URIEncoding="UTF-8"/>
+    -->
+
+       <!-- To disable compression just comment out two last lines -->
+    <Connector URIEncoding="UTF-8" acceptCount="100" address="${jboss.bind.address}" compressableMimeType="text/html,text/xml,text/plain,text/css,text/javascript,text/json,application/x-javascript,application/javascript,application/json" compression="on" compressionMinSize="2048" connectionTimeout="20000" disableUploadTimeout="true" emptySessionPath="true" enableLookups="false" maxHttpHeaderSize="8192" maxThreads="250" noCompressionUserAgents="gozilla, traviata" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
+
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
     <Connector address="${jboss.bind.address}" emptySessionPath="true" enableLookups="false" port="8009" protocol="AJP/1.3" redirectPort="8443"/>
@@ -142,14 +151,6 @@
             -->
             <Valve cachedConnectionManagerObjectName="jboss.jca:service=CachedConnectionManager" className="org.jboss.web.tomcat.service.jca.CachedConnectionValve" transactionManagerObjectName="jboss:service=TransactionManager"/>
 
-<!--            <Context docBase="\\neo\users\temp\maps" path="/tiles">-->
-<!--            </Context>-->
-            <Context docBase="\\neo\users\temp\Bin\aa_db.nalchik_data.maps\" path="/nalchik">
-            </Context>
-            <Context docBase="\\programmers\Bin\maps\cache\" path="/cachegltf">
-            </Context>
-            <Context docBase="\\programmers\Bin\maps" path="/tiles">
-            </Context>
          </Host>
 
       </Engine>

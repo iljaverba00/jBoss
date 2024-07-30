@@ -156,10 +156,10 @@
     <dbms name="Access" class="com.geocad.wc.jdbc.access.AccessDbms">
 
 <!--    AccessSimple - простой вариант описания, без возможности законнектиться    -->
-		<param name="TypeDriver" value="AccessSimple"/>
+<!--		<param name="TypeDriver" value="AccessSimple"/>-->
 
 <!--    AccessJdbcOdbc - вариант описания, позволяющий законнектиться к БД через мост JDBC - ODBC.   -->
-<!--		<param name="TypeDriver" value="AccessJdbcOdbc"/>-->
+		<param name="TypeDriver" value="AccessJdbcOdbc"/>
 
         <template direction="special" std="geeEquals($e1,$e2)" special="$e1 = $e2"/>
         <template direction="special" std="geeNotEquals($e1,$e2)" special="$e1 &lt;> $e2"/>

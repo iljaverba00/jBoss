@@ -1,59 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jnlp codebase="$$codebase">
   <information>
-      <title>GEE Administrator</title>
-      <vendor>Geocad Plus Ltd.</vendor>
+      <title>Administrator</title>
+      <vendor>ООО "ГЕОКАД плюс"</vendor>
       <homepage href="http://www.geocad.ru"/>
-      <shortcut>
-          <menu submenu="Geocad Enterprise Edition"/>
-      </shortcut>
   </information>
   <security>
       <all-permissions/>
   </security>
-    <application-desc main-class="com.geocad.wc.constructor2.view.admin.AdminForm"/>
+  <application-desc main-class="com.geocad.wc.bootstrap.Bootstrap">
+    <argument>com.geocad.wc.constructor2.view.admin.AdminForm</argument>
+  </application-desc>
   <resources>
-    <j2se version="1.5" java-vm-args="-XX:SoftRefLRUPolicyMSPerMB=1000000000"/>
-    <property name="java.naming.factory.initial" value="org.jnp.interfaces.NamingContextFactory"/>
-    <property name="java.naming.factory.url.pkgs" value="org.jboss.naming"/>
-    <jar href="wc_constructor.jar" version="1.28"/>
-    <jar href="wc_graphicdao.jar" version="1.23"/>
-    <jar href="wc_dbms_exc.jar" version="1.12"/>
-    <jar href="wc_dbms_mapinfo.jar" version="1.20"/>
-    <jar href="wc_dbms_polis.jar" version="1.17"/>
-    <jar href="wc_dbms_googlemap.jar" version="1.9"/>
-    <jar href="wc_dbms_arcsde.jar" version="1.20"/>
-    <jar href="wc_dbms_wfs.jar" version="1.9"/>
-    <jar href="wc_dbms_importexport.jar" version="1.24"/>
-    <jar href="wc_sqlmodel.jar" version="1.16"/>
-    <jar href="wc_util.jar" version="1.29"/>
-    <jar href="wc_bean_common.jar" version="1.38"/>
-    <jar href="wc_proc_common.jar" version="1.6"/>
-    <jar href="wc_spatial_common.jar" version="1.8"/>
-    <jar href="wc_security_common.jar" version="1.10"/>
-    <jar href="wc_jms_common.jar" version="1.13"/>
-    <jar href="wc_metamodel_common.jar" version="3.13"/>
-    <jar href="wc_client.jar" version="1.45"/>
-    <jar href="wc_report_common.jar" version="1.25"/>
-    <jar href="wc_report_client.jar" version="1.18"/>
-    <jar href="wc_report_xml.jar" version="1.5"/>
-    <jar href="wc_graphic.jar" version="1.44"/>
-    <jar href="wc_pictures.jar" version="1.16"/>
-    <jar href="wc_swing.jar" version="1.26"/>
-    <jar href="wc_abris.jar" version="1.2"/>
-    <jar href="wc_interaction.jar" version="1.5"/>
-    <jar href="wc_help.jar" version="1.1"/>
-    <jar href="bsh-core.jar" version="2.0b6"/>
-    <jar href="jbossall-client.jar" version="4.2.2.3"/>
-    <jar href="jboss-aop-jdk50-client.jar" version="1.5.6.1"/>
-    <jar href="jboss-aspect-jdk50-client.jar" version="1.5.0.1"/>
-    <jar href="jboss-ejb3-client.jar" version="4.2.2.1"/>
-    <jar href="jboss-ejb3x.jar" version="4.2.2.1"/>
-    <jar href="poi.jar" version="3.0.1.1"/>
-    <jar href="rmiio.jar" version="2.0.2.1"/>
-    <jar href="ss_css2.jar" version="0.9.4.1"/>
+    <j2se version="1.7+"/>
+    <jar href="wc_bootstrap_admin.jar"/>
+    <jar href="wc_constructor.jar" version="1.52725"/>
+    <jar href="wc_security_admin.jar" version="1.50974"/>
+    <jar href="wc_factform.jar" version="1.51904"/>
+    <jar href="wc_factlook.jar" version="1.51566"/>
+    <jar href="wc_sign.jar" version="1.52854"/>
+    <jar href="wc_graphicdao.jar" version="1.52464"/>
+    <jar href="wc_graphic3d.jar" version="1.52795"/>
+    <jar href="wc_statisticmodel.jar" version="1.50974"/>
+    <jar href="wc_dbms_exc.jar" version="1.53242"/>
+    <jar href="wc_jdbc_core.jar" version="1.53067"/>
+    <jar href="wc_dbms_mapinfo.jar" version="1.50974"/>
+    <jar href="wc_dbms_arcsde.jar" version="1.52367"/>
+    <jar href="wc_dbms_wfs.jar" version="1.50974"/>
+    <jar href="wc_dbms_importexport.jar" version="1.52946"/>
+    <jar href="wc_sqlmodel.jar" version="1.52907"/>
+    <jar href="wc_util.jar" version="1.53242"/>
+    <jar href="wc_plugin_businessprocess.jar" version="1.51836"/>
+    <jar href="wc_plugin.jar" version="1.51836"/>
+    <jar href="wc_bean_common.jar" version="1.53043"/>
+    <jar href="wc_proc_common.jar" version="1.52296"/>
+    <jar href="wc_spatial_common.jar" version="1.52738"/>
+    <jar href="wc_security_common.jar" version="1.52725"/>
+    <jar href="wc_jms_common.jar" version="1.53067"/>
+    <jar href="wc_metamodel_common.jar" version="16.53172"/>
+    <jar href="wc_metamodel_constr.jar" version="16.51836"/>
+    <jar href="wc_managemodel.jar" version="1.52928"/>
+    <jar href="wc_exception.jar" version="16.53242"/>
+    <jar href="wc_graphicmodel.jar" version="1.53043"/>
+    <jar href="wc_paintsettings.jar" version="1.53122"/>
+    <jar href="wc_graphicrender.jar" version="1.53263"/>
+    <jar href="wc_sqleditor.jar" version="1.51836"/>
+    <jar href="wc_report_common.jar" version="1.52738"/>
+    <jar href="wc_report_client.jar" version="1.53043"/>
+    <jar href="wc_report_xml.jar" version="1.51836"/>
+    <jar href="wc_graphic.jar" version="1.53209"/>
+    <jar href="wc_graphic_common.jar" version="1.53209"/>
+    <jar href="wc_pictures.jar" version="1.51836"/>
+    <jar href="wc_swing.jar" version="1.53067"/>
+    <jar href="wc_abris.jar" version="1.53043"/>
+    <jar href="wc_interaction.jar" version="1.51836"/>
+    <jar href="wc_diagnostics_common.jar" version="7.51836"/>
+    <jar href="wc_diagnostics_client.jar" version="7.51836"/>
+    <jar href="wc_gendoc.jar" version="1.52972"/>
+    <jar href="wc_genxml.jar" version="1.53067"/>
+    <jar href="wc_smev3.jar" version="1.53067"/>
+    <jar href="bsh-core.jar" version="2.0b13"/>
+    <jar href="jbossall-client.jar" version="4.2.2.4"/>
+    <jar href="jboss-ejb3x.jar" version="4.2.2.2"/>
+    <jar href="poi.jar" version="3.17"/>
+    <jar href="poi-ooxml.jar" version="3.17"/>
+    <jar href="poi-ooxml-schemas.jar" version="3.17"/>
+    <jar href="gson-2.10.1.jar" version="2.10.1"/>
+    <jar href="proj4j-1.3.0.jar" version="1.3.0"/>
+    <jar href="rmiio.jar" version="2.0.2.2"/>
+    <jar href="threetenbp-1.5.0.jar" version="1.5.0"/>
+    <jar href="commons-collections4-4.2.jar" version="4.2"/>
+    <jar href="commons-compress-1.19.jar" version="1.19"/>
+    <jar href="commons-io-2.6.jar" version="2.6"/>
+    <jar href="commons-lang3-3.8.1.jar" version="3.8.1"/>
+    <jar href="commons-logging-1.2.jar" version="1.2"/>
+    <jar href="xmlbeans-2.6.0.jar" version="2.6.0"/>
+    <jar href="common-2.6.0.jar" version="2.6.0"/>
+    <jar href="commons-collections-3.1.jar" version="3.1"/>
+    <jar href="ecore-2.6.1.jar" version="2.6.1"/>
+    <jar href="geotools.jar" version="10.0"/>
+    <jar href="jdom-1.0.jar" version="1.0"/>
+    <jar href="jsr-275-1.0.0.2.jar" version="1.0.0.2"/>
+    <jar href="jts-1.14.1-mod.jar" version="1.14.1-mod"/>
+    <jar href="org.w3.xlink-10.0.jar" version="10.0"/>
+    <jar href="picocontainer-1.2.jar" version="1.2"/>
+    <jar href="xpp3_min-1.1.4.3.jar" version="1.1.4.3"/>
+    <jar href="xsd-2.6.0.jar" version="2.6.0"/>
+    <jar href="httpclient-4.5.13.jar" version="4.5.13"/>
+    <jar href="httpclient-cache-4.5.13.jar" version="4.5.13"/>
+    <jar href="httpmime-4.5.13.jar" version="4.5.13"/>
+    <jar href="httpcore-4.4.14.jar" version="4.4.14"/>
+    <jar href="gdal.jar" version="3.2.1"/>
+    <jar href="bcpkix-jdk15on-1.50.jar" version="1.50.0"/>
+    <jar href="bcprov-ext-jdk15on-1.50.jar" version="1.50.0"/>
+    <jar href="bcprov-jdk15on-1.50.jar" version="1.50.0"/>
+    <jar href="bctls-jdk15on-1.60.jar" version="1.60.0.0"/>
+    <jar href="AdES-core.jar" version="38830"/>
+    <jar href="ASN1P.jar" version="37886"/>
+    <jar href="asn1rt_37886.jar" version="37886"/>
+    <jar href="CAdES.jar" version="38830"/>
+    <jar href="sample_cades.jar" version="1.0"/>
+    <jar href="sample_xades.jar" version="1.0"/>
+    <jar href="XAdES.jar" version="38830"/>
+    <jar href="pdfjet.jar" version="2.81.1"/>
+    <jar href="svgSalamander.jar" version="0.0.1"/>
+    <jar href="batik-all-1.13.jar" version="1.13"/>
+    <jar href="xml-apis-ext-1.3.04.jar" version="1.3.04"/>
+    <jar href="xmlgraphics-commons-2.4.jar" version="2.4"/>
+    <jar href="woodstox-core-5.2.0.jar" version="5.2.0"/>
+    <jar href="stax-api.jar" version="1.0.1"/>
+    <jar href="stax-utils.jar" version="1.0.1"/>
+    <jar href="stax2-api-4.2.jar" version="4.2"/>
+    <jar href="java-uuid-generator-4.0.1.jar" version="4.0.1"/>
+    <jar href="slf4j-api-1.6.2.jar" version="1.6.2"/>
+    <jar href="slf4j-log4j12-1.6.2.jar" version="1.6.2"/>
+    <jar href="ss_css2.jar" version="0.9.5"/>
     <jar href="swing_ru.jar" version="1.0.1"/>
-    <jar href="jh.jar" version="2.0.0.1"/>
-    <jar href="tidy.jar" version="1.0.7.1"/>
+    <jar href="jh.jar" version="2.0.5"/>
+    <jar href="autocomplete.jar" version="2.0.7"/>
+    <jar href="rsyntaxtextarea.jar" version="2.6.1"/>
+    <jar href="tidy.jar" version="1.0.9"/>
+    <jar href="miglayout.jar" version="4.0"/>
+    <jar href="wc_help.jar" version="1.40000"/>
+    <jar href="twelvemonkeys-common-image.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-common-io.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-common-lang.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-imageio-core.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-imageio-metadata.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-imageio-bmp.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-imageio-jpeg.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-imageio-tiff.jar" version="3.8.1"/>
+    <jar href="twelvemonkeys-imageio-pcx.jar" version="3.8.1"/>
+    <jar href="jai_codec.jar" version="1.1.4.1"/>
+    <jar href="jai_core.jar" version="1.1.4.1"/>
+    <jar href="mlibwrapper_jai.jar" version="1.1.3"/>
+    <jar href="thumbnailator-0.4.11.jar" version="0.4.11"/>
+  </resources>
+  <resources os="Windows" arch="x86">
+    <nativelib href="gdal_win32.jar" version="3.51836"/>
+    <nativelib href="jai_win32.jar" version="1.51836"/>
+  </resources>
+  <resources os="Windows" arch="amd64">
+    <nativelib href="gdal_win64.jar" version="3.51836"/>
+  </resources>
+  <resources os="Linux" arch="i386">
+    <nativelib href="jai_linux32.jar" version="1.51836"/>
+  </resources>
+  <resources os="Linux" arch="amd64">
+    <nativelib href="jai_linux64.jar" version="1.51836"/>
   </resources>
 </jnlp>

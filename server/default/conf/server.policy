@@ -151,10 +151,6 @@ grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_bankstruct.prar" {
 grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_portalki.prar" {
     permission java.net.SocketPermission "*", "connect,resolve";
 };
-grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_triggers.prar" {
-    permission javax.management.MBeanServerPermission "createMBeanServer";
-	permission javax.management.MBeanServerPermission "findMBeanServer";
-};
 grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_genxml.prar" {
     permission java.lang.RuntimePermission "createClassLoader";
 };
@@ -188,7 +184,7 @@ grant codeBase "file:${jboss.server.home.dir}/deploy/wc_proc_spr.prar" {
     // для SprImportInfo
     permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
 };
-grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_sign_server.jar" {
+grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_sign.jar" {
     permission java.lang.RuntimePermission "accessClassInPackage.sun.security.x509";
     permission java.lang.RuntimePermission "accessClassInPackage.sun.security.pkcs";
 
@@ -399,20 +395,10 @@ grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_jboss.jar" {
 grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_geesimple.jar" {
     permission java.net.SocketPermission "*", "accept,listen,resolve";
 };
-grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_telegram_bot.jar" {
-    // для регистрации MBean
-    permission javax.management.MBeanTrustPermission "register";
-    permission java.net.SocketPermission "*", "connect,resolve";
-    permission javax.management.MBeanServerPermission "createMBeanServer";
-	permission javax.management.MBeanServerPermission "findMBeanServer";
-	permission javax.management.MBeanPermission "*", "invoke";
-    permission java.io.FilePermission "<<ALL FILES>>", "write,delete";
-};
 grant codeBase "file:${jboss.server.home.dir}/lib/geelib/wc_proc_server.jar" {
     // взятие процедур по имени, AbstractProcedureContext.getProcClass()
     permission javax.management.MBeanPermission "com.geocad.wc.jboss.ProcDeployer#getFullClassName[gee.startup:service=ProcDeployer]", "invoke";
     permission javax.management.MBeanPermission "com.geocad.wc.jboss.ProcDeployer#getResourceForClass[gee.startup:service=ProcDeployer]", "invoke";
-    permission javax.management.MBeanServerPermission "createMBeanServer";
     permission javax.management.MBeanServerPermission "findMBeanServer";
     // для записи файлов на стороне сервера (ServerMessagesFiles)
     permission java.io.FilePermission "<<ALL FILES>>", "write,delete";

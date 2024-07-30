@@ -1,6 +1,8 @@
--Dhttp.proxyPort=8181
--Xmx4096m
--Dsun.java2d.d3d=true
--Dsun.java2d.opengl=false
--Dhttp.proxyHost=kseon.info
--Xms1600m
+-Xms512m
+-Xmx2048m
+-XX:+UseConcMarkSweepGC
+-XX:+CMSClassUnloadingEnabled
+#-XX:MaxPermSize=192m
+-XX:MaxMetaspaceSize=192m
+-Djava.awt.headless=true
+-Djboss.bind.address=172.30.1.110

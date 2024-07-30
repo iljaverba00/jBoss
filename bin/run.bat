@@ -23,9 +23,7 @@ goto END
 
 :FOUND_RUN_JAR
 
-rem JAVA=C:\Program Files\Java\jdk1.8.0_281\bin\java.exe
-
-set JAVA=C:\pub\Java\jdk8u242\bin\java.exe
+set JAVA=%JBOSS_HOME%\..\jre\bin\java.exe
 
 if not exist "%JAVA%" set JAVA=java
 
@@ -55,7 +53,7 @@ set JAVA_OPTS=%JAVA_OPTS% -Djava.security.manager "-Djava.security.policy=%JBOSS
 rem JPDA options. Uncomment and modify as appropriate to enable remote debugging.
 rem set JAVA_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=y %JAVA_OPTS%
 
-FOR /F "delims=" %%i in (%JBOSS_HOME%\bin\run.vmoptions) DO call :APPOPTS "%%i"
+FOR /F "delims=" %%i in (%JBOSS_HOME%\bin\run.vmoptions) DO call :VMOPTS "%%i"
 
 rem Setup the java endorsed dirs
 set JBOSS_ENDORSED_DIRS=%JBOSS_HOME%\lib\endorsed
@@ -76,7 +74,7 @@ echo ===========================================================================
 echo.
 
 :RESTART
-"%JAVA%" %JAVA_OPTS% "-Djava.endorsed.dirs=%JBOSS_ENDORSED_DIRS%" -classpath "%JBOSS_CLASSPATH%" org.jboss.Main %*
+"%JAVA%" %JAVA_OPTS% "-Djava.endorsed.dirs=%JBOSS_ENDORSED_DIRS%" -classpath "%JBOSS_CLASSPATH%" org.jboss.Main
 if ERRORLEVEL 10 goto RESTART
 
 :END
@@ -86,6 +84,6 @@ exit /B
   set RETVAL=%~f1
   exit /B
 
-:APPOPTS
+:VMOPTS
   set JAVA_OPTS=%JAVA_OPTS% %~1
   exit /B

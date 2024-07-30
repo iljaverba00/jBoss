@@ -50,15 +50,17 @@
 
     -->
 
+    <!-- 
+       | Set raw properties file style properties.
 
+    <attribute name="Properties">
 
+      my.project.property=This is the value of my property
+      my.project.anotherProperty=This is the value of my other property
 
-<!--    <attribute name="Properties">-->
-<!--        https:proxyHost=kseon.info-->
-<!--        https:proxyPort=8181-->
-<!--    </attribute>-->
+    </attribute>
      
-
+    -->
 
   </mbean>
 

@@ -5,8 +5,7 @@ rem -------------------------------------------------------------------------
 
 setlocal
 
-set MAIN_JAR_NAME=shutdown.jar
-set MAIN_CLASS=org.jboss.Shutdown
+chcp 1251
 
 set JBOSS_HOME=%~dp0%..
 set PROGNAME=%~nx0%
@@ -24,34 +23,53 @@ goto END
 
 :FOUND_MAIN_JAR
 
-set JAVA=C:\work\jdk\jre7_80_x32_oracle\bin\java.exe
+set JAVA=%JBOSS_HOME%\..\jre\bin\java.exe
 
 if not exist "%JAVA%" set JAVA=java
 
 set JBOSS_CLASSPATH=%MAIN_JAR%;%JBOSS_HOME%\client\jbossall-client.jar
 
-rem Воспользуемся тем же appopts для сбора аргументов
-FOR /F "delims=" %%i in (%JBOSS_HOME%\bin\shutdown.appoptions) DO call :APPOPTS "%%i"
-set ARGS=%ARGS% %JAVA_OPTS%
-
-rem Setup JBoss sepecific properties
-set JAVA_OPTS=-Djboss.boot.loader.name=%PROGNAME%
+rem Setup JBoss specific properties
+set JAVA_OPTS=%JAVA_OPTS% -Djboss.boot.loader.name=%PROGNAME%
 
 rem JPDA options. Uncomment and modify as appropriate to enable remote debugging.
 rem set JAVA_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=y %JAVA_OPTS%
 
-rem Ну и vmoptions не забываем, вдруг кто что захочет передать
-FOR /F "delims=" %%i in (%JBOSS_HOME%\bin\shutdown.vmoptions) DO call :APPOPTS "%%i"
+FOR /F "delims=" %%i in (%JBOSS_HOME%\bin\shutdown.vmoptions) DO call :VMOPTS "%%i"
 
-"%JAVA%" %JAVA_OPTS% -classpath "%JBOSS_CLASSPATH%" %MAIN_CLASS% -S %ARGS%
+FOR /F "delims=" %%i in (%JBOSS_HOME%\bin\shutdown.appoptions) DO call :APPOPTS "%%i"
+
+echo ===============================================================================
+echo.
+echo   JBoss Shutdown Environment
+echo.
+echo   JBOSS_HOME: %JBOSS_HOME%
+echo.
+echo   JAVA: %JAVA%
+echo.
+echo   JAVA_OPTS: %JAVA_OPTS%
+echo.
+echo   ARGS: %ARGS%
+echo.
+echo   CLASSPATH: %JBOSS_CLASSPATH%
+echo.
+echo ===============================================================================
+echo.
+
+
+"%JAVA%" %JAVA_OPTS% -classpath "%JBOSS_CLASSPATH%" org.jboss.Shutdown -S %ARGS%
 
 :END
-exit
+exit /B
 
 :NORMALIZEPATH
   set RETVAL=%~f1
   exit /B
 
-:APPOPTS
+:VMOPTS
   set JAVA_OPTS=%JAVA_OPTS% %~1
+  exit /B
+
+:APPOPTS
+  set ARGS=%ARGS% %~1
   exit /B

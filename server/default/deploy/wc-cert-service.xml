@@ -9,7 +9,6 @@
                 <invoker transport="socket">
                     <attribute name="serverBindAddress">${jboss.bind.address}</attribute>
                     <!--attribute name="serverBindPort">3873</attribute-->
-                    <attribute name="clientConnectAddress">${java.rmi.server.hostname}</attribute>
                 </invoker>
                 <handlers>
                     <handler subsystem="AOP">org.jboss.aspects.remoting.AOPRemotingInvocationHandler</handler>

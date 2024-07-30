@@ -1,5 +1,7 @@
-<?xml version='1.0' encoding='Cp1251'?>
-<!DOCTYPE policy PUBLIC "-//JBoss//DTD JBOSS Security Config 3.0//EN" "http://www.jboss.org/j2ee/dtd/security_config.dtd" []>
+<?xml version="1.0" encoding="Cp1251"?>
+<!DOCTYPE policy PUBLIC
+        "-//JBoss//DTD JBOSS Security Config 3.0//EN"
+        "http://www.jboss.org/j2ee/dtd/security_config.dtd">
 
 <!-- The XML based JAAS login configuration read by the
 org.jboss.security.auth.login.XMLLoginConfig mbean. Add
@@ -26,13 +28,14 @@ $Revision: 1.12 $
 
 <policy>
     <!-- Security domain for JBossMQ -->
-    <application-policy name="jbossmq">
+    <application-policy name = "jbossmq">
         <authentication>
-            <login-module code="org.jboss.security.auth.spi.DatabaseServerLoginModule" flag="required">
-                <module-option name="unauthenticatedIdentity">guest</module-option>
-                <module-option name="dsJndiName">java:/DefaultDS</module-option>
-                <module-option name="principalsQuery">SELECT PASSWD FROM JMS_USERS WHERE USERID=?</module-option>
-                <module-option name="rolesQuery">SELECT ROLEID, 'Roles' FROM JMS_ROLES WHERE USERID=?</module-option>
+            <login-module code = "org.jboss.security.auth.spi.DatabaseServerLoginModule"
+                          flag = "required">
+                <module-option name = "unauthenticatedIdentity">guest</module-option>
+                <module-option name = "dsJndiName">java:/DefaultDS</module-option>
+                <module-option name = "principalsQuery">SELECT PASSWD FROM JMS_USERS WHERE USERID=?</module-option>
+                <module-option name = "rolesQuery">SELECT ROLEID, 'Roles' FROM JMS_ROLES WHERE USERID=?</module-option>
             </login-module>
         </authentication>
     </application-policy>
@@ -50,24 +53,26 @@ $Revision: 1.12 $
     -->
 
     <!-- Security domains for testing new jca framework -->
-    <application-policy name="HsqlDbRealm">
+    <application-policy name = "HsqlDbRealm">
         <authentication>
-            <login-module code="org.jboss.resource.security.ConfiguredIdentityLoginModule" flag="required">
-                <module-option name="principal">sa</module-option>
-                <module-option name="userName">sa</module-option>
-                <module-option name="password" />
-                <module-option name="managedConnectionFactoryName">jboss.jca:service=LocalTxCM,name=DefaultDS</module-option>
+            <login-module code = "org.jboss.resource.security.ConfiguredIdentityLoginModule"
+                          flag = "required">
+                <module-option name = "principal">sa</module-option>
+                <module-option name = "userName">sa</module-option>
+                <module-option name = "password"></module-option>
+                <module-option name = "managedConnectionFactoryName">jboss.jca:service=LocalTxCM,name=DefaultDS</module-option>
             </login-module>
         </authentication>
     </application-policy>
 
-    <application-policy name="JmsXARealm">
+    <application-policy name = "JmsXARealm">
         <authentication>
-            <login-module code="org.jboss.resource.security.ConfiguredIdentityLoginModule" flag="required">
-                <module-option name="principal">guest</module-option>
-                <module-option name="userName">guest</module-option>
-                <module-option name="password">guest</module-option>
-                <module-option name="managedConnectionFactoryName">jboss.jca:service=TxCM,name=JmsXA</module-option>
+            <login-module code = "org.jboss.resource.security.ConfiguredIdentityLoginModule"
+                          flag = "required">
+                <module-option name = "principal">guest</module-option>
+                <module-option name = "userName">guest</module-option>
+                <module-option name = "password">guest</module-option>
+                <module-option name = "managedConnectionFactoryName">jboss.jca:service=TxCM,name=JmsXA</module-option>
             </login-module>
         </authentication>
     </application-policy>
@@ -76,9 +81,10 @@ $Revision: 1.12 $
       defaults to the UsersRolesLoginModule the same as other and should be
       changed to a stronger authentication mechanism as required.
     -->
-    <application-policy name="jmx-console">
+    <application-policy name = "jmx-console">
         <authentication>
-            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required">
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule"
+                          flag = "required">
                 <module-option name="usersProperties">props/jmx-console-users.properties</module-option>
                 <module-option name="rolesProperties">props/jmx-console-roles.properties</module-option>
             </login-module>
@@ -89,9 +95,10 @@ $Revision: 1.12 $
       defaults to the UsersRolesLoginModule the same as other and should be
       changed to a stronger authentication mechanism as required.
     -->
-    <application-policy name="web-console">
+    <application-policy name = "web-console">
         <authentication>
-            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required">
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule"
+                          flag = "required">
                 <module-option name="usersProperties">web-console-users.properties</module-option>
                 <module-option name="rolesProperties">web-console-roles.properties</module-option>
             </login-module>
@@ -105,7 +112,8 @@ $Revision: 1.12 $
     -->
     <application-policy name="JBossWS">
         <authentication>
-            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required">
+            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule"
+                          flag="required">
                 <module-option name="usersProperties">props/jbossws-users.properties</module-option>
                 <module-option name="rolesProperties">props/jbossws-roles.properties</module-option>
                 <module-option name="unauthenticatedIdentity">anonymous</module-option>
@@ -116,7 +124,7 @@ $Revision: 1.12 $
     <!-- The default login configuration used by any security domain that
     does not have a application-policy entry with a matching name
     -->
-    <application-policy name="other">
+    <application-policy name = "other">
         <!-- A simple server login module, which can be used when the number
         of users is relatively small. It uses two properties files:
         users.properties, which holds users (key) and their password (value).
@@ -129,7 +137,8 @@ $Revision: 1.12 $
         unauthenticatedIdentity="nobody"
         -->
         <authentication>
-            <login-module code="org.jboss.security.auth.spi.UsersRolesLoginModule" flag="required" />
+            <login-module code = "org.jboss.security.auth.spi.UsersRolesLoginModule"
+                          flag = "required" />
         </authentication>
     </application-policy>
 
@@ -167,33 +176,112 @@ $Revision: 1.12 $
         <authentication>
             <login-module code="com.geocad.wc.login.GseeMetamodelLoginModule" flag="sufficient">
                 <module-option name="turnOff">false</module-option>
-                <module-option name="hashAlgorithm">MD5</module-option>
+                <!-- Если включить эту опцию, то можно будет входить под пользователем,
+                     который был ранее загружен из LDAP. -->
+                <module-option name="ignoreType">false</module-option>
+                <module-option name="hashAlgorithm">md5</module-option>
             </login-module>
 
-            <login-module code="com.geocad.wc.login.GseeLdapLoginModule" flag="sufficient">
-                <module-option name="turnOff">false</module-option>
-                <module-option name="java.naming.provider.url">ldap://dns.corp.geocad.ru:3268</module-option> <!-- 389 -->
-                <module-option name="bindAsUser">true</module-option>
-                <module-option name="bindDomain">geo</module-option>
+            <login-module code="com.geocad.wc.login.GseeLdapLoginModule" flag="sufficient" >
+                <module-option name="turnOff">true</module-option>
+                <!-- Если включить эту опцию, то можно будет входить под пользователем,
+                     который был ранее загружен из метамодели, если отключить метамодельный модуль. -->
+                <module-option name="ignoreType">false</module-option>
+                <!-- Адрес сервера и порт его службы LDAP
+                     В случае использования SSL выглядит как ldaps://server:636 -->
+                <module-option name="java.naming.provider.url">ldap://solo.geocad.ru:389</module-option>
+                <!-- DN и пароль пользователя, под которым будут получаться данные.
+                     Грубо говоря, это пользователь с правом поиска по всему дереву.
+                     В ActiveDirectory можно использовать не DN, а в виде домен\юзер. -->
+                <module-option name="bindDN">geocad\alexey</module-option>
+                <module-option name="bindCredential">пароль</module-option>
+                <!-- Есть возможность использовать для поиска по дереву того же пользователя, которого и ищем,
+                     не указывая DN и пароль некоего администратора выше (т.е. вместо bindDN и bindCredential) -->
+                <!-- module-option name="bindAsUser">true</module-option -->
+                <!-- Для такого логина в ActiveDirectory может понадобится имя домена, которое юзер обычно не вводит -->
+                <!-- <module-option name="bindDomain">geocad</module-option -->
+
+                <!-- время (в миллисекундах) отведённое на поиск -->
                 <module-option name="searchTimeLimit">10000</module-option>
-                <module-option name="userCtxDN">ou=&#x41f;&#x43e;&#x43b;&#x44c;&#x437;&#x43e;&#x432;&#x430;&#x442;&#x435;&#x43b;&#x438;,dc=corp,dc=geocad,dc=ru</module-option>
+
+                <!-- Во всех DN и фильтрах ниже могут использоваться два параметра:
+                     {0} - имя пользователя (логин в GSEE)
+                     {1} - DN пользователя в LDAP
+                     {2} - техническое имя метамодели
+                -->
+
+                <!-- Distinguished Name, откуда берутся пользователи.
+                     Можно указать несколько через точку с запятой. -->
+                <module-option name="userCtxDN">ou=Пользователи,dc=geocad,dc=ru</module-option>
+                <!-- Фильтр для выбора аккаунта по логину, в данном случае sAMAccountName - это имя проперти, где оно содержится.
+                     Здесь для поиска можно использовать только {0}. -->
                 <module-option name="userFilter">(sAMAccountName={0})</module-option>
+                <!-- глубина поиска пользователя в дереве -->
                 <module-option name="userSearchScope">SUBTREE_SCOPE</module-option>
+                <!-- Некоторые LDAP-серверы интерпретируют пустой пароль как анонимный логин.
+                     По умолчанию выключаем такое поведение. -->
                 <module-option name="allowEmptyPassword">false</module-option>
+                <!-- Атрибут, в котором содержится имя пользователя.
+                     Это имя будет добавлено в метамодельное описание пользователя. -->
+                <module-option name="userNameAttr">cn</module-option>
 
+                <!-- Существует как минимум два способа сбора ролей юзеров.
 
-                <!--module-option name="roleCtxDN">OU=Пользователи,dc=corp,dc=geocad,dc=ru;OU=GSEE,OU=Группы доступа,dc=corp,dc=geocad,dc=ru</module-option>
-                <module-option name="roleFilter">(member={1})</module-option-->
-                <module-option name="roleCtxDN">dc=corp,dc=geocad,dc=ru;OU={2},OU=programmers,OU=GSEE,OU=Группы доступа,dc=corp,dc=geocad,dc=ru</module-option>
-				<module-option name="roleFilter">(|(member={1})(distinguishedName={1}))</module-option>
+                     1. Роли заданы атрибутами пользователя; имя атрибута одно, повторяется несколько раз, по количеству ролей.
+                        Тогда достаточно опять по DN найти юзера и обратившись к его атрибутам собрать все роли,
+                        не метаясь по дереву.
+                        Задаём:
+                        - roleCtxDN = такой же как baseCtxDN; можно указать несколько через точку с запятой
+                        - roleFilter = такой же, как baseFilter (обычно с использованием переменной {0}, т.е. именем юзера)
+                        - roleAttributeID = атрибут с именами ролей у пользователя
+                        Если юзеры не раскинуты по древу, то достаточно
+                        - searchScope = ONELEVEL_SCOPE
 
-                <module-option name="roleAttributeID">name</module-option>
-                <module-option name="roleSearchScope">SUBTREE_SCOPE</module-option>
-                <module-option name="roleAttributeIsDN">false</module-option>
+                    2. Роли заданы отдельно, у них атрибутом перечислены DN пользователей.
+                       Тогда задаём:
+                       - roleCtxDN = DN где искать роли; можно указать несколько через точку с запятой
+                       - roleFilter = фильтр поиска, причём в нём в качестве переменной используется {1} (DN юзера)
+                       - roleAttributeID = атрибут у роли, содержащий её имя
+                       Если роли раскиданы по древу, то надо задать
+                       - searchScope = SUBTREE_SCOPE
+
+                    Если даже в атрибуте имя роли задаётся через DN, тогда
+                        - roleAttributeIsDN = true
+                        Это обычно бывает в первом случае, но вряд ли будет во втором.
+
+                        При такой настройке появляется смысл ещё в двух атрибутах.
+                        Если имя роли есть прямо в её DN, то можно задать
+                        - parseRoleNameFromDN = true
+                        В противном случае оно полезет искать роль по дереву.
+                        roleNameAttributeID используется либо для выборки атрибута, если parseRoleNameFromDN=false,
+                        либо для разбора DN роли, если parseRoleNameFromDN=true
+                -->
+
+                <module-option name="roleCtxDN">ou=Пользователи,dc=geocad,dc=ru</module-option>
+                <module-option name="roleFilter">(sAMAccountName={0})</module-option>
+                <module-option name="roleAttributeID">memberOf</module-option>
+                <module-option name="roleSearchScope">ONELEVEL_SCOPE</module-option>
+                <module-option name="roleAttributeIsDN">true</module-option>
                 <module-option name="parseRoleNameFromDN">true</module-option>
                 <module-option name="roleNameAttributeID">cn</module-option>
 
-                <module-option name="allRolesCtxDN">OU=Пользователи,dc=corp,dc=geocad,dc=ru;OU=GSEE,OU=Группы доступа,dc=corp,dc=geocad,dc=ru</module-option>
+                <!--module-option name="roleCtxDN">ou=Группы доступа,dc=geocad,dc=ru</module-option>
+                <module-option name="roleFilter">(member={1})</module-option>
+                <module-option name="roleAttributeID">name</module-option>
+                <module-option name="searchScope">SUBTREE_SCOPE</module-option>
+                <module-option name="roleAttributeIsDN">false</module-option-->
+
+
+                <!-- Конфигурация для сбора всех ролей, для отображения в соответствующих диалогах
+                    (навроде диалога задания роли в Администраторе)
+
+                    В принципе напоминает предыдущий блок, вариант №2.
+                    Предыдущий блок использовать невозможно, т.к. там может быть настроен вариант №1
+                    (впрочем, из него используется параметр roleSearchScope).
+                    В принципе, все параметры точно такие же, поэтому документацию см. выше.
+                    Здесь не могут использоваться параметры {0} и {1} ввиду отсутствия конкретного пользователя.
+                -->
+                <module-option name="allRolesCtxDN">ou=Группы доступа,dc=geocad,dc=ru</module-option>
                 <module-option name="allRolesFilter"></module-option>
                 <module-option name="allRolesAttributeID">name</module-option>
                 <module-option name="allRolesAttributeIsDN">false</module-option>
@@ -205,7 +293,6 @@ $Revision: 1.12 $
                 <module-option name="turnOff">false</module-option>
                 <module-option name="ignoreType">false</module-option>
                 <module-option name="hashAlgorithm">md5</module-option>
-                <module-option name="esiaConnect">true</module-option>
             </login-module>
         </authentication>
     </application-policy>

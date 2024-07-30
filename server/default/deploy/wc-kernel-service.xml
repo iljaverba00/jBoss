@@ -32,8 +32,6 @@
                     <attribute name="unmarshaller" isParam="true">org.jboss.invocation.unified.marshall.InvocationUnMarshaller</attribute>
                     <attribute name="serverSocketFactory">jboss.remoting:service=ServerSocketFactory,type=SecurityDomainGeocad</attribute>
                     <attribute name="serverBindAddress">${jboss.bind.address}</attribute>
-                    <!--attribute name="serverBindPort">3843</attribute-->
-                    <attribute name="clientConnectAddress">${java.rmi.server.hostname}</attribute>
                     <attribute name="invokerDestructionDelay" isParam="true">5000</attribute>
                 </invoker>
                 <handlers>
@@ -43,3 +41,29 @@
         </attribute>
     </mbean>
 </server>
+
+<!-- SSL OFF -->
+<!--server>
+    <mbean code="org.jboss.remoting.transport.Connector"
+           name="jboss.remoting:type=Connector,transport=socketssl,handler=ejb3">
+        display-name="Socket transport Connector">
+
+        <depends>jboss.aop:service=AspectDeployer</depends>
+
+        <attribute name="Configuration">
+            <config>
+                <invoker transport="socket">
+                    <attribute name="dataType" isParam="true">invocation</attribute>
+                    <attribute name="marshaller" isParam="true">org.jboss.invocation.unified.marshall.InvocationMarshaller</attribute>
+                    <attribute name="unmarshaller" isParam="true">org.jboss.invocation.unified.marshall.InvocationUnMarshaller</attribute>
+                    <attribute name="serverBindAddress">${jboss.bind.address}</attribute>
+                </invoker>
+                <handlers>
+                    <handler subsystem="AOP">org.jboss.aspects.remoting.AOPRemotingInvocationHandler</handler>
+                </handlers>
+            </config>
+        </attribute>
+    </mbean>
+</server-->
+
+<!--attribute name="serverBindPort">3843</attribute-->
